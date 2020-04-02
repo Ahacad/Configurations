@@ -1,0 +1,18 @@
+snippet document "the skeleton for a document" b
+\documentclass[UTF-8]{${1:a			rticle}}
+\usepackage{amsmath}
+
+\author{$2}
+\date{$3}
+
+\begin{document}
+$4
+\end{document}
+endsnippet
+
+snippet beg "environment"
+\begin{$1}
+$2
+\end{$1}
+$0
+endsnippet
