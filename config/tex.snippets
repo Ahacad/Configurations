@@ -1,18 +1,50 @@
-snippet document "the skeleton for a document" b
-\documentclass[UTF-8]{${1:a			rticle}}
+snippet docu "the skeleton for a document" b
+\documentclass[UTF-8]{${1:article}}
 \usepackage{amsmath}
 
 \author{$2}
 \date{$3}
 
 \begin{document}
-$4
+$0
 \end{document}
 endsnippet
 
-snippet beg "environment"
-\begin{$1}
-$2
+snippet beam "the skeleton for beamer"
+\documentclass[UTF-8]{${1:beamer}}
+\usepackage{amsmath}
+
+\author{$2}
+\date{$3}
+
+\begin{document}
+$0
+\end{document}
+endsnippet
+
+snippet beg "begin an environment"
+\begin{${1:env}}
+	${2:${VISUAL}}
 \end{$1}
+$0
+endsnippet
+
+snippet gat "gather environment"
+\begin{gather${1:*}}
+	${2:${VISUAL}}
+\end{gather$1}
+endsnippet
+
+snippet ali "align environment"
+\begin{align${1:*}}
+	${2:${VISUAL}}
+\end{align$1}
+$0
+endsnippet
+
+snippet enum "enumerate environment"
+\begin{enumerate}
+	\item $1
+\end{enumerate}
 $0
 endsnippet
