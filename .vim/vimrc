@@ -12,6 +12,9 @@ set tabstop=4
 set expandtab
 set softtabstop=4
 
+set background=dark
+set t_Co=256
+
 setlocal spell
 set spelllang=en
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
