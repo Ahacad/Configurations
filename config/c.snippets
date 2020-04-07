@@ -20,25 +20,25 @@ endsnippet
 
 snippet if "the if " w
 if ($1){
-	$0
+	${0:${VISUAL}}
 }
 endsnippet
 
 snippet for "the for" w
 for ($1; $2; $3){
-	$0
+	${0:${VISUAL}}
 }
 endsnippet
 
 snippet whi "the while" w
 while ($1){
-	$0
+	${0:${VISUAL}}
 }
 endsnippet
 
 snippet voi "the void function" w
 ${1:void} ${2:funcname}($3){
-	$0
+	${0:${VISUAL}}
 }
 endsnippet
 
