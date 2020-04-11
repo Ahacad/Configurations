@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+google-chrome "https://zhihu.com/search?q=$1"
+echo searching $1 in zhihu
