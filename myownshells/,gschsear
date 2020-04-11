@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+firefox "https://scholar.google.com/scholar?q=$1"
+echo searching $1 google scholar

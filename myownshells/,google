@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+firefox "https://www.google.com/search?q=$1"
+echo searching $1 google
