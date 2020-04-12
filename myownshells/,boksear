@@ -1,0 +1,4 @@
+#! /bin/zsh
+
+google-chrome "https://b-ok.org/s/$1"
+echo searching $1 in b-ok
