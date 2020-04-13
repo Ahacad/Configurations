@@ -1,0 +1,17 @@
+#! /bin/bash
+
+echo installing ranger
+sudo apt-get install ranger
+echo ##############################################################
+
+echo installing git
+sudo apt-get install git
+echo ##############################################################
+
+echo installing lazygit
+sudo add-apt-repository ppa:lazygit-team/release
+sudo apt-get update
+sudo apt-get install lazygit
+echo ##############################################################
+
+
