@@ -16,7 +16,7 @@ set background=dark
 set t_Co=256
 
 setlocal spell
-set spelllang=en
+set spelllang=en,cjk
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 hi clear SpellBad
 hi SpellBad cterm=underline
@@ -35,22 +35,128 @@ vnoremap Y "+y
 
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'lervag/vimtex'
 Plug 'sirver/ultisnips'
 Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
+"Plug 'powerline/powerline'
+Plug 'preservim/nerdcommenter'
+Plug 'https://github.com/itchyny/lightline.vim'
+"Plug 'Yggdroot/indentLine'
+Plug 'frazrepo/vim-rainbow'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-fugitive'
 call plug#end()
-let NERDTreeWinPos='right'
-let NERDTreeWinSize=30
-map <F2> :NERDTreeToggle<CR>
 
+" nerdtree
+"
+" Open a NERDTree
+map <F2> :NERDTreeToggle<CR>
+" NERD tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=35
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" nerdtree git
+"
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" vimtex
+"
 let g:tex_flavor='xelatex'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
+" Ultisnippets
+"
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-let g:UltiSnipsSnippetDirectories = ['/home/ahacad/Workstation/Ultisnips-config/config']
+let g:UltiSnipsSnippetDirectories = ['/home/ahacad/Workstation/Configurations/config']
 
+" indent line
+"
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" tagbar
+"
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+nmap <F6> :TagbarToggle<CR>
+
+"vim powerline
+"
+"set laststatus=2 " Always display the status line
+"set statusline+=%{fugitive#statusline()} "  Git Hotness
+
+"lightline
+set laststatus=2
+                        
+"vim rainbow
+"
+"au FileType c,cpp,python call rainbow#load()
+"
+"let g:rainbow_load_separately = [
+"    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+"    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+"    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+"    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+"    \ ]
+"
+"let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+"let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+"Gitgutter
+"
+nnoremap <leader>gd :GitGutterToggle<CR>
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Colors
+
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""''""""""""""""""""""""""""""""""""""""""""""""""""""
+" functions
+"map <silent> <C-r> :call CPP()<CR>
+"
+func C()
+    exec "!clear && gcc % &&./a.out"
+endfunc
+
+func CPP()
+    exec "!clear && g++ % &&./a.out"
+endfunc
+"
+func PYTHON()
+    exec "!clear && python3 %"
+endfunc
+
+autocmd FileType c map <C-r> :call C()<CR>
+autocmd FileType cpp map <C-r> :call CPP()<CR>
+autocmd FileType python map <C-r> :call PYTHON()<CR>
 
