@@ -11,7 +11,7 @@ for ($1; $2; $3){
 endsnippet
 
 snippet whi "while" w
-while ($1){
+while($1){
 	${0:${VISUAL}}
 }
 endsnippet
@@ -39,5 +39,22 @@ snippet	stand "standard file form" bw
 int main(){
 	using namespace std;
 	$0
+}
+endsnippet
+
+snippet head "standard header for oj" bw
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+$1
+
+int read(){
+    $2
+}
+
+int	main(){
+	$0
+	return 0;
 }
 endsnippet
