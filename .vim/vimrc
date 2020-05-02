@@ -2,6 +2,17 @@
 
 set number
 
+" no blink for the 
+"highlight Cursor guifg=white guibg=black
+"highlight Cursor guifg=white guibg=steelblue
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
+"set guicursor=a:blinkon0
+set cursorline
+
+
 syntax on
 set showmode
 
@@ -15,6 +26,7 @@ set softtabstop=4
 set background=dark
 set t_Co=256
 
+"---------- spelling check ------------------------
 setlocal spell
 set spelllang=en,cjk
 inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
@@ -24,6 +36,7 @@ hi SpellBad cterm=underline
 hi SpellBad gui=undercurl
 hi SpellBad ctermfg=red ctermbg=black 
 hi SpellCap cterm=bold ctermfg=blue ctermbg=black
+"====================================================
 
 :nmap L J
 :nmap H K
@@ -33,6 +46,8 @@ hi SpellCap cterm=bold ctermfg=blue ctermbg=black
 vnoremap Y "+y
 
 
+
+"----------- plugins --------------------------------
 call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -45,7 +60,8 @@ Plug 'majutsushi/tagbar'
 Plug 'preservim/nerdcommenter'
 Plug 'https://github.com/itchyny/lightline.vim'
 "Plug 'Yggdroot/indentLine'
-Plug 'frazrepo/vim-rainbow'
+"Plug 'frazrepo/vim-rainbow'
+Plug 'luochen1990/rainbow'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-syntastic/syntastic'
 Plug 'tpope/vim-fugitive'
@@ -104,7 +120,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 "
 let g:tagbar_width=35
 let g:tagbar_autofocus=1
-nmap <F6> :TagbarToggle<CR>
+nmap <F3> :TagbarToggle<CR>
 
 "vim powerline
 "
@@ -128,20 +144,64 @@ set laststatus=2
 "let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
 "let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
 
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let lightcolors =  ['lightblue', 'lightyellow', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
+let darkcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+
+let g:rainbow_conf = {
+\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'ctermfgs': lightcolors,
+\	'guis': [''],
+\	'cterms': [''],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'markdown': {
+\			'parentheses_options': 'containedin=markdownCode contained',
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\		},
+\		'haskell': {
+\			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+\		},
+\		'vim': {
+\			'parentheses_options': 'containedin=vimFuncBody',
+\		},
+\		'perl': {
+\			'syn_name_prefix': 'perlBlockFoldRainbow',
+\		},
+\		'stylus': {
+\			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+\		},
+\		'css': 0,
+\	}
+\}
+
+
+
+
+
+
+
 "Gitgutter
 "
 nnoremap <leader>gd :GitGutterToggle<CR>
+"=========================================================================================
+
+
+"------------ Colors  ---------------------------------------
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"Colors
+"------------------------------------------------------------
 
 
 
 
-""""""""""""""""""""""""""""""""""""""""""""""""""''""""""""""""""""""""""""""""""""""""""""""""""""""
-" functions
+
+"----------- functions --------------------------------------
 "map <silent> <C-r> :call CPP()<CR>
 "
 func C()
@@ -160,3 +220,14 @@ autocmd FileType c map <C-r> :call C()<CR>
 autocmd FileType cpp map <C-r> :call CPP()<CR>
 autocmd FileType python map <C-r> :call PYTHON()<CR>
 
+"==============================================================
+
+
+"----------- commands --------------------------------------------------------
+command! -nargs=0 CountBytesBack        :normal mxvgg"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountBytesForward     :normal mxv$G"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountBytesAll         :normal mxggVG"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountCharsAll         :%s/./&/gn|noh
+command! -nargs=0 CountWordsAll         :%s/\i\+/&/gn|noh
+
+"=================================================================================
