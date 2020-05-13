@@ -29,3 +29,9 @@ On a new machine, the programs below need to be installed to promote productivit
 - lazygit
 - ranger
 - neofetch
+
+
+## Gnome Shell Extensions
+
+- [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)
+

@@ -1,0 +1,7 @@
+#! /bin/bash
+
+google-chrome "https://zzk.cnblogs.com/s/blogpost?w=$1"
+google-chrome "https://so.csdn.net/so/search/s.do?q=$1"
+google-chrome "https://www.baidu.com/s?wd=$1"
+firefox "https://www.google.com/search?q=$1"
+echo searching $1 on cnblog, csdn, baidu and google

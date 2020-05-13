@@ -99,7 +99,10 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/home/ahacad/Workstation/Configurations/myownshells:/home/ahacad/anaconda3/bin:/home/ahacad/nextcloud:/home/ahacad/Languages/go/bin:$PATH"
 
-neofetch
 
 setxkbmap us -variant colemak -option
 setxkbmap us -variant colemak -option caps:escape
+
+alias lg=lazygit
+alias ra=ranger
+alias ns="nautilus .&"
