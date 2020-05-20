@@ -1,0 +1,7 @@
+#! /bin/bash
+let BRIGHTNESSNOW=$BRIGHTNESS+15000
+if [ $BRIGHTNESS -ge 120000 ]; then
+    let BRIGHTNESSNOW=120000
+fi
+export BRIGHTNESS=$BRIGHTNESSNOW
+echo $BRIGHTNESSNOW | sudo tee /sys/class/backlight/intel_backlight/brightness
