@@ -70,14 +70,21 @@ endsnippet
 
 snippet cofo "codeforces template" bw
 #include <cstdio>
-
+#include <algorithm>
+$1
 using namespace std;
 
 using ll = long long;
 
+$2
+
 int main(){
+	#ifdef LOCAL
 	freopen("input.txt", "r", stdin);
-	freopen("output.txt", "w", stdout);
+	//freopen("output.txt", "w", stdout);
+	#endif
+
+	$0
 
 	return 0;
 }
@@ -93,6 +100,29 @@ using namespace std;
 $0
 
 int main(){
+
+	return 0;
+}
+endsnippet
+
+
+snippet noco "nowcoder template" bw
+#include <cstdio>
+#include <algorithm>
+$1
+using namespace std;
+
+using ll = long long;
+
+$2
+
+int main(){
+	#ifdef LOCAL
+	freopen("input.txt", "r", stdin);
+	//freopen("output.txt", "w", stdout);
+	#endif
+
+	$0
 
 	return 0;
 }

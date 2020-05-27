@@ -35,3 +35,17 @@ On a new machine, the programs below need to be installed to promote productivit
 
 - [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)
 
+
+
+
+
+
+# Needed cli tools
+
+git, lazygit
+ranger
+tmux 
+zsh, ohmyzsh
+w3m
+
+
