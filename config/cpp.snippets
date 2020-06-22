@@ -69,7 +69,7 @@ endsnippet
 
 
 snippet cofo "codeforces template" bw
-#include <cstdio>
+#include <iostream>
 #include <algorithm>
 $1
 using namespace std;
@@ -84,6 +84,8 @@ int main(){
 	//freopen("output.txt", "w", stdout);
 	#endif
 
+	std::ios::sync_with_stdio(false);
+	cin.tie(0); cout.tie(0);
 	$0
 
 	return 0;
@@ -96,6 +98,8 @@ snippet leco "leetcode template" bw
 #include <vector>
 
 using namespace std;
+
+${VISUAL}
 
 $0
 

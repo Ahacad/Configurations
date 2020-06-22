@@ -37,16 +37,9 @@ snippet gat "gather environment"
 endsnippet
 
 snippet ali "align environment"
-\begin{aligned}
-	${1:${VISUAL}}
-\end{aligned}
-$0
-endsnippet
-
-snippet equ "equation environment"
-\begin{equation}
-	${1:${VISUAL}}
-\end{equation}
+\begin{align${1:*}}
+	${2:${VISUAL}}
+\end{align$1}
 $0
 endsnippet
 
@@ -128,7 +121,3 @@ snippet NN "natural" iA
 \N
 endsnippet
 
-
-snippet bf "\textbf" w
-\textbf{$1}$0
-endsnippet
