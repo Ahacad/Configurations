@@ -1,33 +1,33 @@
 snippet if "the if " w
 if ($1){
-	${0:${VISUAL}}
+    ${0:${VISUAL}}
 }
 endsnippet
 
 snippet for "the for" w
 for ($1; $2; $3){
-	${0:${VISUAL}}
+    ${0:${VISUAL}}
 }
 endsnippet
 
 snippet whi "while" w
 while($1){
-	${0:${VISUAL}}
+    ${0:${VISUAL}}
 }
 endsnippet
 
 snippet fun "the void function" w
 ${1:int} ${2:main}(${3:}){
-	${0:${VISUAL}}
+    ${0:${VISUAL}}
 }
 endsnippet
 
 snippet class "a new class" b
 class ${1:Solution}{
 public:
-	${2:int} ${3:func}($4){
-		$0
-	}
+    ${2:int} ${3:func}($4){
+        $0
+    }
 };
 endsnippet
 
@@ -37,8 +37,8 @@ snippet	stand "standard file form" bw
 #include <iostream>
 
 int main(){
-	using namespace std;
-	$0
+    using namespace std;
+    $0
 }
 endsnippet
 
@@ -51,19 +51,19 @@ using namespace std;
 $2
 
 int read(){
-	$3
-	return 0;
+    $3
+    return 0;
 }
 
 int solve(){
-	$0
+    $0
 }
 
 int	main(){
-	read();
-	solve();
-
-	return 0;
+    read();
+    solve();
+    
+    return 0;
 }
 endsnippet
 
@@ -79,16 +79,16 @@ using ll = long long;
 $2
 
 int main(){
-	#ifdef LOCAL
-	freopen("input.txt", "r", stdin);
-	//freopen("output.txt", "w", stdout);
-	#endif
-
-	std::ios::sync_with_stdio(false);
-	cin.tie(0); cout.tie(0);
-	$0
-
-	return 0;
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    std::ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    $0
+    
+    return 0;
 }
 endsnippet
 
@@ -105,7 +105,7 @@ $0
 
 int main(){
 
-	return 0;
+    return 0;
 }
 endsnippet
 
@@ -121,13 +121,13 @@ using ll = long long;
 $2
 
 int main(){
-	#ifdef LOCAL
-	freopen("input.txt", "r", stdin);
-	//freopen("output.txt", "w", stdout);
-	#endif
-
-	$0
-
-	return 0;
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    $0
+    
+    return 0;
 }
 endsnippet
