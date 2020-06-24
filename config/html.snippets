@@ -1,101 +1,116 @@
 
 snippet h1
-<h1>$1</h1>
+<h1>${1:${VISUAL}}</h1>
     $0
 endsnippet
 
 snippet h1.
-<h1 class="$1">$2</h1>
+<h1 class="$1">${2:${VISUAL}}</h1>
     $0
 endsnippet
 
 snippet h1#
-<h1 id="$1">$2</h1>
+<h1 id="$1">${2:${VISUAL}}</h1>
     $0
 endsnippet
 
 snippet h2
-<h2>$1</h2>
+<h2>${1:${VISUAL}}</h2>
     $0
 endsnippet
 
 snippet h2.
-<h2 class="$1">$2</h2>
+<h2 class="$1">${2:${VISUAL}}</h2>
     $0
 endsnippet
 
 snippet h2#
-<h2 id="$1">$2</h2>
+<h2 id="$1">${2:${VISUAL}}</h2>
     $0
 endsnippet
 
 snippet h3
-<h3>$1</h3>
+<h3>${1:${VISUAL}}</h3>
     $0
 endsnippet
 
 snippet h3.
-<h3 class="$1">$2</h3>
+<h3 class="$1">${2:${VISUAL}}</h3>
     $0
 endsnippet
 
 snippet h3#
-<h3 id="$1">$2</h3>
+<h3 id="$1">${2:${VISUAL}}</h3>
     $0
 endsnippet
 
 snippet h4
-<h4>$1</h4>
+<h4>${1:${VISUAL}}</h4>
     $0
 endsnippet
 
 snippet h4.
-<h4 class="$1">$2</h4>
+<h4 class="$1">${2:${VISUAL}}</h4>
     $0
 endsnippet
 
 snippet h4#
-<h4 id="$1">$2</h4>
+<h4 id="$1">${2:${VISUAL}}</h4>
     $0
 endsnippet
 
 snippet h5
-<h5>$1</h5>
+<h5>${1:${VISUAL}}</h5>
     $0
 endsnippet
 
 snippet h5.
-<h5 class="$1">$2</h5>
+<h5 class="$1">${2:${VISUAL}}</h5>
     $0
 endsnippet
 
 snippet h5#
-<h5 id="$1">$2</h5>
+<h5 id="$1">${2:${VISUAL}}</h5>
     $0
 endsnippet
 
 snippet h6
-<h6>$1</h6>
+<h6>${1:${VISUAL}}</h6>
     $0
 endsnippet
 
 snippet h6.
-<h6 class="$1">$2</h6>
+<h6 class="$1">${2:${VISUAL}}</h6>
     $0
 endsnippet
 
 snippet h6#
-<h6 id="$1">$2</h6>
+<h6 id="$1">${2:${VISUAL}}</h6>
     $0
 endsnippet
 
 snippet p
-<p>$1</p>
+<p>${1:${VISUAL}}</p>
 $0
 endsnippet
 
 snippet b
-<b>$1</b>
+<b>${1:${VISUAL}}</b>
+$0
+endsnippet
+
+snippet i
+<i>${1:${VISUAL}}</i>
+$0
+endsnippet
+
+snippet i.
+<i class="$1">${2:${VISUAL}}</i>
+$0
+endsnippet
+
+snippet i#
+<i id="$1">${2:${VISUAL}}</i>
 $0
 endsnippet
 
@@ -105,7 +120,7 @@ $0
 endsnippet
 
 snippet sup
-<sup>$1</sup>
+<sup>${1:${VISUAL}}</sup>
 $0
 endsnippet
 
@@ -122,40 +137,81 @@ endsnippet
 
 snippet ul
 <ul>
-    $1
+    ${1:${VISUAL}}
 </ul>
 $0
 endsnippet
 
 snippet li
-<li>$1</li>
+<li>${1:${VISUAL}}</li>
 $0
 endsnippet
 
 snippet a
-<a href="$1">$2</a>$0
+<a href="$1">${2:${VISUAL}}</a>$0
 endsnippet
 
 snippet scr
 <script>
-$0
+${0:${VISUAL}}
 </script>
 endsnippet
 
 snippet div
 <div>
-    $0
+    ${1:${VISUAL}}
 </div>
+$0
 endsnippet
 
 snippet div.
 <div class="$1">
-    $0
+    ${2:${VISUAL}}
 </div>
+$0
 endsnippet
 
 snippet div#
 <div id="$1">
-    $0
+    ${2:${VISUAL}}
 </div>
+$0
+endsnippet
+
+snippet tit
+<title>${1:${VISUAL}}</title>
+$0
+endsnippet
+
+snippet tit.
+<title class="$1">${2:${VISUAL}}</title>
+$0
+endsnippet
+
+snippet tit#
+<title id="$1">${2:${VISUAL}}</title>
+$0
+endsnippet
+
+snippet but
+<button>${1:${VISUAL}}</button>$0
+endsnippet
+
+snippet but.
+<button class="$1">${2:${VISUAL}}</button>$0
+endsnippet
+
+snippet but#
+<button id="$1">${2:${VISUAL}}</button>$0
+endsnippet
+
+#
+#
+#
+#
+# include packages here
+
+snippet bstp 
+<link rel="stylesheet" href="${1:/home/ahacad/Languages/Bootstrap/bootstrap-4.5.0-dist/css/bootstrap.min.css}">
+$0
 endsnippet
