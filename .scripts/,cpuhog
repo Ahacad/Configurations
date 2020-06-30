@@ -1,0 +1,4 @@
+#! /bin/bash
+
+notify-send "Biggest cpu hogs
+$(ps axch -o cmd:15,%cpu --sort=-%cpu | head)"

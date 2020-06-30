@@ -1,0 +1,3 @@
+#! /bin/bash
+
+echo $((($(date --date=$1 +%s) - $(date --date=$2 +%s)) / (60 * 60 *24)))

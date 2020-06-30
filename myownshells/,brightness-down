@@ -1,7 +1,0 @@
-#! /bin/bash
-let BRIGHTNESS=$BRIGHTNESS-15000
-if [ $BRIGHTNESS -lt 0 ]; then
-    let BRIGHTNESS=0
-fi
-export BRIGHTNESS=$BRIGHTNESS
-echo $BRIGHTNESS | sudo tee /sys/class/backlight/intel_backlight/brightness

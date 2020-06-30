@@ -1,7 +1,0 @@
-#!/bin/bash
-
-read -p "enter the date in the format YYYY-MM-DD "
-
-future=$(date -d "$REPLY" "+%s")
-now=$(date "+%s")
-echo "$(( ( $future / 86400 ) - ( $now / 86400 ) )) days"
