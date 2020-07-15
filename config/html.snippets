@@ -125,8 +125,10 @@ $0
 endsnippet
 
 snippet html
+<!DOCTYPE html>
 <html>
     <head>
+		<meta charset="utf-8">
         $1
     </head>
     <body>
@@ -204,6 +206,44 @@ endsnippet
 snippet but#
 <button id="$1">${2:${VISUAL}}</button>$0
 endsnippet
+
+snippet tab
+<table>$1</table>$0
+endsnippet
+
+snippet tr
+<tr>
+    ${0:${VISUAL}}
+</tr>
+endsnippet
+
+snippet td
+<td>$1</td>
+$0
+endsnippet
+
+snippet th
+<th>$1</th>
+$0
+endsnippet
+
+snippet the
+<thead>
+    $0
+</thead>
+endsnippet
+
+snippet tbo
+<tbody>
+    $0
+</tbody>
+endsnippet
+
+snippet tfo
+<tfoot>
+    $0
+endsnippet
+
 
 #
 #
