@@ -151,11 +151,14 @@ snippet html
 <!DOCTYPE html>
 <html>
     <head>
-		<meta charset="utf-8">
-        $1
+        <meta charset="utf-8">
+        <meta name="author" content="${1:Ahacad}">
+        <meta name="description" content="$2">
+        <title>$3</title>
+        $4
     </head>
     <body>
-        $2
+        $0
     </body>
 </html>
 endsnippet
@@ -343,6 +346,22 @@ endsnippet
 
 snippet time
 <time datetime="$1">${2:${VISUAL}}</time>$0
+endsnippet
+
+snippet add
+<address>
+    ${0:${VISUAL}}
+</address>
+endsnippet
+
+snippet add.
+<address class="$1">
+    ${0:${VISUAL}}
+</address>
+endsnippet
+
+snippet br
+</br>
 endsnippet
 
 
