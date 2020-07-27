@@ -137,10 +137,6 @@ snippet i#
 $0
 endsnippet
 
-snippet img
-<img src="$1" alt="$2">
-$0
-endsnippet
 
 snippet sup
 <sup>${1:${VISUAL}}</sup>
@@ -362,6 +358,38 @@ endsnippet
 
 snippet br
 </br>
+endsnippet
+
+
+snippet img
+<img src="$1" alt="$2" width="$3" height="$4">
+$0
+endsnippet
+
+snippet fig
+<figure>
+    <img src="$1" alt="$2">
+    <figcaption>$3</figcaption>
+</figure>
+endsnippet 
+
+snippet vid
+<video controls width="$1" height="$2" poster="$3" preload="$4">
+    <source src="$5" type="$6">
+</video>
+$0
+endsnippet
+
+snippet aud
+<audio controls>
+    <source src="$1" type="$2">
+</audio>
+$0
+endsnippet
+
+snippet ifr
+<iframe src="$1" width="$2" height="$3" frameborder="$4" allowfullscreen sandbox>
+</iframe>
 endsnippet
 
 
