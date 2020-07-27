@@ -94,6 +94,29 @@ snippet p
 $0
 endsnippet
 
+snippet p.
+<p class="$1">${2:${VISUAL}}</p>
+$0
+endsnippet
+
+snippet p#
+<p id="$1">${2:${VISUAL}}</p>
+$0
+endsnippet
+
+
+snippet q
+<q>${1:${VISUAL}}</q>$0
+endsnippet
+
+snippet q.
+<q class="$1">${2:${VISUAL}}</q>$0
+endsnippet
+
+snippet q#
+<q id="$1">${2:${VISUAL}}</q>$0
+endsnippet
+
 snippet b
 <b>${1:${VISUAL}}</b>
 $0
@@ -242,6 +265,84 @@ endsnippet
 snippet tfo
 <tfoot>
     $0
+endsnippet
+
+snippet dl
+<dl>
+    ${1:${VISUAL}}
+</dl>
+endsnippet
+
+snippet dl.
+<dl class="$1">
+    ${2:${VISUAL}}
+</dl>
+endsnippet
+
+snippet dl#
+<dl id="$1">
+    ${2:${VISUAL}}
+</dl>
+endsnippet
+
+snippet dt
+<dt>$1</dt>
+$0
+endsnippet
+
+snippet dd
+<dd>$1</dd>
+$0
+endsnippet
+
+snippet str
+<strong>${1:${VISUAL}}</strong>$0
+endsnippet
+
+snippet em
+<em>${1:${VISUAL}}</em>$0
+endsnippet
+
+snippet blo
+<blockquote cite="$1">
+    ${2:${VISUAL}}
+</blockquote>
+endsnippet
+
+snippet code
+<code>${1:${VISUAL}}</code>$0
+endsnippet
+
+snippet pre
+<pre>${1:${VISUAL}}</pre>$0
+endsnippet
+
+snippet kbd
+<kbd>${1:${VISUAL}}</kbd>$0
+endsnippet
+
+snippet samp
+<samp>${1:${VISUAL}}</samp>$0
+endsnippet
+
+snippet cite
+<cite>${1:${VISUAL}}</cite>$0
+endsnippet
+
+snippet abbr
+<abbr title="$1">${2:${VISUAL}}</abbr>$0
+endsnippet
+
+snippet sub
+<sub>${1:${VISUAL}}</sub>$0
+endsnippet
+
+snippet sup
+<sup>${1:${VISUAL}}</sup>$0
+endsnippet
+
+snippet time
+<time datetime="$1">${2:${VISUAL}}</time>$0
 endsnippet
 
 
