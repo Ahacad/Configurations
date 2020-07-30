@@ -227,7 +227,7 @@ endsnippet
 
 snippet tab
 <table>
-$1
+    $1
 </table>
 endsnippet
 
@@ -239,6 +239,12 @@ endsnippet
 
 snippet td
 <td>$1</td>
+$0
+endsnippet
+
+
+snippet tdr
+<td rowspan="$1">$2</td>
 $0
 endsnippet
 
@@ -412,7 +418,7 @@ endsnippet
 
 snippet sec
 <section>
-    $1
+    ${1:${VISUAL}}
 </section>
 endsnippet
 
@@ -432,6 +438,14 @@ snippet asi
 <aside>
     $1
 </aside>
+endsnippet
+
+# -*-     -*- 
+
+snippet sty
+<style>
+    $1
+</style>
 endsnippet
 
 #
