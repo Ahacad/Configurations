@@ -3,17 +3,17 @@
 # operation control
 
 snippet if 
-if {
-    $1
+if ($1) {
+    $2
 }
 $0
 endsnippet
 
 snippet ife
-if {
-    $1
-} else {
+if ($1) {
     $2
+} else {
+    $3
 }
 $0
 endsnippet
