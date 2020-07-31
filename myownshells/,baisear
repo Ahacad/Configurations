@@ -1,4 +1,0 @@
-#! /bin/zsh
-
-google-chrome "https://baidu.com/s?wd=$1"
-echo searching $1 in baidu
