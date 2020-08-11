@@ -36,6 +36,7 @@ while($1){
 endsnippet
 
 
+# == 
 
 snippet fun "the void function" w
 ${1:int} ${2:main}(${3:}){
@@ -53,41 +54,6 @@ public:
 endsnippet
 
 
-snippet	stand "standard file form" bw
-#include <cstdio>
-#include <iostream>
-
-int main(){
-    using namespace std;
-    $0
-}
-endsnippet
-
-snippet head "standard header for oj" bw
-#include <iostream>
-#include <fstream>
-$1
-using namespace std;
-
-$2
-
-int read(){
-    $3
-    return 0;
-}
-
-int solve(){
-    $0
-}
-
-int	main(){
-    read();
-    solve();
-    
-    return 0;
-}
-endsnippet
-
 
 # == templates for ojs
 
@@ -95,8 +61,23 @@ snippet cofo "codeforces template" bw
 #include <iostream>
 #include <algorithm>
 $1
+
 using namespace std;
-using ll = long long;
+#define pb push_back;
+#define mp make_pair;
+#define rep(i, a, b) for(int i = a; i < b; i++)
+#define repb(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef pair<int, int> pii;
+typedef vector<pii> vpii;
 
 const int LEN = 1e5 + 5;
 
@@ -121,7 +102,22 @@ snippet cofot "codeforces template with t test cases" bw
 #include <algorithm>
 $1
 using namespace std;
-using ll = long long;
+
+#define pb push_back;
+#define mp make_pair;
+#define rep(i, a, b) for(int i = a; i < b; i++)
+#define repb(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef pair<int, int> pii;
+typedef vector<pii> vpii;
 
 const int LEN = 1e5 + 5;
 int t;
@@ -184,3 +180,4 @@ int main(){
     return 0;
 }
 endsnippet
+
