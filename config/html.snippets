@@ -152,13 +152,12 @@ $0
 endsnippet
 
 snippet a
-<a href="$1">${2:${VISUAL}}</a>$0
+<a href="${1:#}">${2:${VISUAL}}</a>$0
 endsnippet
 
 snippet scr
-<script>
-${0:${VISUAL}}
-</script>
+<script src="$1">${2:${VISUAL}}</script>
+$0
 endsnippet
 
 snippet div
@@ -387,6 +386,7 @@ snippet hea
 <header>
   $1
 </header>
+$0
 endsnippet
 
 # 
@@ -395,6 +395,7 @@ snippet mai
 <main>
   $1
 </main>
+$0
 endsnippet
 
 snippet art

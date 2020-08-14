@@ -1,4 +1,3 @@
-
 set number
 set cursorline
 syntax on
@@ -22,11 +21,23 @@ set t_Co=256
 :nmap J 7j
 :nmap K 7k
 
+" use Ctrl-s for saving
+noremap W :update<CR>
+"vnoremap <C-S>		<C-C>:update<CR>
+"inoremap <C-S>		<Esc>:update<CR>gi
+
+
 " copy to system paster
 vnoremap Y "+y
 
 " set gui cursor with block
 set guicursor=a:block
+
+" fold code
+set foldmethod=manual
+noremap F zfat<CR>
+noremap f za<CR>
+
 
 
 " ####################################################3
@@ -51,6 +62,8 @@ Plug 'tpope/vim-surround'
 Plug 'junegunn/vim-easy-align'
 " generate table of contents for markdown easily
 Plug 'mzlogin/vim-markdown-toc'
+" syntax checks for vim 
+Plug 'vim-syntastic/syntastic'
 " use sudo easily in vim
 Plug 'lambdalisue/suda.vim'
 " vim LaTeX companion
@@ -59,13 +72,17 @@ Plug 'lervag/vimtex'
 Plug 'preservim/nerdcommenter'
 " rainbow color brackets
 Plug 'luochen1990/rainbow'
-" syntax checks for vim 
-Plug 'vim-syntastic/syntastic'
 " shows changes since last commit
 Plug 'airblade/vim-gitgutter'
 " display the indentation levels
 Plug 'Yggdroot/indentLine'
-" code debugger for vim
+" auto pair up 
+Plug 'jiangmiao/auto-pairs'
+" amazing vim start screen
+Plug 'mhinz/vim-startify'
+" vim wiki
+Plug 'vimwiki/vimwiki'
+"code debugger for vim
 "Plug 'puremourning/vimspector'
 
 "" multiple tabs for vim
@@ -102,6 +119,12 @@ call plug#end()
 " == vista
 map <F2> :Vista<CR>
 map <F3> :Vista!<CR>
+let g:vista_sidebar_width = 50
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "⚛",
+\   "variable": "\U00000024",
+\  }
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
 " == lightline
@@ -190,6 +213,9 @@ let g:indentLine_color_term = 147
 "let g:indentLine_bgcolor_gui = '#3DAEEB'
 "let g:indentLine_setConceal = 0
 
+" == vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+
 
 " #########################################################3
 "
@@ -218,10 +244,11 @@ func! CompileRunGcc()
 	elseif &filetype == 'html'
         silent! exec "!chromium % &"
 		"silent! exec "!".g:mkdp_browser." % &"
-	"elseif &filetype == 'javascript'
-		"set splitbelow
-		":sp
+	elseif &filetype == 'javascript'
+		set splitbelow
+		:sp
 		":term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
+        :term node %
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
@@ -239,3 +266,4 @@ func! CompileRunGcc()
 		":term go run .
 	endif
 endfunc
+
