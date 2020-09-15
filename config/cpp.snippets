@@ -23,6 +23,12 @@ for ($1; $2; $3){
 }
 endsnippet
 
+snippet fori "for i" w
+for (int i = 0; i < $1; i++){
+    ${0:${VISUAL}}
+}
+endsnippet
+
 snippet whi "while" w
 while($1){
     ${0:${VISUAL}}
@@ -30,6 +36,7 @@ while($1){
 endsnippet
 
 
+# == 
 
 snippet fun "the void function" w
 ${1:int} ${2:main}(${3:}){
@@ -47,41 +54,6 @@ public:
 endsnippet
 
 
-snippet	stand "standard file form" bw
-#include <cstdio>
-#include <iostream>
-
-int main(){
-    using namespace std;
-    $0
-}
-endsnippet
-
-snippet head "standard header for oj" bw
-#include <iostream>
-#include <fstream>
-$1
-using namespace std;
-
-$2
-
-int read(){
-    $3
-    return 0;
-}
-
-int solve(){
-    $0
-}
-
-int	main(){
-    read();
-    solve();
-    
-    return 0;
-}
-endsnippet
-
 
 # == templates for ojs
 
@@ -89,8 +61,25 @@ snippet cofo "codeforces template" bw
 #include <iostream>
 #include <algorithm>
 $1
+
 using namespace std;
-using ll = long long;
+#define pb push_back;
+#define mp make_pair;
+#define FOR(i, a, b) for(int i = a; i < b; i++)
+#define ROF(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+/*
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef vector<pii> vpii;
+*/
+typedef pair<int, int> pii;
 
 const int LEN = 1e5 + 5;
 
@@ -105,6 +94,50 @@ int main(){
     std::ios::sync_with_stdio(false);
     cin.tie(0); cout.tie(0);
     $0
+    
+    return 0;
+}
+endsnippet
+
+snippet cofot "codeforces template with t test cases" bw
+#include <iostream>
+#include <algorithm>
+$1
+using namespace std;
+
+#define pb push_back;
+#define mp make_pair;
+#define rep(i, a, b) for(int i = a; i < b; i++)
+#define repb(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef pair<int, int> pii;
+typedef vector<pii> vpii;
+
+const int LEN = 1e5 + 5;
+int t;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    std::ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    cin >> t;
+    while(t--){
+    $0   
+    }
     
     return 0;
 }
@@ -149,3 +182,4 @@ int main(){
     return 0;
 }
 endsnippet
+

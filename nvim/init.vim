@@ -1,4 +1,6 @@
+set wrap
 
+"
 set number
 set cursorline
 syntax on
@@ -22,25 +24,56 @@ set t_Co=256
 :nmap J 7j
 :nmap K 7k
 
+" use Ctrl-s for saving
+noremap W :update<CR>
+"vnoremap <C-S>		<C-C>:update<CR>
+"inoremap <C-S>		<Esc>:update<CR>gi
+
+
 " copy to system paster
 vnoremap Y "+y
 
 " set gui cursor with block
 set guicursor=a:block
 
+" fold code
+set foldmethod=manual
+noremap F zfat<CR>
+noremap f za<CR>
+
+"netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
+let g:netrw_winsize = 25
+"augroup ProjectDrawer
+  "autocmd!
+  "autocmd VimEnter * :Vexplore
+"augroup END
+map <F4> :Vexplore<CR>
+map <F5> <C-w>h
+map <F6> :q<CR>
+
+" spell check
+map <F7> :setlocal spell! spelllang=en,cjk<CR>
+hi clear SpellBad
+hi SpellBad cterm=underline
+hi SpellBad gui=undercurl
+hi SpellBad ctermfg=red ctermbg=black
+hi SpellCap cterm=bold ctermfg=blue ctermbg=black
+
 
 " ####################################################3
 "
 " PLUGS
 call plug#begin()
-" tags for classes and functions
-Plug 'liuchengxu/vista.vim'
-" beautiful bar downside
-Plug 'itchyny/lightline.vim'
-" great companion for writing codes
-Plug 'sirver/ultisnips'
+
+""" 1. file related
 " fuzzy file finder
 Plug 'junegunn/fzf.vim'
+
+""" 2. typing productivity tools
 " make table quickly in vim
 Plug 'dhruvasagar/vim-table-mode'
 "" multiple cursor modify
@@ -49,28 +82,60 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 " easily align code by given texts
 Plug 'junegunn/vim-easy-align'
-" generate table of contents for markdown easily
-Plug 'mzlogin/vim-markdown-toc'
-" use sudo easily in vim
-Plug 'lambdalisue/suda.vim'
-" vim LaTeX companion
-Plug 'lervag/vimtex'
-" easy comment 
-Plug 'preservim/nerdcommenter'
+" great companion for writing codes
+Plug 'sirver/ultisnips'
 " rainbow color brackets
 Plug 'luochen1990/rainbow'
-" syntax checks for vim 
-Plug 'vim-syntastic/syntastic'
-" shows changes since last commit
-Plug 'airblade/vim-gitgutter'
+" easy comment 
+Plug 'preservim/nerdcommenter'
+" auto pair up 
+Plug 'jiangmiao/auto-pairs'
+
+""" 3. program info assisstance
 " display the indentation levels
 Plug 'Yggdroot/indentLine'
-" code debugger for vim
+" tags for classes and functions
+Plug 'liuchengxu/vista.vim'
+" beautiful bar downside
+Plug 'itchyny/lightline.vim'
+" syntax checks for vim 
+Plug 'vim-syntastic/syntastic'
+
+""" 4. language specific tools
+" vim LaTeX companion
+Plug 'lervag/vimtex'
+" generate table of contents for markdown easily
+Plug 'mzlogin/vim-markdown-toc'
+" vim wiki
+Plug 'vimwiki/vimwiki'
+" flutter
+Plug 'dart-lang/dart-vim-plugin'
+Plug 'thosakwe/vim-flutter'
+" immediate color for html
+"Plug 'gko/vim-coloresque'
+Plug 'ap/vim-css-color'
+" match html tags always
+Plug 'valloric/MatchTagAlways'
+
+""" 5. delicate little tool
+" use sudo easily in vim
+Plug 'lambdalisue/suda.vim'
+" shows changes since last commit
+Plug 'airblade/vim-gitgutter'
+" amazing vim start screen
+Plug 'mhinz/vim-startify'
+" easily format your code
+Plug 'Chiel92/vim-autoformat'
+" line up texts easily
+Plug 'godlygeek/tabular'
+"" do git inside vim
+"Plug 'tpope/vim-fugitive'
+"code debugger for vim
 "Plug 'puremourning/vimspector'
 
 "" multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
-"" great language autocomplete
+" great language autocomplete
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'weirongxu/coc-explorer'
 "" undo history in tree style
@@ -78,8 +143,6 @@ Plug 'Yggdroot/indentLine'
 "Plug 'tpope/vim-fugitive'
 "" 
 "Plug 'svermeulen/vim-subversive'
-"" easily format your code
-"Plug 'Chiel92/vim-autoformat'
 "" vim motion on speed!
 "Plug 'easymotion/vim-easymotion'
 "" bomark for vim
@@ -102,6 +165,12 @@ call plug#end()
 " == vista
 map <F2> :Vista<CR>
 map <F3> :Vista!<CR>
+let g:vista_sidebar_width = 50
+let g:vista#renderer#enable_icon = 1
+let g:vista#renderer#icons = {
+\   "function": "⚛",
+\   "variable": "\U00000024",
+\  }
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 
 " == lightline
@@ -179,6 +248,9 @@ let g:rainbow_conf = {
 \	}
 \}
 
+" == vimtex
+let g:tex_flavor = 'latex'
+
 
 " == vim-gitgutter
 
@@ -190,6 +262,35 @@ let g:indentLine_color_term = 147
 "let g:indentLine_bgcolor_gui = '#3DAEEB'
 "let g:indentLine_setConceal = 0
 
+" == vimspector
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" == COC
+"inoremap <silent><expr> <TAB>
+      "\ pumvisible() ? "\<C-n>" :
+      "\ <SID>check_back_space() ? "\<TAB>" :
+      "\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+"function! s:check_back_space() abort
+  "let col = col('.') - 1
+  "return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
+
+"inoremap <silent><expr> <c-space> coc#refresh()
+
+
+" == match tag always
+let g:mta_filetypes = {
+    \ 'html' : 1,
+    \ 'xhtml' : 1,
+    \ 'xml' : 1,
+    \ 'jinja' : 1,
+    \ 'javascript' : 1,
+    \}
+let g:mta_use_matchparen_group = 0
+let g:mta_set_default_matchtag_color = 0
+highlight MatchTag ctermfg=black ctermbg=lightblue guifg=black guibg=lightblue
 
 " #########################################################3
 "
@@ -200,8 +301,12 @@ noremap r :call CompileRunGcc()<CR>
 func! CompileRunGcc()
 	exec "w"
 	if &filetype == 'c'
-		exec "!clear && g++ % -o %<"
-		exec "!time ./%<"
+        set splitbelow
+		exec "!clear && gcc % -o %<"
+        :sp
+		"exec "!time ./%<"
+		":res -15
+		:term ./%<
 	elseif &filetype == 'cpp'
 		set splitbelow
 		exec "!clear && g++ -std=c++11 % -Wall -o %<"
@@ -218,10 +323,15 @@ func! CompileRunGcc()
 	elseif &filetype == 'html'
         silent! exec "!chromium % &"
 		"silent! exec "!".g:mkdp_browser." % &"
-	"elseif &filetype == 'javascript'
-		"set splitbelow
-		":sp
+	elseif &filetype == 'javascript'
+		set splitbelow
+		:sp
 		":term export DEBUG="INFO,ERROR,WARNING"; node --trace-warnings .
+        :term node %
+    elseif &filetype == 'go'
+        set splitbelow
+        :sp
+        :term go run %
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
@@ -239,3 +349,4 @@ func! CompileRunGcc()
 		":term go run .
 	endif
 endfunc
+

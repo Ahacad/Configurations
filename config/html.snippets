@@ -1,91 +1,91 @@
 snippet h1
 <h1>${1:${VISUAL}}</h1>
-    $0
+  $0
 endsnippet
 
 snippet h1.
 <h1 class="$1">${2:${VISUAL}}</h1>
-    $0
+  $0
 endsnippet
 
 snippet h1#
 <h1 id="$1">${2:${VISUAL}}</h1>
-    $0
+  $0
 endsnippet
 
 snippet h2
 <h2>${1:${VISUAL}}</h2>
-    $0
+  $0
 endsnippet
 
 snippet h2.
 <h2 class="$1">${2:${VISUAL}}</h2>
-    $0
+  $0
 endsnippet
 
 snippet h2#
 <h2 id="$1">${2:${VISUAL}}</h2>
-    $0
+  $0
 endsnippet
 
 snippet h3
 <h3>${1:${VISUAL}}</h3>
-    $0
+  $0
 endsnippet
 
 snippet h3.
 <h3 class="$1">${2:${VISUAL}}</h3>
-    $0
+  $0
 endsnippet
 
 snippet h3#
 <h3 id="$1">${2:${VISUAL}}</h3>
-    $0
+  $0
 endsnippet
 
 snippet h4
 <h4>${1:${VISUAL}}</h4>
-    $0
+  $0
 endsnippet
 
 snippet h4.
 <h4 class="$1">${2:${VISUAL}}</h4>
-    $0
+  $0
 endsnippet
 
 snippet h4#
 <h4 id="$1">${2:${VISUAL}}</h4>
-    $0
+  $0
 endsnippet
 
 snippet h5
 <h5>${1:${VISUAL}}</h5>
-    $0
+  $0
 endsnippet
 
 snippet h5.
 <h5 class="$1">${2:${VISUAL}}</h5>
-    $0
+  $0
 endsnippet
 
 snippet h5#
 <h5 id="$1">${2:${VISUAL}}</h5>
-    $0
+  $0
 endsnippet
 
 snippet h6
 <h6>${1:${VISUAL}}</h6>
-    $0
+  $0
 endsnippet
 
 snippet h6.
 <h6 class="$1">${2:${VISUAL}}</h6>
-    $0
+  $0
 endsnippet
 
 snippet h6#
 <h6 id="$1">${2:${VISUAL}}</h6>
-    $0
+  $0
 endsnippet
 
 snippet p
@@ -141,7 +141,7 @@ endsnippet
 
 snippet ul
 <ul>
-    ${1:${VISUAL}}
+  ${1:${VISUAL}}
 </ul>
 $0
 endsnippet
@@ -151,33 +151,37 @@ snippet li
 $0
 endsnippet
 
+snippet spa
+<span>${1:${VISUAL}}</span>
+$0
+endsnippet
+
 snippet a
-<a href="$1">${2:${VISUAL}}</a>$0
+<a href="${1:#}">${2:${VISUAL}}</a>$0
 endsnippet
 
 snippet scr
-<script>
-${0:${VISUAL}}
-</script>
+<script src="$1">${2:${VISUAL}}</script>
+$0
 endsnippet
 
 snippet div
 <div>
-    ${1:${VISUAL}}
+  ${1:${VISUAL}}
 </div>
 $0
 endsnippet
 
 snippet div.
 <div class="$1">
-    ${2:${VISUAL}}
+  ${2:${VISUAL}}
 </div>
 $0
 endsnippet
 
 snippet div#
 <div id="$1">
-    ${2:${VISUAL}}
+  ${2:${VISUAL}}
 </div>
 $0
 endsnippet
@@ -211,13 +215,13 @@ endsnippet
 
 snippet tab
 <table>
-    $1
+  $1
 </table>
 endsnippet
 
 snippet tr
 <tr>
-    ${0:${VISUAL}}
+  ${0:${VISUAL}}
 </tr>
 endsnippet
 
@@ -239,36 +243,36 @@ endsnippet
 
 snippet the
 <thead>
-    $0
+  $0
 </thead>
 endsnippet
 
 snippet tbo
 <tbody>
-    $0
+  $0
 </tbody>
 endsnippet
 
 snippet tfo
 <tfoot>
-    $0
+  $0
 endsnippet
 
 snippet dl
 <dl>
-    ${1:${VISUAL}}
+  ${1:${VISUAL}}
 </dl>
 endsnippet
 
 snippet dl.
 <dl class="$1">
-    ${2:${VISUAL}}
+  ${2:${VISUAL}}
 </dl>
 endsnippet
 
 snippet dl#
 <dl id="$1">
-    ${2:${VISUAL}}
+  ${2:${VISUAL}}
 </dl>
 endsnippet
 
@@ -292,7 +296,7 @@ endsnippet
 
 snippet blo
 <blockquote cite="$1">
-    ${2:${VISUAL}}
+  ${2:${VISUAL}}
 </blockquote>
 endsnippet
 
@@ -334,13 +338,13 @@ endsnippet
 
 snippet add
 <address>
-    ${0:${VISUAL}}
+  ${0:${VISUAL}}
 </address>
 endsnippet
 
 snippet add.
 <address class="$1">
-    ${0:${VISUAL}}
+  ${0:${VISUAL}}
 </address>
 endsnippet
 
@@ -348,6 +352,9 @@ snippet br
 </br>
 endsnippet
 
+snippet hr
+<hr>
+endsnippet
 
 snippet img
 <img src="$1" alt="$2" width="$3" height="$4">
@@ -356,21 +363,21 @@ endsnippet
 
 snippet fig
 <figure>
-    <img src="$1" alt="$2">
-    <figcaption>$3</figcaption>
+  <img src="$1" alt="$2">
+  <figcaption>$3</figcaption>
 </figure>
 endsnippet 
 
 snippet vid
 <video controls width="$1" height="$2" poster="$3" preload="$4">
-    <source src="$5" type="$6">
+  <source src="$5" type="$6">
 </video>
 $0
 endsnippet
 
 snippet aud
 <audio controls>
-    <source src="$1" type="$2">
+  <source src="$1" type="$2">
 </audio>
 $0
 endsnippet
@@ -382,45 +389,48 @@ endsnippet
 
 snippet hea 
 <header>
-    $1
+  $1
 </header>
+$0
 endsnippet
 
 # 
 # semantic tags
 snippet mai
+<main>
+  $1
 </main>
-    $1
-</main>
+$0
 endsnippet
 
 snippet art
 <article>
-    $1
+  $1
 </article>
+$0
 endsnippet
 
 snippet sec
 <section>
-    ${1:${VISUAL}}
+  ${1:${VISUAL}}
 </section>
 endsnippet
 
 snippet foo
 <footer>
-    $1
+  $1
 </footer>
 endsnippet
 
 snippet nav
 <nav>
-    $1
+  $1
 </nav>
 endsnippet
 
 snippet asi
 <aside>
-    $1
+  $1
 </aside>
 endsnippet
 
@@ -428,7 +438,7 @@ endsnippet
 
 snippet sty
 <style>
-    $1
+  $1
 </style>
 endsnippet
 
@@ -436,7 +446,7 @@ endsnippet
 # == forms
 snippet form
 <form action="$1" method="$2">
-    
+  
 </form>
 $0
 endsnippet
@@ -453,7 +463,7 @@ endsnippet
 
 snippet fie
 <fieldset>
-    $1
+  $1
 </fieldset>
 $0
 endsnippet
@@ -465,7 +475,7 @@ endsnippet
 
 snippet sel
 <select id="$1" name="$2">
-    
+  
 </select>
 $0
 endsnippet
@@ -485,16 +495,18 @@ endsnippet
 snippet html
 <!DOCTYPE html>
 <html lang="$1" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="author" content="${2:Ahacad}">
-        <meta name="description" content="$3">
-        <title>$4</title>
-        $5
-    </head>
-    <body>
-        $0
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <meta name="author" content="${2:Ahacad}">
+    <meta name="description" content="$3">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link type="text/css" rel="stylesheet" href="$4">
+    <title>$5</title>
+    $6
+  </head>
+  <body>
+    $0
+  </body>
 </html>
 endsnippet
 
