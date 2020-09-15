@@ -1,5 +1,12 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhistcnt =3
-let g:netrw_dirhist_3='/home/ahacad/TEST'
-let g:netrw_dirhist_2='/home/ahacad'
-let g:netrw_dirhist_1='/home/ahacad/TEST'
+let g:netrw_dirhist_3='/etc/wpa_supplicant'
+let g:netrw_dirhist_2='/etc/nginx/sites-enabled'
+let g:netrw_dirhist_1='/home/ahacad/TEST/typescript-test/test1-github/.git'
+let g:netrw_dirhist_0='/home/ahacad/TEST/react-test/test16-emoji/.git'
+let g:netrw_dirhist_9='/home/ahacad/.config/nvim'
+let g:netrw_dirhist_8='/home/ahacad/TEST/react-test/test4-antd/src'
+let g:netrw_dirhist_7='/home/ahacad/.config/nvim'
+let g:netrw_dirhist_6='/usr/share/nvim/runtime/doc'
+let g:netrw_dirhist_5='/home/ahacad/.config/nvim'
+let g:netrw_dirhist_4='/home/ahacad'
