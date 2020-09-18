@@ -1,5 +1,8 @@
 set wrap
 
+filetype plugin on
+set nocompatible
+
 "
 set number
 set cursorline
@@ -17,6 +20,7 @@ set shiftwidth=4
 " background
 set background=dark
 set t_Co=256
+set termguicolors
 
 " key maps
 :nmap L J
@@ -62,6 +66,11 @@ hi SpellBad cterm=underline
 hi SpellBad gui=undercurl
 hi SpellBad ctermfg=red ctermbg=black
 hi SpellCap cterm=bold ctermfg=blue ctermbg=black
+
+
+" Tab navigation like Firefox.
+nnoremap <C-t>     :tabnew<CR>
+nnoremap <C-w>     :tabclose<CR>
 
 
 " ####################################################3
@@ -128,12 +137,19 @@ Plug 'mhinz/vim-startify'
 Plug 'Chiel92/vim-autoformat'
 " line up texts easily
 Plug 'godlygeek/tabular'
+Plug 'MattesGroeger/vim-bookmarks'
 "" do git inside vim
 "Plug 'tpope/vim-fugitive'
 "code debugger for vim
 "Plug 'puremourning/vimspector'
 
-"" multiple tabs for vim
+""" 6. color schemes
+Plug 'embark-theme/vim', { 'as': 'embark' }
+" dracula
+"Plug 'dracula/vim', { 'name': 'dracula' }
+
+
+"multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
 " great language autocomplete
 "Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -158,6 +174,8 @@ Plug 'godlygeek/tabular'
 
 call plug#end()
 
+"colorscheme dracula
+"colorscheme embark
 
 " Plug configurations, sorted at the same turn with installed 
 "
@@ -213,12 +231,14 @@ cnoreabbrev sudowrite w suda://%
 " == nerdcommenter
 
 " == vim rainbow
-let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
-let lightcolors =  ['lightblue', 'lightyellow', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
-let darkcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
 
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let lightcolors =  ['lightblue', 'cyan', 'lightyellow', 'darkyellow', 'magenta', 'lightred', 'yellow', 'white']
+let darkcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+" 'royalblue3', 
+" ['darkorange3', 'seagreen3', 'firebrick']
 let g:rainbow_conf = {
-\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'guifgs': lightcolors,
 \	'ctermfgs': lightcolors,
 \	'guis': [''],
 \	'cterms': [''],
@@ -291,6 +311,11 @@ let g:mta_filetypes = {
 let g:mta_use_matchparen_group = 0
 let g:mta_set_default_matchtag_color = 0
 highlight MatchTag ctermfg=black ctermbg=lightblue guifg=black guibg=lightblue
+
+let g:lightline = {
+      \ 'colorscheme': 'embark',
+      \ }
+
 
 " #########################################################3
 "
