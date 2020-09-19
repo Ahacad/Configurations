@@ -70,7 +70,6 @@ hi SpellCap cterm=bold ctermfg=blue ctermbg=black
 
 " Tab navigation like Firefox.
 nnoremap <C-t>     :tabnew<CR>
-nnoremap <C-w>     :tabclose<CR>
 
 
 " ####################################################3
@@ -357,6 +356,8 @@ func! CompileRunGcc()
         set splitbelow
         :sp
         :term go run %
+    elseif &filetype == 'scss'
+        exec "!clear && sass % %<.css"
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
