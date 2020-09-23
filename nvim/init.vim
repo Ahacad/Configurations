@@ -1,3 +1,11 @@
+" experiments
+":nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+:nnoremap <leader>' :tabe<cr>:term<cr> a
+
+" terminal mode mapping 
+:tnoremap <Esc> <C-\><C-n>
+
+
 set wrap
 
 filetype plugin on
@@ -23,10 +31,20 @@ set t_Co=256
 set termguicolors
 
 " key maps
-:nmap L J
-:nmap H K
-:nmap J 7j
-:nmap K 7k
+:nnoremap L J
+:nnoremap H K
+:nnoremap J 7j
+:nnoremap K 7k
+
+" leader
+:let mapleader = "\\"
+
+:nnoremap <space> viw 
+
+" edit init.vim quickly
+:nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+:nnoremap <leader>sv :source $MYVIMRC<cr>
+
 
 " use Ctrl-s for saving
 noremap W :update<CR>
@@ -151,7 +169,7 @@ Plug 'embark-theme/vim', { 'as': 'embark' }
 "multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
 " great language autocomplete
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'weirongxu/coc-explorer'
 "" undo history in tree style
 "Plug 'mbbill/undotree'
@@ -316,6 +334,9 @@ let g:lightline = {
       \ }
 
 
+
+
+
 " #########################################################3
 "
 " Functions
@@ -357,7 +378,7 @@ func! CompileRunGcc()
         :sp
         :term go run %
     elseif &filetype == 'scss'
-        exec "!clear && sass % %<.css"
+        exec "!clear && sass % fdxk/%<.css && ./useme.sh"
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
