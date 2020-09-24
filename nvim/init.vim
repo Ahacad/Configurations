@@ -61,6 +61,27 @@ noremap W :update<CR>
 noremap Q :q<CR>
 "vnoremap <C-S>		<C-C>:update<CR>
 "inoremap <C-S>		<Esc>:update<CR>gi
+" Disable the default s key
+"
+noremap s <nop>
+
+" split the screens to up (horizontal), down (horizontal), left (vertical), right (vertical)
+noremap su :set nosplitbelow<CR>:split<CR>:set splitbelow<CR>
+noremap se :set splitbelow<CR>:split<CR>
+noremap sn :set nosplitright<CR>:vsplit<CR>:set splitright<CR>
+noremap si :set splitright<CR>:vsplit<CR>
+
+" Resize splits with arrow keys
+"noremap <up> :res +5<CR>
+"noremap <down> :res -5<CR>
+"noremap <left> :vertical resize-5<CR>
+"noremap <right> :vertical resize+5<CR>
+
+" Place the two screens up and down
+noremap sh <C-w>t<C-w>K
+" Place the two screens side by side
+noremap sv <C-w>t<C-w>H
+
 
 " copy to system paster
 vnoremap Y "+y
@@ -140,6 +161,7 @@ Plug 'liuchengxu/vista.vim'
 Plug 'itchyny/lightline.vim'
 " syntax checks for vim 
 Plug 'vim-syntastic/syntastic'
+"Plug 'theniceboy/eleline.vim'
 
 """ 4. language specific tools
 " vim LaTeX companion
@@ -207,6 +229,8 @@ Plug 'embark-theme/vim', { 'as': 'embark' }
 "Plug 'junegunn/goyo.vim'
 
 call plug#end()
+
+let g:airline_powerline_fonts = 1
 
 "colorscheme dracula
 "colorscheme embark
