@@ -193,6 +193,14 @@ Plug 'godlygeek/tabular'
 Plug 'MattesGroeger/vim-bookmarks'
 " snippets 
 Plug 'honza/vim-snippets'
+"  highlight the same workds after a delay
+Plug 'RRethy/vim-illuminate'
+" change working directory to root automatically
+Plug 'airblade/vim-rooter'
+Plug 'pechorin/any-jump.vim'
+
+" call floating ranger within vim
+"Plug 'kevinhwang91/rnvimr'
 "" do git inside vim
 "Plug 'tpope/vim-fugitive'
 "code debugger for vim
@@ -430,7 +438,8 @@ let g:lightline = {
       \ 'colorscheme': 'embark',
       \ }
 
-
+" vim-rooter
+let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
 
 
 " #########################################################3
