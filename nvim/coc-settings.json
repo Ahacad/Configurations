@@ -1,0 +1,50 @@
+{
+    "coc.preferences,extensionUpdateCheck": "daily",
+    "suggest.completionItemKindLabels": {
+		"class": "\uf0e8",
+		"color": "\ue22b",
+		"constant": "\uf8fe",
+		"default": "\uf29c",
+		"enum": "\uf435",
+		"enumMember": "\uf02b",
+		"event": "\u23f1",
+		"field": "\u25c9",
+		"file": "\uf723",
+		"folder": "\uf115",
+		"function": "\u0192",
+		"interface": "\uf417",
+		"keyword": "\uf1de",
+		"method": "\uf6a6",
+		"module": "\uf40d",
+		"operator": "\u2685",
+		"property": "\ue624",
+		"reference": "\u267a",
+		"snippet": "\ue60b",
+		"struct": "\ufb44",
+		"text": "\ue612",
+		"typeParameter": "\uf728",
+		"unit": "\uf475",
+		"value": "\uf89f",
+		"variable": "\ue71b"
+	},
+  	"diagnostic.signOffset": 1,
+	"diagnostic.errorSign": "\uf467",
+	"diagnostic.warningSign": "\uf071",
+	"diagnostic.infoSign": "\uf129",
+	"diagnostic.hintSign": "\uf864",
+	"diagnostic.displayByAle": false,
+	"diagnostic.refreshOnInsertMode": false,
+	"diagnostic.refreshAfterSave": false,
+	"diagnostic.checkCurrentLine": true,
+	"diagnostic.virtualTextPrefix": " ❯❯❯ ",
+	"diagnostic.virtualText": true,
+  	"codeLens.enable": true,
+	"list.nextKeymap": "<C-e>",
+	"list.previousKeymap": "<C-u>", 
+    "coc.preferences.formatOnSaveFiletypes": ["json"],
+    "snippets.ultisnipts.directories": [
+        "/media/HOME/ahacad/WORKSTATION/Working/Configurations/config"
+    ]
+
+
+}

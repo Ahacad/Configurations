@@ -31,21 +31,13 @@ On a new machine, the programs below need to be installed to promote productivit
 - neofetch
 
 
-## Gnome Shell Extensions
-
-- [ShellTile](https://extensions.gnome.org/extension/657/shelltile/)
-
-
-
-
+- git, lazygit
+- ranger
+- tmux 
+- zsh, ohmyzsh
+- w3m
 
 
-# Needed cli tools
+## The new-vim way
 
-git, lazygit
-ranger
-tmux 
-zsh, ohmyzsh
-w3m
-
-
+With the awesome plugin coc, vim can now be used in two ways: the simple clean vim, and the IDE like heavy vim.
