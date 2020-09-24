@@ -309,6 +309,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-actions',
+    \ 'coc-snippets',
     \ 'coc-vimlsp',
     \ 'coc-python', 
     \ 'coc-tsserver',
@@ -364,7 +365,7 @@ endfunction
 xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
-
+nnoremap <F4> :CocCommand explorer<CR>
 
 
 " == match tag always
