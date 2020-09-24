@@ -1,14 +1,27 @@
-" experiments
-":nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-:nnoremap <leader>' :tabe<cr>:term<cr> a
+" Your awesome header starts here
 
-" terminal mode mapping 
+
+
+
+" experiments place
+:nnoremap <space> viw 
+":nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
+
+
+
+" leader
+:let mapleader = "\\"
+
+" vim terminal mode
+:nnoremap <leader>' :tabe<cr>:term<cr> a
 :tnoremap <Esc> <C-\><C-n>
 
-set wrap
+" Tab navigation like Firefox.
+nnoremap <C-t>     :tabnew<CR>
 
 filetype plugin on
 set nocompatible
+set wrap
 
 "
 set number
@@ -24,39 +37,30 @@ set expandtab
 set softtabstop=4
 set shiftwidth=4
 
-" background
+" background color
 set background=dark
 set t_Co=256
 set termguicolors
+" set gui cursor with block
+set guicursor=a:block
 
-" key maps
+" the moving key maps 
 :nnoremap L J
 :nnoremap H K
 :nnoremap J 7j
 :nnoremap K 7k
 
-" leader
-:let mapleader = "\\"
-
-:nnoremap <space> viw 
-
 " edit init.vim quickly
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
-
-" use Ctrl-s for saving
 noremap W :update<CR>
 noremap Q :q<CR>
 "vnoremap <C-S>		<C-C>:update<CR>
 "inoremap <C-S>		<Esc>:update<CR>gi
 
-
 " copy to system paster
 vnoremap Y "+y
-
-" set gui cursor with block
-set guicursor=a:block
 
 " fold code
 set foldmethod=manual
@@ -86,11 +90,7 @@ hi SpellBad ctermfg=red ctermbg=black
 hi SpellCap cterm=bold ctermfg=blue ctermbg=black
 
 
-" Tab navigation like Firefox.
-nnoremap <C-t>     :tabnew<CR>
-
-
-" ####################################################3
+" #####################################################
 "
 " PLUGS
 call plug#begin()
