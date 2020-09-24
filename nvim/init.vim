@@ -168,7 +168,7 @@ Plug 'embark-theme/vim', { 'as': 'embark' }
 "Plug 'dracula/vim', { 'name': 'dracula' }
 
 """ 7. this thing is awesome
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
@@ -374,7 +374,6 @@ let g:coc_snippet_next = '<c-e>'
 let g:coc_snippet_prev = '<c-n>'
 imap <C-e> <Plug>(coc-snippets-expand-jump)
 let g:snips_author = 'ahacad'
-autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
 
 
 " == match tag always
