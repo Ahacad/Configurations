@@ -5,7 +5,6 @@
 " terminal mode mapping 
 :tnoremap <Esc> <C-\><C-n>
 
-
 set wrap
 
 filetype plugin on
@@ -48,6 +47,7 @@ set termguicolors
 
 " use Ctrl-s for saving
 noremap W :update<CR>
+noremap Q :q<CR>
 "vnoremap <C-S>		<C-C>:update<CR>
 "inoremap <C-S>		<Esc>:update<CR>gi
 
@@ -73,9 +73,9 @@ let g:netrw_winsize = 25
   "autocmd!
   "autocmd VimEnter * :Vexplore
 "augroup END
-map <F4> :Vexplore<CR>
-map <F5> <C-w>h
-map <F6> :q<CR>
+"map <F4> :Vexplore<CR>
+"map <F5> <C-w>h
+"map <F6> :q<CR>
 
 " spell check
 map <F7> :setlocal spell! spelllang=en,cjk<CR>
@@ -155,6 +155,8 @@ Plug 'Chiel92/vim-autoformat'
 " line up texts easily
 Plug 'godlygeek/tabular'
 Plug 'MattesGroeger/vim-bookmarks'
+" snippets 
+Plug 'honza/vim-snippets'
 "" do git inside vim
 "Plug 'tpope/vim-fugitive'
 "code debugger for vim
@@ -165,11 +167,12 @@ Plug 'embark-theme/vim', { 'as': 'embark' }
 " dracula
 "Plug 'dracula/vim', { 'name': 'dracula' }
 
+""" 7. this thing is awesome
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
 " great language autocomplete
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'weirongxu/coc-explorer'
 "" undo history in tree style
 "Plug 'mbbill/undotree'
@@ -212,9 +215,9 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 set laststatus=2
 
 " == ultisnippets
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsExpandTrigger = '<C-y>'
+let g:UltiSnipsJumpForwardTrigger = '<C-y>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-C-y>'
 let g:UltiSnipsSnippetDirectories = ['/media/HOME/ahacad/WORKSTATION/Working/Configurations/config']
 
 "" == coc.nvim
@@ -237,7 +240,6 @@ let g:multi_cursor_quit_key = '<Esc>'
 
 " == vim surrond
 
-" == vim easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
@@ -303,18 +305,66 @@ let g:indentLine_color_term = 147
 let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
-"inoremap <silent><expr> <TAB>
-      "\ pumvisible() ? "\<C-n>" :
-      "\ <SID>check_back_space() ? "\<TAB>" :
-      "\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+" coc extensions
+let g:coc_global_extensions = [
+    \ 'coc-explorer',
+    \ 'coc-actions',
+    \ 'coc-vimlsp',
+    \ 'coc-python', 
+    \ 'coc-tsserver',
+    \ 'coc-flutter-tools',
+    \ 'coc-marketplace']
 
-"function! s:check_back_space() abort
-  "let col = col('.') - 1
-  "return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
+" use <TAB> to choose the completion you want
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-"inoremap <silent><expr> <c-space> coc#refresh()
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" trigger completion by <c-o>
+inoremap <silent><expr> <c-o> coc#refresh()
+
+" use cr to complete
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" find warnings with [g
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" use <leader>h to shell documentation
+nnoremap <silent> <leader>h :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocActionAsync('doHover')
+  endif
+endfunction
+
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
+
+
 
 
 " == match tag always
@@ -332,7 +382,6 @@ highlight MatchTag ctermfg=black ctermbg=lightblue guifg=black guibg=lightblue
 let g:lightline = {
       \ 'colorscheme': 'embark',
       \ }
-
 
 
 
