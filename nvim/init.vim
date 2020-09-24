@@ -54,6 +54,9 @@ set guicursor=a:block
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 :nnoremap <leader>sv :source $MYVIMRC<cr>
 
+" lazygit quick open
+:nnoremap <leader>lg :tabe<CR>:term<CR>i lazygit<CR>
+
 noremap W :update<CR>
 noremap Q :q<CR>
 "vnoremap <C-S>		<C-C>:update<CR>
