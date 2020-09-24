@@ -367,6 +367,15 @@ nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<C
 
 nnoremap <F4> :CocCommand explorer<CR>
 
+" coc-snippets
+imap <C-l> <Plug>(coc-snippets-expand)
+vmap <C-e> <Plug>(coc-snippets-select)
+let g:coc_snippet_next = '<c-e>'
+let g:coc_snippet_prev = '<c-n>'
+imap <C-e> <Plug>(coc-snippets-expand-jump)
+let g:snips_author = 'ahacad'
+autocmd BufRead,BufNewFile tsconfig.json set filetype=jsonc
+
 
 " == match tag always
 let g:mta_filetypes = {
