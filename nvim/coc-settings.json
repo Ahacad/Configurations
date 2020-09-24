@@ -41,5 +41,10 @@
   	"codeLens.enable": true,
 	"list.nextKeymap": "<C-e>",
 	"list.previousKeymap": "<C-u>", 
-    "coc.preferences.formatOnSaveFiletypes": ["json"]
+    "coc.preferences.formatOnSaveFiletypes": ["json"],
+    "snippets.ultisnipts.directories": [
+        "/media/HOME/ahacad/WORKSTATION/Working/Configurations/config"
+    ]
+
+
 }
