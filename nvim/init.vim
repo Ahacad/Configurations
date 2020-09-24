@@ -356,10 +356,13 @@ let g:indentLine_color_term = 147
 let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
-" coc extensions
-hi Quote ctermbg=109 guifg=#83a598
-hi CocFloating guibg=none guifg=none.
+" toggle suggestion box off for markdown
+autocmd FileType markdown let b:coc_suggest_disable = 1
 
+nnoremap <F5> :CocDisable<CR>
+nnoremap <F6> :CocEnable<CR>
+
+" coc extensions
 let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-actions',
