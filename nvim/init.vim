@@ -124,6 +124,11 @@ hi SpellBad gui=undercurl
 hi SpellBad ctermfg=red ctermbg=black
 hi SpellCap cterm=bold ctermfg=blue ctermbg=black
 
+" fixed coc floating color 
+hi Pmenu guibg=#492929 gui=NONE
+hi PmenuSel guibg=#294929 gui=NONE
+hi PmenuSbar guibg=#492929
+hi PmenuThumb guibg=#492929
 
 " #####################################################
 "
@@ -209,10 +214,10 @@ Plug 'pechorin/any-jump.vim'
 """ 6. color schemes
 Plug 'embark-theme/vim', { 'as': 'embark' }
 " dracula
-"Plug 'dracula/vim', { 'name': 'dracula' }
+Plug 'dracula/vim', { 'name': 'dracula' }
 
 """ 7. this thing is awesome
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "multiple tabs for vim
 "Plug 'mg979/vim-xtabline'
@@ -352,6 +357,9 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
 " coc extensions
+hi Quote ctermbg=109 guifg=#83a598
+hi CocFloating guibg=none guifg=none.
+
 let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-actions',
@@ -501,4 +509,5 @@ func! CompileRunGcc()
 		":term go run .
 	endif
 endfunc
+
 
