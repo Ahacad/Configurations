@@ -67,6 +67,17 @@ set foldmethod=manual
 noremap F zfat<CR>
 noremap f za<CR>
 
+" backups
+silent !mkdir -p ~/.config/nvim/tmp/backup
+silent !mkdir -p ~/.config/nvim/tmp/undo
+"silent !mkdir -p ~/.config/nvim/tmp/sessions
+set backupdir=~/.config/nvim/tmp/backup,.
+set directory=~/.config/nvim/tmp/backup,.
+if has('persistent_undo')
+	set undofile
+	set undodir=~/.config/nvim/tmp/undo,.
+endif
+
 "netrw
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
