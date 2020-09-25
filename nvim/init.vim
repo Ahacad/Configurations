@@ -369,6 +369,7 @@ let g:coc_global_extensions = [
     \ 'coc-vimlsp',
     \ 'coc-python', 
     \ 'coc-tsserver',
+    \ 'coc-vetur',
     \ 'coc-flutter-tools',
     \ 'coc-marketplace']
 
