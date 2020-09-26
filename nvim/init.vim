@@ -251,8 +251,8 @@ let g:airline_powerline_fonts = 1
 "
 "
 " == vista
-map <F2> :Vista<CR>
-map <F3> :Vista!<CR>
+map <space>v :Vista<CR>
+map <space>V :Vista!<CR>
 let g:vista_sidebar_width = 50
 let g:vista#renderer#enable_icon = 1
 let g:vista#renderer#icons = {
@@ -370,6 +370,7 @@ let g:coc_global_extensions = [
     \ 'coc-python', 
     \ 'coc-tsserver',
     \ 'coc-vetur',
+    \ 'coc-texlab',
     \ 'coc-flutter-tools',
     \ 'coc-marketplace']
 
