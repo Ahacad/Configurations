@@ -265,10 +265,10 @@ let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 set laststatus=2
 
 " == ultisnippets
-let g:UltiSnipsExpandTrigger = '<C-y>'
-let g:UltiSnipsJumpForwardTrigger = '<C-y>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-C-y>'
-let g:UltiSnipsSnippetDirectories = ['/media/HOME/ahacad/WORKSTATION/Working/Configurations/config']
+"let g:UltiSnipsExpandTrigger = '<C-y>'
+"let g:UltiSnipsJumpForwardTrigger = '<C-y>'
+"let g:UltiSnipsJumpBackwardTrigger = '<s-C-y>'
+"let g:UltiSnipsSnippetDirectories = ['/media/HOME/ahacad/WORKSTATION/Working/Configurations/config']
 
 "" == coc.nvim
 
