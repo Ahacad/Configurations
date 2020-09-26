@@ -148,7 +148,7 @@ Plug 'tpope/vim-surround'
 " easily align code by given texts
 Plug 'junegunn/vim-easy-align'
 " great companion for writing codes
-Plug 'sirver/ultisnips'
+"Plug 'sirver/ultisnips'
 " rainbow color brackets
 Plug 'luochen1990/rainbow'
 " easy comment 
@@ -356,7 +356,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
 " toggle suggestion box off for markdown
-autocmd FileType markdown let b:coc_suggest_disable = 1
+"autocmd FileType markdown let b:coc_suggest_disable = 1
 
 nnoremap <F5> :CocDisable<CR>
 nnoremap <F6> :CocEnable<CR>
@@ -442,6 +442,7 @@ let g:mta_filetypes = {
     \ 'xml' : 1,
     \ 'jinja' : 1,
     \ 'javascript' : 1,
+    \ 'vue': 1,
     \}
 let g:mta_use_matchparen_group = 0
 let g:mta_set_default_matchtag_color = 0
