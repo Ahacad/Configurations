@@ -194,7 +194,9 @@ Plug 'mhinz/vim-startify'
 Plug 'Chiel92/vim-autoformat'
 " line up texts easily
 Plug 'godlygeek/tabular'
+" bookmarks for vim
 Plug 'MattesGroeger/vim-bookmarks'
+"Plug 'mg979/vim-xtabline'
 " snippets 
 Plug 'honza/vim-snippets'
 "  highlight the same workds after a delay
@@ -339,6 +341,17 @@ let g:rainbow_conf = {
 
 " == vimtex
 let g:tex_flavor = 'latex'
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_latexmk_engines = {
+    \ '_'                : '-xelatex',
+    \ 'xelatex'          : '-xelatex',
+    \ 'pdflatex'         : '-pdf',
+    \ 'dvipdfex'         : '-pdfdvi',
+    \ 'lualatex'         : '-lualatex',
+    \ 'context (pdftex)' : '-pdf -pdflatex=texexec',
+    \ 'context (luatex)' : '-pdf -pdflatex=context',
+    \ 'context (xetex)'  : '-pdf -pdflatex=''texexec --xtx''',
+    \}
 
 
 " == vim-gitgutter
@@ -356,7 +369,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
 " toggle suggestion box off for markdown
-"autocmd FileType markdown let b:coc_suggest_disable = 1
+autocmd FileType markdown let b:coc_suggest_disable = 1
 
 nnoremap <F5> :CocDisable<CR>
 nnoremap <F6> :CocEnable<CR>
@@ -365,12 +378,14 @@ nnoremap <F6> :CocEnable<CR>
 let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-actions',
+    \ 'coc-eslint',
     \ 'coc-snippets',
     \ 'coc-vimlsp',
     \ 'coc-python', 
     \ 'coc-tsserver',
     \ 'coc-vetur',
     \ 'coc-texlab',
+    \ 'coc-vimtex',
     \ 'coc-flutter-tools',
     \ 'coc-marketplace']
 
@@ -498,6 +513,10 @@ func! CompileRunGcc()
         :term go run %
     elseif &filetype == 'scss'
         exec "!clear && sass % fdxk/%<.css && ./useme.sh"
+    elseif &filetype == 'tex'
+        set splitbelow
+        :sp
+        exec "!clear && xelatex % && zathura %<.pdf"
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
