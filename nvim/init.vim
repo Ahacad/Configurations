@@ -13,7 +13,11 @@
 
 " vim terminal mode
 :nnoremap <leader>' :tabe<cr>:term<cr> a
-:tnoremap <Esc> <C-\><C-n>
+:tnoremap ` <C-\><C-n>
+
+" for inkscape-figures
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
 
 " Tab navigation like Firefox.
 nnoremap <C-t>     :tabnew<CR>
@@ -196,7 +200,7 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'godlygeek/tabular'
 " bookmarks for vim
 Plug 'MattesGroeger/vim-bookmarks'
-"Plug 'mg979/vim-xtabline'
+Plug 'mg979/vim-xtabline'
 " snippets 
 Plug 'honza/vim-snippets'
 "  highlight the same workds after a delay
@@ -374,7 +378,7 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " toggle suggestion box off for markdown
 autocmd FileType markdown let b:coc_suggest_disable = 1
 
-nnoremap <F5> :CocDisable<CR>
+"nnoremap <F5> :CocDisable<CR>
 nnoremap <F6> :CocEnable<CR>
 
 " coc extensions
@@ -470,8 +474,24 @@ let g:lightline = {
       \ 'colorscheme': 'embark',
       \ }
 
-" vim-rooter
+" == vim-rooter
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
+
+" == xtabline
+
+autocmd BufEnter * :XTabTheme codedark
+
+" == any-jump
+
+"" Normal mode: Jump to definition under cursore
+nnoremap <leader>j :AnyJump<CR>
+" Visual mode: jump to selected text in visual mode
+xnoremap <leader>j :AnyJumpVisual<CR>
+" Normal mode: open previous opened file (after jump)
+nnoremap <leader>ab :AnyJumpBack<CR>
+" Normal mode: open last closed search window again
+nnoremap <leader>al :AnyJumpLastResults<CR>
+Disabling default any-jump keybindings:
 
 
 " #########################################################3
