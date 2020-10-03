@@ -42,7 +42,12 @@
 	"list.nextKeymap": "<C-e>",
 	"list.previousKeymap": "<C-u>", 
     "coc.preferences.formatOnSaveFiletypes": ["json"],
-    "snippets.ultisnipts.directories": [
+    "snippets.ultisnips.directories": [
         "/media/HOME/ahacad/WORKSTATION/Working/Configurations/config"
-    ]
+    ],
+
+  	"explorer.file.column.indent.indentLine": true,
+	"explorer.file.showHiddenFiles": true,
+	"explorer.icon.enableNerdfont": true,
+	"explorer.file.column.git.showIgnored": true
 }

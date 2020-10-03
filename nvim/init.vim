@@ -446,7 +446,7 @@ xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " coc-explorer
-nnoremap <space>e :CocCommand explorer<CR>
+nnoremap <space><space> :CocCommand explorer<CR>
 
 " coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -491,7 +491,6 @@ xnoremap <leader>j :AnyJumpVisual<CR>
 nnoremap <leader>ab :AnyJumpBack<CR>
 " Normal mode: open last closed search window again
 nnoremap <leader>al :AnyJumpLastResults<CR>
-Disabling default any-jump keybindings:
 
 
 " #########################################################3
