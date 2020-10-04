@@ -1,0 +1,185 @@
+# == operations control
+
+snippet if "the if " w
+if ($1){
+    ${2:${VISUAL}}
+}
+$0
+endsnippet
+
+snippet ife "if else" w
+if ($1){
+    ${2:${VISUAL}}
+} else {
+    $3
+}
+$0
+endsnippet
+
+
+snippet for "the for" w
+for ($1; $2; $3){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet fori "for i" w
+for (int i = 0; i < $1; i++){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet whi "while" w
+while($1){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+
+# == 
+
+snippet fun "the void function" w
+${1:int} ${2:main}(${3:}){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet class "a new class" b
+class ${1:Solution}{
+public:
+    ${2:int} ${3:func}($4){
+        $0
+    }
+};
+endsnippet
+
+
+
+# == templates for ojs
+
+snippet cofo "codeforces template" bw
+#include <iostream>
+#include <algorithm>
+$1
+
+using namespace std;
+#define pb push_back;
+#define mp make_pair;
+#define FOR(i, a, b) for(int i = a; i < b; i++)
+#define ROF(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+/*
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef vector<pii> vpii;
+*/
+typedef pair<int, int> pii;
+
+const int LEN = 1e5 + 5;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    std::ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    $0
+    
+    return 0;
+}
+endsnippet
+
+snippet cofot "codeforces template with t test cases" bw
+#include <iostream>
+#include <algorithm>
+$1
+using namespace std;
+
+#define pb push_back;
+#define mp make_pair;
+#define rep(i, a, b) for(int i = a; i < b; i++)
+#define repb(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef pair<int, int> pii;
+typedef vector<pii> vpii;
+
+const int LEN = 1e5 + 5;
+int t;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    std::ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    cin >> t;
+    while(t--){
+    $0   
+    }
+    
+    return 0;
+}
+endsnippet
+
+snippet leco "leetcode template" bw
+#include <cstdio>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+${VISUAL}
+
+$0
+
+int main(){
+
+    return 0;
+}
+endsnippet
+
+
+snippet noco "nowcoder template" bw
+#include <cstdio>
+#include <algorithm>
+$1
+using namespace std;
+
+using ll = long long;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    $0
+    
+    return 0;
+}
+endsnippet
+
