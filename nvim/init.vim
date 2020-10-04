@@ -11,16 +11,6 @@
 " leader
 :let mapleader = "\\"
 
-" vim terminal mode
-:nnoremap <leader>' :tabe<cr>:term<cr> a
-:tnoremap ` <C-\><C-n>
-
-" for inkscape-figures
-inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
-nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
-
-" Tab navigation like Firefox.
-nnoremap <C-t>     :tabnew<CR>
 
 filetype plugin on
 set nocompatible
@@ -46,6 +36,21 @@ set t_Co=256
 set termguicolors
 " set gui cursor with block
 set guicursor=a:block
+
+"
+" == key mappings start here
+"
+"
+" vim terminal mode
+:nnoremap <leader>' :tabe<cr>:term<cr> a
+:tnoremap ` <C-\><C-n>
+
+" for inkscape-figures
+inoremap <C-f> <Esc>: silent exec '.!inkscape-figures create "'.getline('.').'" "'.b:vimtex.root.'/figures/"'<CR><CR>:w<CR>
+nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/" > /dev/null 2>&1 &'<CR><CR>:redraw!<CR>
+
+" Tab navigation like Firefox.
+nnoremap <C-t>     :tabnew<CR>
 
 " the moving key maps 
 :nnoremap L J
@@ -278,8 +283,6 @@ set laststatus=2
 
 "" == coc.nvim
 
-" == fzf 
-noremap <C-p> :Files<CR>
 
 " == vim-table-mode
 
@@ -294,10 +297,7 @@ let g:multi_cursor_prev_key = '<c-p>'
 let g:multi_cursor_skip_key = '<C-s>'
 let g:multi_cursor_quit_key = '<Esc>' 
 
-" == vim surrond
 
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
 
 " == suda
 cnoreabbrev sudowrite w suda://%
@@ -376,10 +376,8 @@ let g:vimspector_enable_mappings = 'HUMAN'
 
 " == COC
 " toggle suggestion box off for markdown
-autocmd FileType markdown let b:coc_suggest_disable = 1
+"autocmd FileType markdown let b:coc_suggest_disable = 1
 
-"nnoremap <F5> :CocDisable<CR>
-nnoremap <F6> :CocEnable<CR>
 
 " coc extensions
 let g:coc_global_extensions = [
@@ -387,11 +385,25 @@ let g:coc_global_extensions = [
     \ 'coc-actions',
     \ 'coc-eslint',
     \ 'coc-snippets',
+    \ 'coc-cmake',
+    \ 'coc-dictionary',
+    \ 'coc-markmap',
+    \ 'coc-styled-components',
+    \ 'coc-template',
+    \ 'coc-word',
+    \ 'coc-emoji',
     \ 'coc-vimlsp',
     \ 'coc-python', 
     \ 'coc-tsserver',
     \ 'coc-vetur',
+    \ 'coc-go',
     \ 'coc-texlab',
+    \ 'coc-html',
+    \ 'coc-json',
+    \ 'coc-git',
+    \ 'coc-java',
+    \ 'coc-sql',
+    \ 'coc-jest',
     \ 'coc-vimtex',
     \ 'coc-flutter-tools',
     \ 'coc-marketplace']
@@ -446,7 +458,6 @@ xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<
 nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@
 
 " coc-explorer
-nnoremap <space><space> :CocCommand explorer<CR>
 
 " coc-snippets
 imap <C-l> <Plug>(coc-snippets-expand)
@@ -481,8 +492,11 @@ let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
 
 autocmd BufEnter * :XTabTheme codedark
 
-" == any-jump
+"
+" == plugin maps start here
+"
 
+" == any-jump
 "" Normal mode: Jump to definition under cursore
 nnoremap <leader>j :AnyJump<CR>
 " Visual mode: jump to selected text in visual mode
@@ -492,6 +506,14 @@ nnoremap <leader>ab :AnyJumpBack<CR>
 " Normal mode: open last closed search window again
 nnoremap <leader>al :AnyJumpLastResults<CR>
 
+nnoremap <F6> :CocEnable<CR>
+" == fzf 
+noremap <C-p> :Files<CR>
+" == vim surrond
+xnoremap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
+
+nnoremap <space><space> :CocCommand explorer<CR>
 
 " #########################################################3
 "
