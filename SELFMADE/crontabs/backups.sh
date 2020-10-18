@@ -14,6 +14,10 @@ cp -r /home/ahacad/.config/sxhkd $ConfigFolder
 rm -rf $ConfigFolder"/SELFMADE"
 cp -r /home/ahacad/.config/SELFMADE $ConfigFolder
 
+# dwm
+
+rm -rf $ConfigFolder"/.dwm"
+cp -r /home/ahacad/.dwm $ConfigFolder
 
 # git 
 CommitMessage=`date +'%Y%m%d'`"-backup"
