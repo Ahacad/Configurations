@@ -5,7 +5,11 @@
 
 " experiments place
 ":nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
-
+nmap 1as :vs<CR><C-w>l<C-d><C-d>kkkk
+nmap 1bind :windo set scrollbind<CR>L
+nmap 2as 1as1bind
+nmap 3as 1as1as1bind
+:noremap <silent> <Leader>vs :<C-u>let @z=&so<CR>:set so=0 noscb<CR>:bo vs<CR>Ljzt:setl scb<CR><C-w>p:setl scb<CR>:let &so=@z<CR>
 
 
 " leader
@@ -22,6 +26,9 @@ set cursorline
 syntax on
 set showmode
 set encoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set termencoding=utf-8
 
 " indent
 set autoindent
@@ -53,8 +60,8 @@ nnoremap <C-f> : silent exec '!inkscape-figures edit "'.b:vimtex.root.'/figures/
 nnoremap <C-t>     :tabnew<CR>
 
 " the moving key maps 
-:nnoremap L J
-:nnoremap H K
+":nnoremap L J
+":nnoremap H K
 :nnoremap J 7j
 :nnoremap K 7k
 
@@ -168,6 +175,7 @@ Plug 'jiangmiao/auto-pairs'
 """ 3. program info assisstance
 " display the indentation levels
 Plug 'Yggdroot/indentLine'
+"Plug 'nathanaelkane/vim-indent-guides'
 " tags for classes and functions
 Plug 'liuchengxu/vista.vim'
 " beautiful bar downside
@@ -181,11 +189,13 @@ Plug 'vim-syntastic/syntastic'
 Plug 'lervag/vimtex'
 " generate table of contents for markdown easily
 Plug 'mzlogin/vim-markdown-toc'
+" rust lang
+Plug 'rust-lang/rust.vim'
 " vim wiki
 Plug 'vimwiki/vimwiki'
 " flutter
 Plug 'dart-lang/dart-vim-plugin'
-Plug 'thosakwe/vim-flutter'
+"Plug 'thosakwe/vim-flutter'
 " immediate color for html
 "Plug 'gko/vim-coloresque'
 Plug 'ap/vim-css-color'
@@ -205,14 +215,21 @@ Plug 'Chiel92/vim-autoformat'
 Plug 'godlygeek/tabular'
 " bookmarks for vim
 Plug 'MattesGroeger/vim-bookmarks'
+" great vim tabs
 Plug 'mg979/vim-xtabline'
+" icons for vim
+Plug 'ryanoasis/vim-devicons'
+
 " snippets 
 Plug 'honza/vim-snippets'
 "  highlight the same workds after a delay
 Plug 'RRethy/vim-illuminate'
 " change working directory to root automatically
 Plug 'airblade/vim-rooter'
+" awesome jumpings
 Plug 'pechorin/any-jump.vim'
+"" undo history in tree style
+Plug 'mbbill/undotree'
 
 " call floating ranger within vim
 "Plug 'kevinhwang91/rnvimr'
@@ -233,8 +250,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 "Plug 'mg979/vim-xtabline'
 " great language autocomplete
 "Plug 'weirongxu/coc-explorer'
-"" undo history in tree style
-"Plug 'mbbill/undotree'
 "Plug 'tpope/vim-fugitive'
 "" 
 "Plug 'svermeulen/vim-subversive'
@@ -394,10 +409,12 @@ let g:coc_global_extensions = [
     \ 'coc-emoji',
     \ 'coc-vimlsp',
     \ 'coc-python', 
+    \ 'coc-rls', 
     \ 'coc-tsserver',
     \ 'coc-vetur',
     \ 'coc-go',
     \ 'coc-texlab',
+    \ 'coc-clangd',
     \ 'coc-html',
     \ 'coc-json',
     \ 'coc-git',
@@ -492,6 +509,12 @@ let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
 
 autocmd BufEnter * :XTabTheme codedark
 
+" == vimwiki
+ let g:vimwiki_list = [{'path': '/media/HOME/ahacad/WORKSTATION/Working/#wiki/',
+                      \ 'syntax': 'markdown' ,'ext': '.md'}]
+
+
+
 "
 " == plugin maps start here
 "
@@ -510,10 +533,11 @@ nnoremap <F6> :CocEnable<CR>
 " == fzf 
 noremap <C-p> :Files<CR>
 " == vim surrond
-xnoremap ga <Plug>(EasyAlign)
-nnoremap ga <Plug>(EasyAlign)
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 nnoremap <space><space> :CocCommand explorer<CR>
+nnoremap <space>u :UndotreeToggle<CR>
 
 " #########################################################3
 "
@@ -579,4 +603,4 @@ func! CompileRunGcc()
 	endif
 endfunc
 
-
+autocmd FileType rmd nnoremap r :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
