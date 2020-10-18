@@ -12,7 +12,7 @@ cp -r /home/ahacad/.config/sxhkd $ConfigFolder
 
 # SELFMADE
 rm -rf $ConfigFolder"/SELFMADE"
-cp -r /home/ahacad/.config/SELFMADE $ConfigFolder"/dwm"
+cp -r /home/ahacad/.config/SELFMADE $ConfigFolder"/SELFMADE"
 
 # dwm
 rm -rf $ConfigFolder"/.dwm"
