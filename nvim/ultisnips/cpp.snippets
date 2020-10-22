@@ -1,14 +1,14 @@
 # == operations control
 
 snippet if "the if " w
-if ($1){
+if ($1) {
     ${2:${VISUAL}}
 }
 $0
 endsnippet
 
 snippet ife "if else" w
-if ($1){
+if ($1) {
     ${2:${VISUAL}}
 } else {
     $3
@@ -30,7 +30,7 @@ for (int i = 0; i < $1; i++){
 endsnippet
 
 snippet whi "while" w
-while($1){
+while ($1) {
     ${0:${VISUAL}}
 }
 endsnippet

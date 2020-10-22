@@ -219,6 +219,8 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug 'mg979/vim-xtabline'
 " icons for vim
 Plug 'ryanoasis/vim-devicons'
+" statistics
+Plug 'wakatime/vim-wakatime'
 
 " snippets 
 Plug 'honza/vim-snippets'
