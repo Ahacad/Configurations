@@ -51,5 +51,6 @@
     "explorer.file.showHiddenFiles": true,
     "explorer.icon.enableNerdfont": true,
     "explorer.file.column.git.showIgnored": true,
-    "coc.source.word.enable": false
+    "coc.source.word.enable": false,
+    "git.enableGutters": true
 }

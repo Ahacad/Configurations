@@ -1,0 +1,29 @@
+#! /bin/bash
+alias tat="tmux attach -t"
+alias ns="nautilus .&"
+alias kl="khal calendar"
+alias ikl="ikhal"
+cd_ls()
+{
+    \cd $1
+    ls
+}
+alias cd="cd_ls"
+ev_and()
+{
+    \evince $1 &
+}
+alias ev="ev_and"
+alias vim="nvim"
+alias mnho="sudo mount /dev/nvme0n1p11 /media/HOME"
+alias mnsg="sudo mount /dev/sda1 /media/Seagate-next"
+alias startup="mnho ; mnsg ; cd /home/ahacad/BookShelf; startx"
+alias s="amixer set Master 5%-"
+alias S="amixer set Master 5%+"
+
+# just to make it shorter
+alias lg=lazygit
+alias ra=ranger
+alias nb=newsboat
+alias gcn="git clone"
+alias okr="column $HOMEDISK/WORKSTATION/Working/OKR.md"

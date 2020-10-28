@@ -1,0 +1,31 @@
+[user]
+	email = 1393345075@qq.com
+	name = ahacad
+[alias]
+	ci = commit
+	d = difftool
+	psa = !git remote | xargs -L1 git push --all
+[core]
+	quotepath = false
+    pager = delta
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[http]
+    proxy = socks5://127.0.0.1:54444
+    sslVerify = false
+[https]
+    proxy = socks5://127.0.0.1:54444
+[delta]
+    plus-color = "#012800"
+    minus-color = "#340001"
+    syntax-theme = Monokai Extended
+    ;minus-style = red bold ul "#ffeeee"
+    line-numbers = true
+    side-by-side = true
+
+[interactive]
+    diffFilter = delta --color-only
+[remote "origin"]
+    proxy = 

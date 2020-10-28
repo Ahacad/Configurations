@@ -1,23 +1,30 @@
 #! /bin/bash
 
-ConfigFolder="/media/HOME/ahacad/WORKSTATION/Working/#Configurations"
+ConfigFolder="/media/HOME/ahacad/WORKSTATION/Working/#Configurations/.config"
 
 # copy nvim config file
 rm -rf $ConfigFolder"/nvim"
-cp -r /home/ahacad/.config/nvim $ConfigFolder
+cp -r "$HOME/.config/nvim" $ConfigFolder
 
 # sxhkd
 rm -rf $ConfigFolder"/sxhkd"
-cp -r /home/ahacad/.config/sxhkd $ConfigFolder
+cp -r "$HOME/.config/sxhkd" $ConfigFolder
 
 # SELFMADE
 rm -rf $ConfigFolder"/SELFMADE"
-cp -r /home/ahacad/.config/SELFMADE $ConfigFolder"/SELFMADE"
+cp -r "$HOME/.config/SELFMADE" $ConfigFolder"/SELFMADE"
 
 # dwm
 rm -rf $ConfigFolder"/.dwm"
-cp -r /home/ahacad/.dwm $ConfigFolder
+cp -r "$HOM/.dwm" $ConfigFolder
 
+# zsh
+rm -rf $ConfigFolder".zshrc"
+cp "$HOME/.zshrc" $ConfigFolder
+
+# git
+rm -rf $ConfigFolder".gitconfig"
+cp "$HOME/.gitconfig" $ConfigFolder
 
 # git 
 CommitMessage=`date +'%Y%m%d'`"-backup"

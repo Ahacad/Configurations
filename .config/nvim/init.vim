@@ -221,6 +221,9 @@ Plug 'mg979/vim-xtabline'
 Plug 'ryanoasis/vim-devicons'
 " statistics
 Plug 'wakatime/vim-wakatime'
+" show who did this
+"Plug 'APZelos/blamer.nvim'
+
 
 " snippets 
 Plug 'honza/vim-snippets'
@@ -401,6 +404,7 @@ let g:coc_global_extensions = [
     \ 'coc-explorer',
     \ 'coc-actions',
     \ 'coc-eslint',
+    \ 'coc-prettier',
     \ 'coc-snippets',
     \ 'coc-cmake',
     \ 'coc-dictionary',
@@ -503,6 +507,28 @@ highlight MatchTag ctermfg=black ctermbg=lightblue guifg=black guibg=lightblue
 let g:lightline = {
       \ 'colorscheme': 'embark',
       \ }
+"" lightline
+"let g:lightline = {
+  "\ 'active': {
+  "\   'left': [
+  "\     [ 'mode', 'paste' ],
+  "\     [ 'ctrlpmark', 'git', 'diagnostic', 'cocstatus', 'filename', 'method' ]
+  "\   ],
+  "\   'right':[
+  "\     [ 'filetype', 'fileencoding', 'lineinfo', 'percent' ],
+  "\     [ 'blame' ]
+  "\   ],
+  "\ },
+  "\ 'component_function': {
+  "\   'blame': 'LightlineGitBlame',
+  "\ }
+"\ }
+"function! LightlineGitBlame() abort
+  "let blame = get(b:, 'coc_git_blame', '')
+  "" return blame
+  "return winwidth(0) > 120 ? blame : ''
+"endfunction
+
 
 " == vim-rooter
 let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
