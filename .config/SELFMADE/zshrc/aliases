@@ -23,6 +23,7 @@ alias S="amixer set Master 5%+"
 
 # just to make it shorter
 alias lg=lazygit
+alias ldk="/home/ahacad/PROGRAMS/lazydocker"
 alias ra=ranger
 alias nb=newsboat
 alias gcn="git clone"

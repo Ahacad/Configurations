@@ -613,6 +613,8 @@ func! CompileRunGcc()
         set splitbelow
         :sp
         exec "!clear && xelatex % && zathura %<.pdf"
+    "elseif &filetype == 'markdown'
+		"exec "typora %"
 	"elseif &filetype == 'java'
 		"exec "!javac %"
 		"exec "!time java %<"
