@@ -10,6 +10,10 @@ cp -r "$HOME/.config/nvim" $ConfigFolder
 rm -rf $ConfigFolder"/sxhkd"
 cp -r "$HOME/.config/sxhkd" $ConfigFolder
 
+# newsboat
+rm -rf $ConfigFolder"/newsboat"
+cp -r "$HOME/.config/newsboat" $ConfigFolder
+
 # SELFMADE
 rm -rf $ConfigFolder"/SELFMADE"
 cp -r "$HOME/.config/SELFMADE" $ConfigFolder"/SELFMADE"
@@ -25,6 +29,7 @@ cp "$HOME/.zshrc" $ConfigFolder
 # git
 rm -rf $ConfigFolder".gitconfig"
 cp "$HOME/.gitconfig" $ConfigFolder
+
 
 # git 
 CommitMessage=`date +'%Y%m%d'`"-backup"
