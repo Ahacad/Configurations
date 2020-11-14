@@ -204,7 +204,6 @@ pomorest()
     pomos
 }
 alias pomor="pomorest"
-alias todo="cat $HOMEDISK/.ahacad/.projects/WHATTODO.md"
 alias cf="$HOME/go/src/github.com/xalanq/cf-tool/cf"
 alias zet="/media/HOME/ahacad/WORKSTATION/Working/ZETTELKASTEN/zettel"
 alias annie="$HOME/PROGRAMS/annie"
