@@ -1,6 +1,6 @@
 #! /bin/bash
 
-wikiPage="/media/HOME/ahacad/WORKSTATION/Working/#wiki"
+wikiPage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#wiki"
 
 cd $wikiPage
 git add .
@@ -11,7 +11,7 @@ if [ $dat -eq 7 ]; then
     git push
 fi
 
-notePage="/media/HOME/ahacad/WORKSTATION/Working/#notebooks"
+notePage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#notebooks"
 cd $notePage
 git add .
 git commit -m `date +'%Y-%m-%d'`
@@ -21,7 +21,7 @@ if [ $dat -eq 7 ]; then
     git push
 fi
 
-learnPage="/media/HOME/ahacad/WORKSTATION/Working/#learning"
+learnPage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#learning"
 
 cd $learnPage
 git add .
