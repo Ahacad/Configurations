@@ -14,3 +14,5 @@ proxy-type socks5
 proxy 127.0.0.1:54444
 download-timeout 20
 download-retries 2
+
+html-renderer internal
