@@ -269,3 +269,6 @@ export CHROME_EXECUTABLE=/usr/bin/chromium
 #go env -w GOPROXY=https://mirrors.aliyun.com/goproxy/
 
 export GOPATH="/home/ahacad/GO"
+
+set icons
+source "$HOME/.config/lf/LF_ICONS"
