@@ -51,18 +51,27 @@ cmd open ${{
         *.jsx) $EDITOR $fx;;
         *.vue) $EDITOR $fx;;
         *.ts) $EDITOR $fx;;
-        *.mpv) mpv $fx;;
+        # shell
+        *.sh) $EDITOR $fx;;
+        *.zsh) $EDITOR $fx;;
         # data
         *.yml) $EDITOR $fx;;
         *.json) $EDITOR $fx;;
         *.toml) $EDITOR $fx;;
+        *.csv) $EDITOR $fx;;
         *.txt) $EDITOR $fx;;
         # miscell
         *.lock) $EDITOR $fx;;
         *.d) $EDITOR $fx;;
+        # videos
+        *.mp4) mpv $fx;;
+        *.flv) mpv $fx;;
         # pictures
         *.jpg) sxiv $fx;;
         *.png) sxiv $fx;;
+        # books
+        *.pdf) zathura $fx;;
+        *.epub) zathura $fx;;
     esac
     exit
     case $(file --mime-type $f -b) in
@@ -223,7 +232,7 @@ map glearn cd /media/HOME/ahacad/WORKSTATION/Working/-learn/#learning
 map greadme cd /media/HOME/ahacad/WORKSTATION/Working/#readme!
 map gjp cd /media/Seagate-next/BOOKS/K.Languages/KB.Japanese
 map galgo cd /media/Seagate-next/BOOKS/E.CS/EH.Algorithms
-map gcard cd /media/HOME/ahacad/WORKSTATION/Working/-BLOG/articles/CARDS
+map gcard cd /media/HOME/ahacad/WORKSTATION/Working/-learn/#cards
 map gokr- cd /media/HOME/ahacad/WORKSTATION/Working/-working/#OKR
 map gconf cd /media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations
 map ginfra cd /media/HOME/ahacad/WORKSTATION/Working/-working/#infrastructure
