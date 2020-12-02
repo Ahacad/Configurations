@@ -39,32 +39,57 @@ map O $mimeopen --ask $f
 cmd open ${{
     case $f in 
         *.md) $EDITOR $fx;;
+        *.mdx) $EDITOR $fx;;
+        *.xml) $EDITOR $fx;;
         *.html) $EDITOR $fx;;
         *.css) $EDITOR $fx;;
         *.scss) $EDITOR $fx;;
+        *.sass) $EDITOR $fx;;
+        *.less) $EDITOR $fx;;
         *.py) $EDITOR $fx;;
+        *.rb) $EDITOR $fx;;
+        *.php) $EDITOR $fx;;
+        *.pl) $EDITOR $fx;;
+        *.java) $EDITOR $fx;;
         *.c) $EDITOR $fx;;
+        *.h) $EDITOR $fx;;
         *.cpp) $EDITOR $fx;;
+        *.c++) $EDITOR $fx;;
+        *.tex) $EDITOR $fx;;
+        *.sty) $EDITOR $fx;;
+        *.cls) $EDITOR $fx;;
+        *.aux) $EDITOR $fx;;
+        *.log) $EDITOR $fx;;
+        *.out) $EDITOR $fx;;
         *.go) $EDITOR $fx;;
         *.rs) $EDITOR $fx;;
         *.js) $EDITOR $fx;;
         *.jsx) $EDITOR $fx;;
         *.vue) $EDITOR $fx;;
         *.ts) $EDITOR $fx;;
+        *.tsx) $EDITOR $fx;;
+        *.snippets) $EDITOR $fx;;
+        *.cmake) $EDITOR $fx;;
+        *.dart) $EDITOR $fx;;
+        *Dockerfile) $EDITOR $fx;;
+        *Makefile) $EDITOR $fx;;
         # shell
         *.sh) $EDITOR $fx;;
         *.zsh) $EDITOR $fx;;
+        *.bash) $EDITOR $fx;;
         # data
         *.yml) $EDITOR $fx;;
         *.json) $EDITOR $fx;;
         *.toml) $EDITOR $fx;;
         *.csv) $EDITOR $fx;;
         *.txt) $EDITOR $fx;;
+        *.sql) $EDITOR $fx;;
         # miscell
         *.lock) $EDITOR $fx;;
         *.d) $EDITOR $fx;;
         # videos
         *.mp4) mpv $fx;;
+        *.mov) mpv $fx;;
         *.flv) mpv $fx;;
         # pictures
         *.jpg) sxiv $fx;;
