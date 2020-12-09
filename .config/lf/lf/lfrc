@@ -83,10 +83,14 @@ cmd open ${{
         *.toml) $EDITOR $fx;;
         *.csv) $EDITOR $fx;;
         *.txt) $EDITOR $fx;;
+        *.in) $EDITOR $fx;;
+        *.out) $EDITOR $fx;;
         *.sql) $EDITOR $fx;;
         # miscell
         *.lock) $EDITOR $fx;;
         *.d) $EDITOR $fx;;
+        # audio
+        *.mp3) mpv $fx;;
         # videos
         *.mp4) mpv $fx;;
         *.mov) mpv $fx;;
