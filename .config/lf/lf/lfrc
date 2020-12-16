@@ -101,6 +101,9 @@ cmd open ${{
         # books
         *.pdf) zathura $fx;;
         *.epub) zathura $fx;;
+        # libreoffice
+        *.doc) libreoffice  $fx;;
+        *.docx) libreoffice  $fx;;
     esac
     exit
     case $(file --mime-type $f -b) in
