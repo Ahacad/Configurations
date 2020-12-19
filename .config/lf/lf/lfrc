@@ -81,6 +81,7 @@ cmd open ${{
         *.yml) $EDITOR $fx;;
         *.json) $EDITOR $fx;;
         *.toml) $EDITOR $fx;;
+        *.yaml) $EDITOR $fx;;
         *.csv) $EDITOR $fx;;
         *.txt) $EDITOR $fx;;
         *.in) $EDITOR $fx;;
@@ -93,6 +94,7 @@ cmd open ${{
         *.mp3) mpv $fx;;
         # videos
         *.mp4) mpv $fx;;
+        *.mkv) mpv $fx;;
         *.mov) mpv $fx;;
         *.flv) mpv $fx;;
         # pictures
