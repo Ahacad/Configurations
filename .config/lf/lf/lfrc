@@ -52,10 +52,14 @@ cmd open ${{
         *.pl) $EDITOR $fx;;
         *.java) $EDITOR $fx;;
         *.c) $EDITOR $fx;;
+        *.s) $EDITOR $fx;;
         *.h) $EDITOR $fx;;
         *.cpp) $EDITOR $fx;;
         *.c++) $EDITOR $fx;;
         *.tex) $EDITOR $fx;;
+        *.fls) $EDITOR $fx;;
+        *.log) $EDITOR $fx;;
+        *.fdb_latexmk) $EDITOR $fx;;
         *.sty) $EDITOR $fx;;
         *.cls) $EDITOR $fx;;
         *.aux) $EDITOR $fx;;
@@ -71,6 +75,7 @@ cmd open ${{
         *.snippets) $EDITOR $fx;;
         *.cmake) $EDITOR $fx;;
         *.dart) $EDITOR $fx;;
+        *.vim) $EDITOR $fx;;
         *Dockerfile) $EDITOR $fx;;
         *Makefile) $EDITOR $fx;;
         # shell
@@ -106,6 +111,7 @@ cmd open ${{
         # libreoffice
         *.doc) libreoffice  $fx;;
         *.docx) libreoffice  $fx;;
+        *.ppt) libreoffice  $fx;;
     esac
     exit
     case $(file --mime-type $f -b) in
