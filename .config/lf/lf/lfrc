@@ -111,6 +111,7 @@ cmd open ${{
         # libreoffice
         *.doc) libreoffice  $fx;;
         *.docx) libreoffice  $fx;;
+        *.xlsx) libreoffice  $fx;;
         *.ppt) libreoffice  $fx;;
     esac
     exit
