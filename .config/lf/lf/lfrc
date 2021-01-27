@@ -101,6 +101,9 @@ cmd open ${{
         *.mp3) mpv $fx;;
         # videos
         *.mp4) mpv $fx;;
+        *.avi) mpv $fx;;
+        *.MP4) mpv $fx;;
+        *.wmv) mpv $fx;;
         *.mkv) mpv $fx;;
         *.mov) mpv $fx;;
         *.flv) mpv $fx;;
