@@ -2,6 +2,8 @@ super + 1
         chromium
 super + 2
         slack
+super + shift + Return
+        st
 super + ctrl + 2
         rofi -show run
 super + 3
