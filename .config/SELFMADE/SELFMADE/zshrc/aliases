@@ -36,3 +36,6 @@ alias "bd"="cd /media/HOME/ahacad/WORKSTATION/Working/-BLOG/DesignersWebsite/gat
 alias lc="ll | column"
 alias v="vim"
 alias q="cd /media/Work/Work"
+alias f="cd /media/Work/PROCESS && lf"
+alias p="cd /media/Work/Fudan && lf"
+alias pgc="proxychains git clone"
