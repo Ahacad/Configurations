@@ -18,7 +18,7 @@ alias vim="nvim"
 alias mnho="sudo mount /dev/nvme0n1p11 /media/HOME"
 alias mnsg="sudo mount /dev/sda1 /media/Seagate-next"
 alias mnwk="sudo mount /dev/nvme0n1p8 /media/Work"
-alias startup="mnho ; mnsg ; mnwk ; cd /home/ahacad/BookShelf; /usr/bin/NetworkManager; startx; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
+alias startup="mnho ; mnsg ; mnwk ; cd /home/ahacad/BookShelf;sudo /usr/bin/NetworkManager; startx; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
 alias s="amixer set Master 5%-"
 alias S="amixer set Master 5%+"
 
