@@ -156,6 +156,8 @@ super + 1
         chromium
 super + 2
         slack
+super + 3
+        code
 super + 0
         betterlockscreen -l blur
 
