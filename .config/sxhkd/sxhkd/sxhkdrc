@@ -53,7 +53,9 @@ super + g
     || (xcape && ibus-daemon -drx && picom --daemon --experimental-backends)
 # scratchpad
 alt + grave
-    ~/.config/bspwm/executable/scratchtermtoggle
+    ~/.config/bspwm/executable/scratchsmalltoggle
+super + grave
+    ~/.config/bspwm/executable/scratchbigtoggle
 
 
 ##############
