@@ -112,9 +112,7 @@ shift + {_,ctrl + ,alt + }Print
 ################
 
 # Run command
-alt + r
     #dmenu_run -p  "Run"
-    rofi -show drun
 # Terminal
 alt + shift + Return
     st
@@ -160,6 +158,10 @@ super + 2
         slack
 super + 3
         code
+super + 6
+        proxychains telegram-desktop
+super + 5
+        rofi -show run
 super + 0
         betterlockscreen -l blur
 
