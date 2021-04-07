@@ -163,7 +163,7 @@ super + 6
 super + 5
         rofi -show run
 super + 0
-        betterlockscreen -l blur
+        /media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
 
 # take screen shot
 super + 4
