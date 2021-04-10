@@ -271,3 +271,6 @@ export GOPATH="/home/ahacad/GO"
 
 set icons
 source "$HOME/.config/lf/LF_ICONS"
+
+# touchpad natural scrolling
+xinput set-prop "ELAN962C:00 04F3:30D0 Touchpad" "libinput Natural Scrolling Enabled" 1
