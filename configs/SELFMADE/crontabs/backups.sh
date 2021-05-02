@@ -12,16 +12,16 @@ backup_config() {
 }
 
 
-backup_config "$HOME/.config/nvim" "$ConfigFolder" "nvim"
-backup_config "$HOME/.config/sxhkd" "$ConfigFolder" "sxhkd"
-backup_config "$HOME/.config/bspwm" "$ConfigFolder" "bspwm"
-backup_config "$HOME/.config/polybar" "$ConfigFolder" "polybar"
-backup_config "$HOME/.config/newsboat" "$ConfigFolder" "newsboat"
-backup_config "$HOME/.config/SELFMADE" "$ConfigFolder" "SELFMADE"
-backup_config "$HOME/.config/lf" "$ConfigFolder" "lf"
-backup_config "$HOME/.zshrc" "$ConfigFolder" ".zshrc"
-backup_config "$HOME/.gitconfig" "$ConfigFolder" ".gitconfig"
-backup_config "$HOME/.tmux.conf" "$ConfigFolder" ".tmux.conf"
+backup_config "$HOME/.config" "$ConfigFolder" "nvim"
+backup_config "$HOME/.config" "$ConfigFolder" "sxhkd"
+backup_config "$HOME/.config" "$ConfigFolder" "bspwm"
+backup_config "$HOME/.config" "$ConfigFolder" "polybar"
+backup_config "$HOME/.config" "$ConfigFolder" "newsboat"
+backup_config "$HOME/.config" "$ConfigFolder" "SELFMADE"
+backup_config "$HOME/.config" "$ConfigFolder" "lf"
+backup_config "$HOME" "$ConfigFolder" ".zshrc"
+backup_config "$HOME" "$ConfigFolder" ".gitconfig"
+backup_config "$HOME" "$ConfigFolder" ".tmux.conf"
 
 
 # git 
