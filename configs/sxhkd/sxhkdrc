@@ -153,13 +153,7 @@ super + shift + g
     dmenu-gpu
 # open browser
 super + 1
-        chromium
-super + 2
-        slack
-super + 3
-        code
-super + 6
-        proxychains telegram-desktop
+        google-chrome-stable
 super + 5
         rofi -show run
 super + 0
