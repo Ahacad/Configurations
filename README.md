@@ -18,13 +18,20 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - polybar
 - sxhkd
 - newsboat
+- redshift
+- alacritty
 - lf
 - dwm
 - st
 - gitconfig
+- zshrc
+- tmux.conf
+- SELFMADE
 
 ## How to use
 
 1. `src/downloads.sh` to download wallpaper
 2. `src/install.sh` to install configs
+3. setup `crontab` for backup: `$HOME/.config/SELFMADE/crontabs/backups.sh`
+
 
