@@ -36,5 +36,14 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 4. you may need to change some paths for your machine:
   1. wallpaper path in `.config/bspwm/executable/auto-wallpaper.sh`
   2. ConfigFolder in `../configs/SELFMADE/crontabs/backups.sh`
+5. look at more setups below
+
+## More setups
+
+### Rime
+
+```bash
+ibus-setup
+```
 
 
