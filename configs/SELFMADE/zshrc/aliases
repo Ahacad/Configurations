@@ -1,6 +1,5 @@
 #! /bin/bash
 alias tat="tmux attach -t"
-alias ns="nautilus .&"
 alias kl="khal calendar"
 alias ikl="ikhal"
 cd_ls()
@@ -13,31 +12,22 @@ ev_and()
 {
     \evince $1 &
 }
-alias ev="ev_and"
 alias vim="nvim"
+alias v="vim"
 alias mnho="sudo mount /dev/nvme0n1p11 /media/HOME"
 alias mnsg="sudo mount /dev/sda1 /media/Seagate-next"
 alias mnwk="sudo mount /dev/nvme0n1p8 /media/Work"
 alias startup="mnho ; mnsg ; mnwk ; sudo /usr/bin/NetworkManager; startx; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
-alias s="amixer set Master 5%-"
-alias S="amixer set Master 5%+"
 
 # just to make it shorter
 alias lg=lazygit
 alias ldk="/home/ahacad/PROGRAMS/lazydocker"
-alias rap="/home/ahacad/PROGRAMS/rap"
 alias ra=ranger
 alias nb=newsboat
-alias gcn="git clone"
-alias okr="column $HOMEDISK/WORKSTATION/Working/-working/#OKR/OKR.md"
-alias musicbox="/usr/bin/musicbox"
-# alias todo="column $HOMEDISK/WORKSTATION/Working/-learn/#today/$(date "+%Y%m%d").md"
-alias "bd"="cd /media/HOME/ahacad/WORKSTATION/Working/-BLOG/DesignersWebsite/gatsby-starter-developer-diary && yarn develop"
 alias lc="ll | column"
-alias v="vim"
 alias q="cd /media/Work/Work"
 alias f="cd /media/Work/PROCESS && lf"
 alias p="cd /media/Work/Fudan && lf"
-alias pgc="proxychains git clone"
-alias dolt="~/PROGRAMS/dolt-linux-amd64/bin/dolt"
-alias pc="proxychains"
+#alias pgc="proxychains git clone"
+#alias dolt="~/PROGRAMS/dolt-linux-amd64/bin/dolt"
+#alias pc="proxychains"
