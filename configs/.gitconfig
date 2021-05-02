@@ -12,11 +12,11 @@
 	tool = vimdiff
 [difftool]
 	prompt = false
-[http]
-    proxy = socks5://127.0.0.1:7890
-    sslVerify = false
-[https]
-    proxy = socks5://127.0.0.1:7890
+;[http]
+    ;proxy = socks5://127.0.0.1:7890
+    ;sslVerify = false
+;[https]
+    ;proxy = socks5://127.0.0.1:7890
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
@@ -27,5 +27,3 @@
 
 [interactive]
     diffFilter = delta --color-only
-[remote "origin"]
-    proxy = 

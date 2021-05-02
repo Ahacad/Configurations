@@ -184,7 +184,9 @@ Plug 'Yggdroot/indentLine'
 " tags for classes and functions
 Plug 'liuchengxu/vista.vim'
 " beautiful bar downside
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+
 " syntax checks for vim 
 Plug 'vim-syntastic/syntastic'
 "Plug 'theniceboy/eleline.vim'
@@ -206,6 +208,8 @@ Plug 'dart-lang/dart-vim-plugin'
 Plug 'ap/vim-css-color'
 " match html tags always
 Plug 'valloric/MatchTagAlways'
+" todo lists
+Plug 'aserebryakov/vim-todo-lists'
 
 """ 5. delicate little tool
 " use sudo easily in vim
@@ -226,9 +230,14 @@ Plug 'mg979/vim-xtabline'
 Plug 'ryanoasis/vim-devicons'
 " statistics
 Plug 'wakatime/vim-wakatime'
+" get number sequence quickly
+Plug 'triglav/vim-visual-increment'
+" git history graph
+Plug 'junegunn/gv.vim'
+" quickly select cloeset text object
+Plug 'gcmt/wildfire.vim'
 " show who did this
 "Plug 'APZelos/blamer.nvim'
-
 
 " snippets 
 Plug 'honza/vim-snippets'
