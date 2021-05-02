@@ -33,5 +33,8 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 1. `src/downloads.sh` to download wallpaper
 2. `src/install.sh` to install configs
 3. setup `crontab` for backup: `$HOME/.config/SELFMADE/crontabs/backups.sh`
+4. you may need to change some paths for your machine:
+  1. wallpaper path in `.config/bspwm/executable/auto-wallpaper.sh`
+  2. ConfigFolder in `../configs/SELFMADE/crontabs/backups.sh`
 
 
