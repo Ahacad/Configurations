@@ -1,0 +1,4 @@
+patch:
+  style/inline_preedit: true
+  schema_list:
+    - schema: double_pinyin

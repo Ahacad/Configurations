@@ -108,9 +108,17 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR="nvim"
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+export XIM_PROGRAM=/usr/bin/ibus-daemon
+export PDFVIEWER_texdoc=zathura
+
+source "$HOME/.config/SELFMADE/zshrc/aliases"
+
 setxkbmap us -variant colemak
 setxkbmap us -variant colemak -option caps:escape
-source "$HOME/.config/SELFMADE/zshrc/aliases"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
