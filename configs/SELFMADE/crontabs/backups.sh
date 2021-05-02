@@ -1,4 +1,4 @@
-#! /bin/bash
+#!/bin/sh
 
 #RepoFolder="/media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations"
 ConfigFolder="/home/ahacad/HOME/Configurations/configs"
@@ -21,6 +21,7 @@ backup_config "$HOME/.config" "$ConfigFolder" "polybar"
 backup_config "$HOME/.config" "$ConfigFolder" "SELFMADE"
 backup_config "$HOME/.config" "$ConfigFolder" "lf"
 backup_config "$HOME/.config" "$ConfigFolder" "redshift"
+backup_config "$HOME/.config" "$ConfigFolder" "ibus/rime"
 backup_config "$HOME" "$ConfigFolder" ".zshrc"
 backup_config "$HOME" "$ConfigFolder" ".gitconfig"
 backup_config "$HOME" "$ConfigFolder" ".tmux.conf"
