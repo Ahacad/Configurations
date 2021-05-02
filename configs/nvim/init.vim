@@ -1,5 +1,9 @@
 " Your awesome header starts here
 
+nnoremap <C-left> gT
+nnoremap <C-right> gt
+nnoremap <C-S-left> :tabm -1<CR>
+nnoremap <C-S-right> :tabm +1<CR>
 
 "
 
