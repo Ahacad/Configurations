@@ -5,6 +5,7 @@ nnoremap <C-right> gt
 nnoremap <C-S-left> :tabm -1<CR>
 nnoremap <C-S-right> :tabm +1<CR>
 
+
 "
 
 " experiments place
@@ -538,7 +539,6 @@ let g:rooter_patterns = ['.git', 'Makefile', '*.sln', 'build/env.sh', '=src']
 
 " == xtabline
 
-autocmd BufEnter * :XTabTheme codedark
 
 " == vimwiki
  let g:vimwiki_list = [{'path': '/media/HOME/ahacad/WORKSTATION/Working/#wiki/',

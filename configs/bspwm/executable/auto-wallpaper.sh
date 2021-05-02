@@ -1,5 +1,5 @@
 #! /bin/bash
-folder="/media/HOME/ahacad/WORKSTATION/Working/-working/#wallpaper"
+folder="/media/tmp/ahacad/WORKSTATION/Working/-working/#wallpaper"
 subfolder="fantasy"
 while true
 do

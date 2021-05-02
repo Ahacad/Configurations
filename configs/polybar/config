@@ -141,6 +141,9 @@ mount-2 = /media/Work
 interval = 30
 fixed-values = true
 spacing = 2
+format-mounted = <label-mounted>
+label-mounted = %mountpoint%: %used% / %total%
+label-unmounted = %mountpoint%: not mounted
 
 [module/bluetooth]
 type = custom/script
