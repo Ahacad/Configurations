@@ -103,3 +103,4 @@ source $ZSH/oh-my-zsh.sh
 export EDITOR="nvim"
 setxkbmap us -variant colemak
 setxkbmap us -variant colemak -option caps:escape
+source "$HOME/.config/SELFMADE/zshrc/aliases"
