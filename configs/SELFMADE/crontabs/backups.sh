@@ -29,7 +29,7 @@ backup_config "$HOME" "$ConfigFolder" ".oh-my-zsh"
 
 
 # git 
-CommitMessage=`date +'%Y%m%d'`"-backup"
+CommitMessage=`date +'%Y%m%d-%H:%M:%S'`"-backup"
 cd "$ConfigFolder" || exit
 git add .
 git commit -m "$CommitMessage" --author="ahacad-bot <bot@ahacad.cool>"
