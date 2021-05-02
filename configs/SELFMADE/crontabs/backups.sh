@@ -24,6 +24,7 @@ backup_config "$HOME/.config" "$ConfigFolder" "redshift"
 backup_config "$HOME" "$ConfigFolder" ".zshrc"
 backup_config "$HOME" "$ConfigFolder" ".gitconfig"
 backup_config "$HOME" "$ConfigFolder" ".tmux.conf"
+backup_config "$HOME" "$ConfigFolder" ".oh-my-zsh"
 
 
 # git 
