@@ -111,7 +111,10 @@ export EDITOR="nvim"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
 export QT_IM_MODULE=ibus
+export QT4_IM_MODULE=ibus
+export CLUTTER_IM_MODULE=ibus
 export XIM_PROGRAM=/usr/bin/ibus-daemon
+
 export PDFVIEWER_texdoc=zathura
 
 source "$HOME/.config/SELFMADE/zshrc/aliases"
