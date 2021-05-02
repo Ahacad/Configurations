@@ -1,0 +1,246 @@
+"set clipboard=unnamedplus
+
+" no blink for the 
+"highlight Cursor guifg=white guibg=black
+"highlight Cursor guifg=white guibg=steelblue
+"set guicursor=n-v-c:block-Cursor
+"set guicursor+=i:ver100-iCursor
+"set guicursor+=n-v-c:blinkon0
+"set guicursor+=i:blinkwait10
+"set guicursor=a:blinkon0
+set number
+set cursorline
+syntax on
+set showmode
+
+set encoding=utf-8
+
+set autoindent
+set tabstop=4
+set expandtab
+set softtabstop=4
+
+set background=dark
+set t_Co=256
+
+"---------- spelling check ------------------------
+"setlocal spell
+"set spelllang=en,cjk
+" credit to @Luke Smith, 'After Vimtutor 02:56'
+map <F6> :setlocal spell! spelllang=en,cjk<CR>  
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+hi clear SpellBad
+hi SpellBad cterm=underline
+" Set style for gVim
+hi SpellBad gui=undercurl
+hi SpellBad ctermfg=red ctermbg=black 
+hi SpellCap cterm=bold ctermfg=blue ctermbg=black
+"====================================================
+
+:nmap L J
+:nmap H K
+:nmap J 7j
+:nmap K 7k
+
+vnoremap Y "+y
+
+"----------- plugins --------------------------------
+call plug#begin('~/.vim/plugged')
+" TO INSTALL: 
+"Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'lervag/vimtex'
+Plug 'sirver/ultisnips'
+Plug 'jiangmiao/auto-pairs'
+Plug 'majutsushi/tagbar'
+Plug 'preservim/nerdcommenter'
+Plug 'https://github.com/itchyny/lightline.vim'
+Plug 'luochen1990/rainbow'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-syntastic/syntastic'
+Plug 'tpope/vim-fugitive'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'powerline/powerline'
+"Plug 'Yggdroot/indentLine'
+"Plug 'frazrepo/vim-rainbow'
+call plug#end()
+
+" nerdtree
+"
+" Open a NERDTree
+map <F2> :NERDTreeToggle<CR>
+" NERD tree
+let NERDChristmasTree=0
+let NERDTreeWinSize=35
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeShowBookmarks=1
+let NERDTreeWinPos="left"
+" Automatically open a NERDTree if no files where specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" Close vim if the only window left open is a NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+" nerdtree git
+"
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
+" vimtex
+"
+let g:tex_flavor='xelatex'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
+
+" Ultisnippets
+"
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetDirectories = ['/home/ahacad/Workstation/Working/Configurations/config']
+
+" indent line
+"
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+
+" tagbar
+"
+let g:tagbar_width=35
+let g:tagbar_autofocus=1
+nmap <F3> :TagbarToggle<CR>
+
+"vim powerline
+"
+"set laststatus=2 " Always display the status line
+"set statusline+=%{fugitive#statusline()} "  Git Hotness
+
+"lightline
+set laststatus=2
+                        
+"vim rainbow
+"
+"au FileType c,cpp,python call rainbow#load()
+"
+"let g:rainbow_load_separately = [
+"    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+"    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
+"    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
+"    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
+"    \ ]
+"
+"let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
+"let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
+
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+let lightcolors =  ['lightblue', 'lightyellow', 'darkgreen', 'darkyellow', 'lightred', 'yellow', 'cyan', 'magenta', 'white']
+let darkcolors = ['DarkBlue', 'Magenta', 'Black', 'Red', 'DarkGray', 'DarkGreen', 'DarkYellow']
+
+let g:rainbow_conf = {
+\	'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+\	'ctermfgs': lightcolors,
+\	'guis': [''],
+\	'cterms': [''],
+\	'operators': '_,_',
+\	'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+\	'separately': {
+\		'*': {},
+\		'markdown': {
+\			'parentheses_options': 'containedin=markdownCode contained',
+\		},
+\		'lisp': {
+\			'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+\		},
+\		'haskell': {
+\			'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/\v\{\ze[^-]/ end=/}/ fold'],
+\		},
+\		'vim': {
+\			'parentheses_options': 'containedin=vimFuncBody',
+\		},
+\		'perl': {
+\			'syn_name_prefix': 'perlBlockFoldRainbow',
+\		},
+\		'stylus': {
+\			'parentheses': ['start=/{/ end=/}/ fold contains=@colorableGroup'],
+\		},
+\		'css': 0,
+\	}
+\}
+
+
+
+
+
+
+
+"Gitgutter
+"
+nnoremap <leader>gd :GitGutterToggle<CR>
+"=========================================================================================
+
+
+"------------ Colors  ---------------------------------------
+
+
+
+"------------------------------------------------------------
+
+
+
+
+
+"----------- functions --------------------------------------
+"map <silent> <C-r> :call CPP()<CR>
+"
+func C()
+    exec "!clear && gcc % &&./a.out"
+endfunc
+
+func CPP()
+    exec "!clear && g++ % &&./a.out"
+endfunc
+"
+func PYTHON()
+    exec "!clear && python3 %"
+endfunc
+
+func GO()
+    exec "!clear && go run %"
+endfunc
+
+func HTML()
+    exec "!clear && google-chrome %"
+endfunc
+
+autocmd FileType c map <C-r> :call C()<CR>
+autocmd FileType cpp map <C-r> :call CPP()<CR>
+autocmd FileType python map <C-r> :call PYTHON()<CR>
+autocmd FileType go map <C-r> :call GO()<CR>
+autocmd FileType html map <C-r> :call HTML()<CR>
+
+func WordCount()
+    exec "!clear && wc %"
+endfunc
+
+"==============================================================
+
+
+"----------- commands --------------------------------------------------------
+command! -nargs=0 CountBytesBack        :normal mxvgg"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountBytesForward     :normal mxv$G"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountBytesAll         :normal mxggVG"ay`x:echo strlen(@a)<CR>
+command! -nargs=0 CountCharsAll         :%s/./&/gn|noh
+command! -nargs=0 CountWordsAll         :%s/\i\+/&/gn|noh
+
+"=================================================================================

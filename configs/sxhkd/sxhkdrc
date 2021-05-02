@@ -1,12 +1,170 @@
+# NOTE: this config is for COLEMAK users. If you are a QWER user please change them to fit your keyboard!
+###########
+# Windows #
+###########
+
+# Close or kill window
+alt + shift + {_,ctrl + }c
+    bspc node -{c,k}
+# Focus or swap window in the current workspace
+alt + {_,shift + }{h,y,n,u}
+    bspc node -{f,s} {west,south,north,east}
+# Focus the given workspace or move window to that workspace
+alt + {_,shift + }{1-9,0}
+    bspc {desktop -f, node -d} '^{1-9,10}'
+# Focus the next/previous window
+#alt + {_,shift + }Tab
+    #bspc node -f {next,prev}.local
+# Focus last window
+alt + Tab 
+    bspc node -f last
+# Focus the last workspace
+#alt + Tab
+#    bspc desktop -f last
+# Move floating windows
+#alt + ctrl + {h,y,n,u}
+    #bspc node -v {-50 0,0 50,0 -50,50 0}
+
+# reload sxhkd
+super + shift + s
+        pkill -USR1 -x sxhkd
+
+
+# resize window in the mode
+alt + ctrl + {h,y,n,u}
+    ~/.config/bspwm/executable/bspwm_resize expand {west,south,north,east} 50
+# resize with contracing window
+#super + shift + e : {h,y,n,u}
+    #~/.config/bspwm/executable/bspwm_resize contract {west,south,north,east} 50
+
+alt + e
+        bspc node focused -t floating;
+alt + f
+        bspc node focused -t tiled; 
+# Toggle sticky flag
+alt + d
+    bspc node -g sticky
+# Toggle monocle layout
+alt + m
+    bspc desktop -l next
+# Toggle game mode
+super + g
+    killall xcape picom ibus-daemon \
+    || (xcape && ibus-daemon -drx && picom --daemon --experimental-backends)
+# scratchpad
+alt + grave
+    ~/.config/bspwm/executable/scratchsmalltoggle
+super + grave
+    ~/.config/bspwm/executable/scratchbigtoggle
+
+
+##############
+## Preselect #
+##############
+
+## Preselect the direction
+#super + p ; super + {h,j,k,l}
+    #bspc node -p {west,south,north,east}
+## Cancel the preselection for the focused desktop
+#super + p ; super + Escape
+    #bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
+
+##############
+# Properties #
+##############
+
+# Toggle floating state
+#alt + e
+    #if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+        #bspc node focused -t floating; \
+    #else \
+        #bspc node focused -t tiled; \
+    #fi
+
+##############
+# Media keys #
+##############
+
+# Volume
+{XF86AudioMute,XF86AudioLowerVolume,XF86AudioRaiseVolume}
+    amixer -q set Master {toggle,10%- unmute,10%+ unmute}
+super + {button2,button5,button4}
+    amixer -q set Master {toggle,10%- unmute,10%+ unmute}
+# Player
+{XF86AudioPrev,XF86AudioPlay,XF86AudioNext}
+    playerctl {previous,play-pause,next}
+# Brightness
+{XF86MonBrightnessDown,XF86MonBrightnessUp}
+    light {-U,-A} 10
+# Screenshot
+{_,ctrl + ,alt + }Print
+    maim {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+        | xclip -selection clipboard -t image/png -i && \
+        notify-send -t 1000 "Sceenshot" "Copied to clipboard"
+shift + {_,ctrl + ,alt + }Print
+    mkdir -p $HOME/Pictures/Screenshots/ && \
+    maim {_,-s,-i $(xdotool getactivewindow)} --noopengl \
+        $HOME/Pictures/Screenshots/$(date +screenshot-%Y%m%d-%H%M%S.png) && \
+        notify-send -t 1000 "Sceenshot" "Saved in ~/Pictures/Screenshots"
+
+################
+# Quick launch #
+################
+
+# Run command
+    #dmenu_run -p  "Run"
+# Terminal
+alt + shift + Return
+    st
+super + shift + Return
+    alacritty
+# Web browser
+super + {_,shift + }w
+    firefox {_,--private-window}
+# File explorer
+#super + e
+    #pcmanfm
+# Translator
+super + {_,shift + }t
+    dmenu-trans {en:vi,_}
+# Calculator
+super + c
+    dmenu-calc
+# Documents
+super + d
+    dmenu-doc
+# Network menu
+super + n
+    dmenu-wifi
+# Key bindings list
+super + slash
+    dmenu-help
+# Power menu
+super + Escape
+    dmenu-power
+# Monitor menu
+super + shift + m
+    dmenu-monitor
+# Lock screen
+super + BackSpace
+    slock
+# Switch GPU
+super + shift + g
+    dmenu-gpu
+# open browser
 super + 1
         chromium
 super + 2
         slack
 super + 3
         code
+super + 6
+        proxychains telegram-desktop
+super + 5
+        rofi -show run
+super + 0
+        /media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
+
+# take screen shot
 super + 4
         import "/home/ahacad/Pictures/`date +'%Y%m%d-%H:%M:%S'`.png"
-super + 5
-        inkscape
-super + 6
-        gimp

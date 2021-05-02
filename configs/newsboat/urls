@@ -1,6 +1,51 @@
 #https://lukesmith.xyz/rss.xml "~--- Unix ---"
 https://draveness.me/feed.xml
+https://www.rdegges.com/feed.xml
+https://blog.codinghorror.com/rss/
+https://blog.matsu.io/feed.xml
+https://coolshell.cn/feed
+https://blog.zhanghai.me/atom.xml
+http://www.ruanyifeng.com/blog/atom.xml
+https://efe.baidu.com/atom.xml
+https://yanhaijing.com/rss.xml
+https://matklad.github.io/feed.xml
+http://blog.chromium.org/atom.xml
+https://blog.glitch.com/api/feed
+https://protesilaos.com/master.xml
+"------------------------------------~-------------"
+https://www.alienzhou.com/rss.xml
+https://dingzeyu.li/blog/feed.xml
+https://weekly.75.team/rss
+https://www.kawabangga.com/feed
+https://www.robinwieruch.de/index.xml
+https://harrychen.xyz/feed.xml
+https://amitness.com/feed.xml
+https://cjting.me/index.xml
+https://www.pushing-pixels.org/feed
+http://jartto.wang/atom.xml
+http://vanseodesign.com/feed/
+https://jsteward.moe/feeds/all.atom.xml
+http://armsword.com/atom.xml
+https://colobu.com/atom.xml
+https://ahacad.cool/rss.xml
+https://www.thirtythreeforty.net/posts/index.xml
+https://alistapart.com/main/feed/
+http://timmurphy.org/feed/
+"-------------------------------------------unix----"
+http://esr.ibiblio.org/?feed=rss2 "unix"
 https://lukesmith.xyz/rss.xml "unix"
+#https://lukesmith.xyz/rss.xml "~---  ---"
+"------------------------------------------research---"
+https://11011110.github.io/blog/
+"------------------------------------------frontend---"
+https://yehudakatz.com/rss/ "frontend"
+https://www.samdawson.dev/rss.xml "frontend"
+"-------------------------------------------design----"
+https://learnui.design/blog/feed.xml
 #https://www.youtube.com/feeds/videos.xml?channel_id=UC2eYFnH61tmytImy1mTYvhA "~Luke Smith (YouTube)"
 #https://lukesmith.xyz/rss.xml "~---  ---"
+"------------------------------------~-------------"
 https://writings.stephenwolfram.com/feed/
+"----------------------------------------------org---"
+https://hacks.mozilla.org/feed/
+"------------------------------------~-------------"

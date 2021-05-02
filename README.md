@@ -23,4 +23,4 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - st
 - git
 
-
+## How to use

@@ -37,9 +37,99 @@ map O $mimeopen --ask $f
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
 cmd open ${{
+    case $f in 
+        *.md) $EDITOR $fx;;
+        *.mdx) $EDITOR $fx;;
+        *.xml) $EDITOR $fx;;
+        *.html) $EDITOR $fx;;
+        *.css) $EDITOR $fx;;
+        *.scss) $EDITOR $fx;;
+        *.sass) $EDITOR $fx;;
+        *.less) $EDITOR $fx;;
+        *.py) $EDITOR $fx;;
+        *.rb) $EDITOR $fx;;
+        *.php) $EDITOR $fx;;
+        *.pl) $EDITOR $fx;;
+        *.java) $EDITOR $fx;;
+        *.c) $EDITOR $fx;;
+        *.s) $EDITOR $fx;;
+        *.h) $EDITOR $fx;;
+        *.cpp) $EDITOR $fx;;
+        *.c++) $EDITOR $fx;;
+        *.tex) $EDITOR $fx;;
+        *.bib) $EDITOR $fx;;
+        *.vb) $EDITOR $fx;;
+        *.fls) $EDITOR $fx;;
+        *.log) $EDITOR $fx;;
+        *.fdb_latexmk) $EDITOR $fx;;
+        *.sty) $EDITOR $fx;;
+        *.cls) $EDITOR $fx;;
+        *.aux) $EDITOR $fx;;
+        *.log) $EDITOR $fx;;
+        *.out) $EDITOR $fx;;
+        *.go) $EDITOR $fx;;
+        *.rs) $EDITOR $fx;;
+        *.js) $EDITOR $fx;;
+        *.jsx) $EDITOR $fx;;
+        *.vue) $EDITOR $fx;;
+        *.ts) $EDITOR $fx;;
+        *.tsx) $EDITOR $fx;;
+        *.snippets) $EDITOR $fx;;
+        *.cmake) $EDITOR $fx;;
+        *.dart) $EDITOR $fx;;
+        *.vim) $EDITOR $fx;;
+        *Dockerfile) $EDITOR $fx;;
+        *Makefile) $EDITOR $fx;;
+        # shell
+        *.sh) $EDITOR $fx;;
+        *.zsh) $EDITOR $fx;;
+        *.bash) $EDITOR $fx;;
+        # data
+        *.yml) $EDITOR $fx;;
+        *.json) $EDITOR $fx;;
+        *.toml) $EDITOR $fx;;
+        *.yaml) $EDITOR $fx;;
+        *.csv) $EDITOR $fx;;
+        *.txt) $EDITOR $fx;;
+        *.in) $EDITOR $fx;;
+        *.out) $EDITOR $fx;;
+        *.sql) $EDITOR $fx;;
+        # miscell
+        *.lock) $EDITOR $fx;;
+        *.d) $EDITOR $fx;;
+        # audio
+        *.mp3) mpv $fx;;
+        # videos
+        *.mp4) mpv $fx;;
+        *.avi) mpv $fx;;
+        *.MP4) mpv $fx;;
+        *.wmv) mpv $fx;;
+        *.mkv) mpv $fx;;
+        *.mov) mpv $fx;;
+        *.flv) mpv $fx;;
+        # pictures
+        *.jpg) sxiv $fx;;
+        *.png) sxiv $fx;;
+        # books
+        *.pdf) zathura $fx;;
+        *.djvu) zathura $fx;;
+        *.epub) zathura $fx;;
+        # libreoffice
+        *.doc) libreoffice  $fx;;
+        *.docx) libreoffice  $fx;;
+        *.pptx) libreoffice  $fx;;
+        *.xlsx) libreoffice  $fx;;
+        *.ppt) libreoffice  $fx;;
+    esac
+    exit
     case $(file --mime-type $f -b) in
         text/*) $EDITOR $fx;;
+        image/*) sxiv $fx;;
+        audio/*) mpv $fx;;
+        video/*) mpv $fx;;
+        application/json) $EDITOR $fx;;
         application/pdf) zathura $fx;;
+        application/epub) zathura $fx;;
         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
@@ -190,10 +280,11 @@ map glearn cd /media/HOME/ahacad/WORKSTATION/Working/-learn/#learning
 map greadme cd /media/HOME/ahacad/WORKSTATION/Working/#readme!
 map gjp cd /media/Seagate-next/BOOKS/K.Languages/KB.Japanese
 map galgo cd /media/Seagate-next/BOOKS/E.CS/EH.Algorithms
-map gcard cd /media/HOME/ahacad/WORKSTATION/Working/-BLOG/articles/CARDS
+map gcard cd /media/HOME/ahacad/WORKSTATION/Working/-learn/#cards
 map gokr- cd /media/HOME/ahacad/WORKSTATION/Working/-working/#OKR
 map gconf cd /media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations
 map ginfra cd /media/HOME/ahacad/WORKSTATION/Working/-working/#infrastructure
+map gpaper cd /media/HOME/ahacad/WORKSTATION/Working/-working/#paper
 map gfail cd /media/HOME/ahacad/WORKSTATION/Working/#failures
 map gwritings cd /media/HOME/ahacad/WORKSTATION/Working/writings
 map gcsopen cd /media/HOME/ahacad/WORKSTATION/Working/-CSOPEN
