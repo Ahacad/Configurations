@@ -28,5 +28,5 @@ backup_config "$HOME" "$ConfigFolder" ".tmux.conf"
 CommitMessage=`date +'%Y%m%d'`"-backup"
 cd "$ConfigFolder" || exit
 git add .
-git commit -m "$CommitMessage" --author="ahacad-bot <bot@ahacad.cool"
+git commit -m "$CommitMessage" --author="ahacad-bot <bot@ahacad.cool>"
 git push
