@@ -1,0 +1,13 @@
+snippet head "Head for blogs" b
+title: ${1:title}
+date: `!v strftime("%Y-%m-%d %H:%M:%S")`
+author: ${2:Ahacad}
+tags: $3
+summary: $4
+category: $5
+$0
+endsnippet
+
+snippet date "show the date" w
+`!v strftime("%Y-%m-%d %H:%M:%S")`
+endsnippet

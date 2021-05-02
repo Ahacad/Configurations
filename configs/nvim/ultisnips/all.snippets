@@ -1,0 +1,35 @@
+snippet ### "make a barrier" w
+##############################################################
+endsnippet
+
+#snippet ( "()" A
+#($1)`!p
+#if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']: 
+#	snip.rv = ' ' 
+#else: 
+#	snip.rv = ''`$2
+#endsnippet
+#
+#snippet [ "[]" A
+#[$1]`!p
+#if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']: 
+#	snip.rv = ' ' 
+#else: 
+#	snip.rv = ''`$2
+#endsnippet
+#
+#snippet { "{}" A
+#{$1}`!p
+#if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']: 
+#	snip.rv = ' ' 
+#else: 
+#	snip.rv = ''`$2
+#endsnippet
+
+snippet todo "" w
+ TODO $1   (ahacad, ahacad@126.com, `date +%Y-%m-%d\ %H:%M:%S`)
+endsnippet
+
+snippet fix "" w
+ FIXME $1   (ahacad, ahacad@126.com, `date +%Y-%m-%d\ %H:%M:%S`)
+endsnippet

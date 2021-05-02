@@ -1,30 +1,32 @@
 #! /bin/bash
 
-RepoFolder="/media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations"
-ConfigFolder="/media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations/.config"
+#RepoFolder="/media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations"
+ConfigFolder="/home/ahacad/HOME/Configurations/configs"
 
 
 backup_config() {
-    rm -rf "$ConfigFolder/nvim"
-    cp -r "$2" "$1"
+    # rm configfolder/config
+    rm -rf "$2/$3"
+    # cp pcfolder/config configfolder
+    cp -r "$1/$3" "$2"
 }
 
 
-backup_config "$ConfigFolder/nvim" "$HOME/.config/nvim"
-backup_config "$ConfigFolder/sxhkd" "$HOME/.config/sxhkd"
-backup_config "$ConfigFolder/bspwm" "$HOME/.config/bspwm"
-backup_config "$ConfigFolder/polybar" "$HOME/.config/polybar"
-backup_config "$ConfigFolder/newsboat" "$HOME/.config/newsboat"
-backup_config "$ConfigFolder/SELFMADE" "$HOME/.config/SELFMADE"
-backup_config "$ConfigFolder/lf" "$HOME/.config/lf"
-backup_config "$ConfigFolder/.zshrc" "$HOME/.zshrc"
-backup_config "$ConfigFolder/.zshrc" "$HOME/.zshrc"
-backup_config "$ConfigFolder/.gitconfig" "$HOME/.gitconfig"
-backup_config "$RepoFolder/.dwm" "$HOME/.dwm"
+backup_config "$HOME/.config/nvim" "$ConfigFolder" "nvim"
+backup_config "$HOME/.config/sxhkd" "$ConfigFolder" "sxhkd"
+backup_config "$HOME/.config/bspwm" "$ConfigFolder" "bspwm"
+backup_config "$HOME/.config/polybar" "$ConfigFolder" "polybar"
+backup_config "$HOME/.config/newsboat" "$ConfigFolder" "newsboat"
+backup_config "$HOME/.config/SELFMADE" "$ConfigFolder" "SELFMADE"
+backup_config "$HOME/.config/lf" "$ConfigFolder" "lf"
+backup_config "$HOME/.zshrc" "$ConfigFolder" ".zshrc"
+backup_config "$HOME/.gitconfig" "$ConfigFolder" ".gitconfig"
+backup_config "$HOME/.tmux.conf" "$ConfigFolder" ".tmux.conf"
+
 
 # git 
 CommitMessage=`date +'%Y%m%d'`"-backup"
 cd "$ConfigFolder" || exit
 git add .
-git commit -m "$CommitMessage"
+git commit -m "$CommitMessage" --author="ahacad-bot <bot@ahacad.cool"
 git push

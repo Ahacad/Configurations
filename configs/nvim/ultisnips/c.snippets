@@ -1,0 +1,76 @@
+snippet std "include stdio" wb
+#include<stdio.h>
+$0
+endsnippet
+
+snippet math "include math" wb
+#include<math.h>
+$0
+endsnippet
+
+snippet time "include time" wb
+#include<time.h>
+$0
+endsnippet
+
+snippet stri "include string" wb
+#include<string.h>
+$0
+endsnippet
+
+snippet if "the if " w
+if ($1){
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet ife "the if else" w
+if ($1){
+	${0:${VISUAL}}
+} else {
+	$1
+}
+endsnippet
+
+snippet for "the for" w
+for ($1; $2; $3){
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet whi "the while" w
+while ($1){
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet fun "the void function" w
+${1:int} ${2:main}($3){
+	${0:${VISUAL}}
+}
+endsnippet
+
+snippet stand "standard file input output" wb
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+
+int main(int argc, char *argv[]){
+	FILE *fin, *fout;
+	fin = fopen("$1.in", "r");
+	fout = fopen("$2.out", "w");
+
+	$0
+
+	fclose(fin);
+	fclose(fout);
+	return 0;
+}
+endsnippet
+
+snippet comm "comment" w
+/*
+  ${1:${VISUAL}}
+*/
+$0
+endsnippet

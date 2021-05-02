@@ -21,6 +21,10 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - lf
 - dwm
 - st
-- git
+- gitconfig
 
 ## How to use
+
+1. `src/downloads.sh` to download wallpaper
+2. `src/install.sh` to install configs
+
