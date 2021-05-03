@@ -111,7 +111,7 @@ cmd open ${{
         *.jpg) sxiv $fx;;
         *.png) sxiv $fx;;
         # books
-        *.pdf) zathura $fx;;
+        *.pdf) zathura $fx &;;
         *.djvu) zathura $fx;;
         *.epub) zathura $fx;;
         # libreoffice
