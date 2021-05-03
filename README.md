@@ -28,6 +28,11 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - tmux.conf
 - SELFMADE
 
+
+
+- khal
+- vdirsyncer (due to the sensitive nature of calendars, I didn't sync them here but use Google Calendar, see [this post](https://opensource.com/article/20/1/open-source-calendar) for setting up)
+
 ## How to use
 
 1. `src/downloads.sh` to download wallpaper
