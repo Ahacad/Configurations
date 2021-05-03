@@ -33,3 +33,19 @@ endsnippet
 snippet fix "" w
  FIXME $1   (ahacad, ahacad@126.com, `date +%Y-%m-%d\ %H:%M:%S`)
 endsnippet
+
+snippet prelude "Head for blogs" bw
+---
+title: "${1:title}"
+date: `!v strftime("%Y-%m-%d %H:%M:%S")`
+author: ${2:Ahacad}
+summary: "$3"
+category: "$4"
+tags: [$5]
+description: "$6"
+language: en
+mainpanel: true
+published: false
+---
+$0
+endsnippet
