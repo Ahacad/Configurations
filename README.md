@@ -44,6 +44,9 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 
 ```bash
 ibus-setup
+ibus restart
 ```
+
+set English keyboard to `colemak` and Chinese to rime.
 
 
