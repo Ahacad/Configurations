@@ -6,6 +6,8 @@ nnoremap <C-S-left> :tabm -1<CR>
 nnoremap <C-S-right> :tabm +1<CR>
 
 
+nnoremap <C-j> 15j
+nnoremap <C-k> 15k
 "
 
 " experiments place
@@ -198,6 +200,8 @@ Plug 'lervag/vimtex'
 Plug 'mzlogin/vim-markdown-toc'
 " rust lang
 Plug 'rust-lang/rust.vim'
+" clang format for c languages
+Plug 'rhysd/vim-clang-format'
 " vim wiki
 Plug 'vimwiki/vimwiki'
 " flutter
@@ -322,11 +326,11 @@ set laststatus=2
 
 " == vim-multiple-cursor
 let g:multi_cursor_use_default_mapping = 0
-let g:multi_cursor_start_word_key = '<c-k>'
+let g:multi_cursor_start_word_key = '<c-n>'
 let g:multi_cursor_select_all_word_key = '<a-a>'
-let g:multi_cursor_start_key = 'g<c-k>'
+let g:multi_cursor_start_key = 'g<c-n>'
 let g:multi_cursor_select_all_key = 'g<a-a>'
-let g:multi_cursor_next_key = '<c-k>'
+let g:multi_cursor_next_key = '<c-n>'
 let g:multi_cursor_prev_key = '<c-p>'
 let g:multi_cursor_skip_key = '<C-s>'
 let g:multi_cursor_quit_key = '<Esc>' 
@@ -578,6 +582,11 @@ nmap ga <Plug>(EasyAlign)
 
 nnoremap <space><space> :CocCommand explorer<CR>
 nnoremap <space>u :UndotreeToggle<CR>
+
+" == vim-clang-format
+let g:clang_format#auto_format = 1
+
+
 
 " #########################################################3
 "
