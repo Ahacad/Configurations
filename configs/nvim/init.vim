@@ -69,8 +69,10 @@ nnoremap <C-t>     :tabnew<CR>
 " the moving key maps 
 ":nnoremap L J
 ":nnoremap H K
-:nnoremap J 7j
-:nnoremap K 7k
+nnoremap J 7j
+nnoremap K 7k
+vnoremap J 7j
+vnoremap K 7k
 
 " edit init.vim quickly
 :nnoremap <leader>ev :vsplit $MYVIMRC<cr>
