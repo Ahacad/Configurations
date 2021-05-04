@@ -586,6 +586,8 @@ nnoremap <space>u :UndotreeToggle<CR>
 " == vim-clang-format
 let g:clang_format#auto_format = 1
 
+" == vim-airline
+let g:airline_section_c = airline#section#create(['%f'])
 
 
 " #########################################################3
