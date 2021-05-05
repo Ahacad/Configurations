@@ -191,7 +191,6 @@ snippet cofos "code forces" bw
 using namespace std;
 
 #define REP(i, N) for (int i = 0; i < (N); i++)
-#define fore(i, N) for (int i = 1; i <= (N); i++)
 #define fore(i, be, en) for (int i = (be); i < (en); i++)
 #define DWN(i, N) for (int i = (N); i >= 0; i--)
 #define down(i, en, be) for (int i = (en); i >= (be); i--)
@@ -233,8 +232,6 @@ inline void write(T x) {
     while (top) putchar(sta[--top] + '0');
 }
 
-ll a[MAXN];
-ll nega[MAXN], posi[MAXN];
 
 int main() {
     // std::ios::sync_with_stdio(false);
@@ -254,3 +251,4 @@ endsnippet
 # - segment tree
 # - tree array
 # - fast power
+# - dijkstra & kruskal (shortest path & MST)
