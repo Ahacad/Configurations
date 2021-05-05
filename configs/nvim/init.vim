@@ -37,6 +37,8 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set termencoding=utf-8
 
+set textwidth=80
+
 " indent
 set autoindent
 set tabstop=4
