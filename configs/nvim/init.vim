@@ -606,13 +606,13 @@ func! CompileRunGcc()
         :sp
 		"exec "!time ./%<"
 		":res -15
-		:term ./%<
+		:term %<
 	elseif &filetype == 'cpp'
 		set splitbelow
 		exec "!clear && g++ -std=c++11 % -Wall -o %<"
 		:sp
 		":res -15
-		:term ./%<
+		:term %<
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
