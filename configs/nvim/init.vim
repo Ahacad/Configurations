@@ -169,7 +169,7 @@ Plug 'junegunn/fzf.vim'
 " make table quickly in vim
 Plug 'dhruvasagar/vim-table-mode'
 "" multiple cursor modify
-Plug 'terryma/vim-multiple-cursors'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 " edit surrounding elements quickly
 Plug 'tpope/vim-surround'
 " easily align code by given texts
