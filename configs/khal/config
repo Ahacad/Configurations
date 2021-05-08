@@ -1,21 +1,8 @@
 [calendars]
 
-[[personal]]
-path = ~/.calendars/Personal/rjiejin@gmail.com/
-color = light magenta
-type = calendar
-[[holidays]]
-path = ~/.calendars/Personal/cln2sor8d5n628r8dtm6ip31f506esjfelo2sthecdgmopbechgn4bj7dtnmer355phmur8@virtual
-color = light blue
-type = calendar
-[[birthdays]]
-path = ~/.calendars/Personal/c5i68sj5edpm4rrfdchm6rreehgm6t3j81jn4rrle0n7cbj3c5m6arj4c5p2sprfdtjmop9ecdnmq@virtual
-color = brown
-type = calendar
-[[localpersonal]]
-path = ~/.calendars/Personal/local
-color = dark green
-type = calendar
+[[personallocal]]
+path = ~/.calendars/Personal/*
+type = discover
 
 [locale]
 timeformat = %H:%M
@@ -25,4 +12,4 @@ datetimeformat = %Y-%m-%d %H:%M
 longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
-default_calendar = personal
+default_calendar = rjiejin@gmail.com
