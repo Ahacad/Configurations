@@ -2,7 +2,7 @@ var:
   last_build_time: 1619961820
   option:
     simplification: true
-  previously_selected_schema: japanese
+  previously_selected_schema: double_pinyin
   schema_access_time:
-    double_pinyin: 1620398996
-    japanese: 1620438980
+    double_pinyin: 1620446187
+    japanese: 1620445378
