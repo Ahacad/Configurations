@@ -26,3 +26,10 @@ longdatetimeformat = %Y-%m-%d %H:%M
 
 [default]
 default_calendar = personal
+
+[highlight_days]
+color = light magenta
+method = bg
+
+[view]
+event_view_always_visible = True
