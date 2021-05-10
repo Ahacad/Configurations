@@ -45,6 +45,13 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 
 ## More setups
 
+### Clock sync
+[NTP (network time protocol)](https://www.wikiwand.com/en/Network_Time_Protocol)
+[arch wiki: ntpd](https://wiki.archlinux.org/title/Network_Time_Protocol_daemon)
+
+```bash
+timedatectl set-ntp true
+```
 ### Rime
 
 ```bash
