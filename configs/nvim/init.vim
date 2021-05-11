@@ -5,7 +5,8 @@ nnoremap <C-right> gt
 nnoremap <C-S-left> :tabm -1<CR>
 nnoremap <C-S-right> :tabm +1<CR>
 
-
+nnoremap j gj
+nnoremap k gk
 nnoremap <C-j> 15j
 nnoremap <C-k> 15k
 "
@@ -420,6 +421,8 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " toggle suggestion box off for markdown
 "autocmd FileType markdown let b:coc_suggest_disable = 1
 
+" coc-go
+autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " coc extensions
 let g:coc_global_extensions = [
