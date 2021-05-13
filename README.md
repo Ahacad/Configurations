@@ -61,4 +61,10 @@ ibus restart
 
 set English keyboard to `colemak` and Chinese to rime.
 
+### xdg-open
 
+some programs replies on `xdg-open` to open files, you may want to [configure it](https://unix.stackexchange.com/questions/36380/how-to-properly-and-easy-configure-xdg-open-without-any-environment)
+
+```
+xdg-mime default xpdf.desktop application/pdf
+```
