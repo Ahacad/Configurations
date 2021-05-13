@@ -230,7 +230,7 @@ Plug 'airblade/vim-gitgutter'
 " amazing vim start screen
 Plug 'mhinz/vim-startify'
 " easily format your code
-Plug 'Chiel92/vim-autoformat'
+"Plug 'Chiel92/vim-autoformat'
 " line up texts easily
 Plug 'godlygeek/tabular'
 " bookmarks for vim
@@ -628,7 +628,7 @@ func! CompileRunGcc()
         ":res -15
 		:term python3 %
 	elseif &filetype == 'html'
-        silent! exec "!chromium % &"
+        silent! exec "!google-chrome-stable % &"
 		"silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'javascript'
 		set splitbelow
