@@ -40,7 +40,7 @@ set fileencoding=utf-8
 set fileencodings=utf-8
 set termencoding=utf-8
 
-autocmd FileType c,cpp,javascript,javascriptreact,typescript,typescriptreact,go,rust set textwidth = 80
+autocmd FileType c,cpp,javascript,javascriptreact,typescript,typescriptreact,go,rust set textwidth=80
 
 
 " indent
