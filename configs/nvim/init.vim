@@ -1,4 +1,10 @@
 " Your awesome header starts here
+augroup SyntaxSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
+augroup END
+
+
 
 set guicursor+=a:blinkon0 "disable cursor blinking
 
@@ -26,6 +32,7 @@ nmap 3as 1as1as1bind
 :let mapleader = "\\"
 
 
+filetype on
 filetype plugin on
 set nocompatible
 set wrap
@@ -206,6 +213,9 @@ Plug 'vim-syntastic/syntastic'
 Plug 'lervag/vimtex'
 " generate table of contents for markdown easily
 Plug 'mzlogin/vim-markdown-toc'
+" tsx
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'leafgarland/typescript-vim'
 " rust lang
 Plug 'rust-lang/rust.vim'
 " clang format for c languages
