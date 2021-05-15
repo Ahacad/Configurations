@@ -108,8 +108,8 @@ cmd open ${{
         *.mov) mpv $fx;;
         *.flv) mpv $fx;;
         # pictures
-        *.jpg) sxiv $fx;;
-        *.png) sxiv $fx;;
+        *.jpg) sxiv $fx &;;
+        *.png) sxiv $fx &;;
         # books
         *.pdf) zathura $fx &;;
         *.djvu) zathura $fx;;
