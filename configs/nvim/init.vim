@@ -5,6 +5,7 @@ augroup SyntaxSettings
 augroup END
 
 
+vnoremap ;; :s:::g
 
 set guicursor+=a:blinkon0 "disable cursor blinking
 
