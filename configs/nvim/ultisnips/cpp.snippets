@@ -99,50 +99,6 @@ int main(){
 }
 endsnippet
 
-snippet cofot "codeforces template with t test cases" bw
-#include <iostream>
-#include <algorithm>
-$1
-using namespace std;
-
-#define pb push_back;
-#define mp make_pair;
-#define rep(i, a, b) for(int i = a; i < b; i++)
-#define repb(i, a, b) for(int i = a - 1; i >= b; i--)
-#define F first
-#define S second
-#define C continue
-#define B break
-
-typedef long long int lli;
-typedef vector<int> vi;
-typedef vector<vi> vii;
-typedef map<int, int> mii;
-typedef pair<int, int> pii;
-typedef vector<pii> vpii;
-
-const int LEN = 1e5 + 5;
-int t;
-
-$2
-
-int main(){
-    #ifdef LOCAL
-    freopen("input.txt", "r", stdin);
-    //freopen("output.txt", "w", stdout);
-    #endif
-    
-    std::ios::sync_with_stdio(false);
-    cin.tie(0); cout.tie(0);
-    cin >> t;
-    while(t--){
-    $0   
-    }
-    
-    return 0;
-}
-endsnippet
-
 snippet leco "leetcode template" bw
 #include <cstdio>
 #include <iostream>
@@ -183,8 +139,7 @@ int main(){
 }
 endsnippet
 
-
-snippet cofos "code forces" bw
+snippet cofot "code forces with t test cases" bw
 #include <cstdio>
 #include <algorithm>
 
@@ -232,6 +187,9 @@ inline void write(T x) {
     while (top) putchar(sta[--top] + '0');
 }
 
+void solve() {
+    $0
+}
 
 int main() {
     // std::ios::sync_with_stdio(false);
@@ -241,11 +199,16 @@ int main() {
     // freopen("output.txt", "w", stdout);
 #endif
 
-	$0
+    int t = read<int>();
+	while(t--) {
+        solve();
+	}
 
     return 0;
 }
 endsnippet
+
+
 
 # TODO:
 # - segment tree
@@ -255,3 +218,20 @@ endsnippet
 # - 二分图
 # - 网络流
 
+snippet buildgraph "build graph" bw 
+struct node {
+    int to = 0, next = 0, w = 0;
+};
+int head[MAXN];
+node edge[MAXN];
+void add(int x, int y, int w) {
+    edge[++cnt].to = y;
+    edge[cnt].next = head[x];
+    edge[cnt].w = w;
+    head[x] = cnt;
+    edge[++cnt].to = x;
+    edge[cnt].next = head[y];
+    edge[cnt].w = w;
+    head[y] = cnt;
+}
+endsnippet
