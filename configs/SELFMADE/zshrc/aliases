@@ -28,6 +28,10 @@ alias lc="ll | column"
 alias q="cd /media/Work/Work"
 alias f="cd /media/Work/PROCESS && lf"
 alias p="cd /media/Work/Fudan && lf"
+move_to_rubbish() {
+    mv $1 "/home/ahacad/Rubbish"
+}
+alias rm="move_to_rubbish"
 #alias pgc="proxychains git clone"
 #alias dolt="~/PROGRAMS/dolt-linux-amd64/bin/dolt"
 #alias pc="proxychains"
