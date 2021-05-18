@@ -632,6 +632,12 @@ func! CompileRunGcc()
 		:sp
 		":res -15
 		:term ./%<
+	elseif &filetype == 'rust'
+		set splitbelow
+		exec "!clear && rustc %"
+		:sp
+		":res -15
+		:term ./%<
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
