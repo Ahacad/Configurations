@@ -221,6 +221,8 @@ Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 " clang format for c languages
 Plug 'rhysd/vim-clang-format'
+" golang
+Plug 'fatih/vim-go'
 " vim wiki
 Plug 'vimwiki/vimwiki'
 " flutter
