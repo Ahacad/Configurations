@@ -250,3 +250,17 @@ inline ll pow(ll x, int p) {
 inline ll inv(ll x) { return pow(x, mod - 2); }
 inline ll C(ll a, ll b) { return fac[a] * inv(fac[b]) % mod * inv(fac[a - b]) % mod; }
 endsnippet
+
+snippet fastpower "fast power" bw
+long long pow(long long base, long long power, long long p) {
+    long long result = 1;
+    while (power > 0) {
+        if (power & 1) {
+            result = result * base % p;
+        }
+        power >>= 1;
+        base = (base * base) % p;
+    }
+    return result;
+}
+endsnippet
