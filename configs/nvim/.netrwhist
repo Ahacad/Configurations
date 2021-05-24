@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =6
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/tmp/.Test-unix'
 let g:netrw_dirhist_6='/home/ahacad/.config/SELFMADE/zshrc'
 let g:netrw_dirhist_5='/usr/include'
 let g:netrw_dirhist_4='/media/HOME/ahacad/WORKSTATION/Working/#wiki/Frontend'
