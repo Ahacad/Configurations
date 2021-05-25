@@ -5,13 +5,13 @@
 	ci = commit
 	d = difftool
 	psa = !git remote | xargs -L1 git push --all
-[core]
-	quotepath = false
-    pager = delta
+;[core]
+	;quotepath = false
+    ;pager = delta
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 [difftool]
-	prompt = false
+	prompt = true
 ;[http]
     ;proxy = socks5://127.0.0.1:7890
     ;sslVerify = false
@@ -27,3 +27,10 @@
 
 [interactive]
     diffFilter = delta --color-only
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+
+
+[credential "https://github.com"]
+	helper = 
+	helper = !/usr/bin/gh auth git-credential
