@@ -9,9 +9,11 @@
 	;quotepath = false
     ;pager = delta
 [diff]
-	tool = nvimdiff
+	tool = vimdiff3
 [difftool]
-	prompt = true
+    prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 ;[http]
     ;proxy = socks5://127.0.0.1:7890
     ;sslVerify = false
@@ -24,13 +26,14 @@
     ;minus-style = red bold ul "#ffeeee"
     line-numbers = true
     side-by-side = true
-
 [interactive]
     diffFilter = delta --color-only
-[difftool "nvimdiff"]
-    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
-
-
 [credential "https://github.com"]
 	helper = 
 	helper = !/usr/bin/gh auth git-credential
+[merge]
+	tool = vimdiff3
+[mergetool "vimdiff"]
+    cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
+[difftool "vimdiff3"]
+	path = nvim
