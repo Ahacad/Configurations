@@ -56,7 +56,8 @@ alt + grave
     ~/.config/bspwm/executable/scratchsmalltoggle
 super + grave
     ~/.config/bspwm/executable/scratchbigtoggle
-
+alt + ctrl + grave
+    ~/.config/bspwm/executable/alacrittytoggle
 
 ##############
 ## Preselect #
