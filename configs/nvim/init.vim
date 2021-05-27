@@ -237,6 +237,8 @@ Plug 'valloric/MatchTagAlways'
 Plug 'aserebryakov/vim-todo-lists'
 
 """ 5. delicate little tool
+Plug 'kshenoy/vim-signature'
+"Plug 'Yilin-Yang/vim-markbar'
 " use sudo easily in vim
 Plug 'lambdalisue/suda.vim'
 " shows changes since last commit
