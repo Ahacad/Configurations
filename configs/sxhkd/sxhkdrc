@@ -52,11 +52,11 @@ super + g
     killall xcape picom ibus-daemon \
     || (xcape && ibus-daemon -drx && picom --daemon --experimental-backends)
 # scratchpad
-alt + grave
+alt + ctrl + grave
     ~/.config/bspwm/executable/scratchsmalltoggle
 super + grave
     ~/.config/bspwm/executable/scratchbigtoggle
-alt + ctrl + grave
+alt + grave
     ~/.config/bspwm/executable/alacrittytoggle
 
 ##############
