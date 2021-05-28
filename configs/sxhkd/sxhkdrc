@@ -33,6 +33,8 @@ super + shift + s
 # resize window in the mode
 alt + ctrl + {h,y,n,u}
     ~/.config/bspwm/executable/bspwm_resize expand {west,south,north,east} 50
+alt + ctrl + shift + {h,y,n,u}
+    ~/.config/bspwm/executable/bspwm_resize shrink {west,south,north,east} 50
 # resize with contracing window
 #super + shift + e : {h,y,n,u}
     #~/.config/bspwm/executable/bspwm_resize contract {west,south,north,east} 50
