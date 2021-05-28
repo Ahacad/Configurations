@@ -57,6 +57,7 @@ bspc rule -a scratchsmall sticky=on state=floating hidden=on
 st -c scratchbig -g 170x50 &
 bspc rule -a scratchbig sticky=on state=floating hidden=on
 bspc rule -a 'Alacritty:scriptlauncher' sticky=on state=floating hidden=on
+ alacritty --class 'scriptlauncher' --title launch &
 
 # start ibus
 ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3
