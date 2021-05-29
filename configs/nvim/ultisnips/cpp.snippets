@@ -213,7 +213,7 @@ endsnippet
 # TODO :
 # - tree array
 # - 高精度运算
-# - dijkstra & kruskal (shortest path & MST)
+# - kruskal (shortest path & MST)
 # - 二分图
 # - 网络流
 # TOLEARNS:
@@ -221,6 +221,7 @@ endsnippet
 # FINISHED:
 # - fast power
 # - segment tree
+# - dijkstra
 
 snippet buildgraph "build graph" bw 
 struct node {
@@ -228,15 +229,12 @@ struct node {
 };
 int head[MAXN];
 node edge[MAXN];
+int cnt = 0;
 void add(int x, int y, int w) {
     edge[++cnt].to = y;
     edge[cnt].next = head[x];
     edge[cnt].w = w;
     head[x] = cnt;
-    edge[++cnt].to = x;
-    edge[cnt].next = head[y];
-    edge[cnt].w = w;
-    head[y] = cnt;
 }
 endsnippet
 
@@ -314,4 +312,40 @@ struct node {
         return res;
     }
 };
+endsnippet
+
+snippet dijkstra "dijkstra" bw
+struct node {
+    int to, next, w;
+};
+int head[MAXN];
+node edge[MAXN];
+int cnt;
+void add(int x, int y, int w) {
+    edge[++cnt].to = y;
+    edge[cnt].next = head[x];
+    edge[cnt].w = w;
+    head[x] = cnt;
+}
+
+int d[MAXN];
+bool vis[MAXN];
+void dij(int s) {
+    memset(d, 0x3f, sizeof(d));
+    memset(vis, 0, sizeof(vis));
+    d[s] = 0;
+    priority_queue<pair<int, int> > q;
+    q.push(make_pair(0, s));
+    while (!q.empty()) {
+        int u = q.top().second;
+        q.pop();
+        if (vis[u]) continue;
+        vis[u] = 1;
+        for (int i = head[u]; i; i = edge[i].next) {
+            int to = edge[i].to, w = edge[i].w;
+            if (d[to] > d[u] + w)
+                d[to] = d[u] + w, q.push(make_pair(-d[to], to));
+        }
+    }
+}
 endsnippet
