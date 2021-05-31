@@ -154,6 +154,7 @@ using namespace std;
 #define GETS(ch) fgets((ch), MAXN, stdin);
 #define INF 0x3f3f3f3f
 #define ll long long
+#define io_speed_up ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
 #define MAXN 1000005
 ll gcd(ll a, ll b) {
     while (b ^= a ^= b ^= a %= b)
@@ -192,8 +193,6 @@ void solve() {
 }
 
 int main() {
-    // std::ios::sync_with_stdio(false);
-    // cin.tie(nullptr); cout.tie(nullptr);
 #ifdef LOCAL
     freopen("input.txt", "r", stdin);
     // freopen("output.txt", "w", stdout);
