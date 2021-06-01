@@ -54,9 +54,10 @@ bspc config focus_follows_pointer true
 # Scratchpad
 st -c scratchsmall -g 120x34 &
 bspc rule -a scratchsmall sticky=on state=floating hidden=on
-st -c scratchbig -g 170x50 &
-bspc rule -a scratchbig sticky=on state=floating hidden=on
-bspc rule -a 'Alacritty:scriptlauncher' sticky=on state=floating hidden=on
+#st -c scratchbig -g 170x50 &
+bspc rule -a 'Alacritty:scratchbig' sticky=on state=floating hidden=on rectangle=1750x1300+300+200
+alacritty --class 'scratchbig' --title bigscratch &
+bspc rule -a 'Alacritty:scriptlauncher' sticky=on state=floating hidden=on rectangle=1376x825+300+300
 alacritty --class 'scriptlauncher' --title launch &
 
 # start ibus

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-id=$(xdotool search --class scratchbig)
+id=$(xdotool search --classname scratchbig)
 
 if [ "$id" != "" ]
  then
