@@ -47,7 +47,8 @@
     "javascriptreact",
     "typescript",
     "typescriptreact",
-    "rust"
+    "rust",
+    "vue"
   ],
   "snippets.ultisnips.directories": ["/home/ahacad/.config/nvim/ultisnips"],
   "explorer.file.column.indent.indentLine": true,
