@@ -126,3 +126,6 @@ setxkbmap us -variant colemak -option caps:escape
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/nvm/init-nvm.sh
+
+export http_proxy=http://localhost:7890
+export https_proxy=http://localhost:7890
