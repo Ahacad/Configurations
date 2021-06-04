@@ -117,9 +117,9 @@ shift + {_,ctrl + ,alt + }Print
 # Run command
     #dmenu_run -p  "Run"
 # Terminal
-alt + shift + Return
-    st
 super + shift + Return
+    st
+alt + shift + Return
     alacritty
 # Web browser
 super + {_,shift + }w
