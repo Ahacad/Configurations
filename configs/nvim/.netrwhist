@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =9
+let g:netrw_dirhistcnt =0
+let g:netrw_dirhist_0='/tmp'
 let g:netrw_dirhist_9='/etc/polipo'
 let g:netrw_dirhist_8='/home/ahacad/.config/nvim/plugged'
 let g:netrw_dirhist_7='/tmp/.Test-unix'
