@@ -237,6 +237,7 @@ Plug 'valloric/MatchTagAlways'
 Plug 'aserebryakov/vim-todo-lists'
 
 """ 5. delicate little tool
+Plug 'voldikss/vim-floaterm'
 Plug 'kshenoy/vim-signature'
 "Plug 'Yilin-Yang/vim-markbar'
 " use sudo easily in vim
@@ -613,6 +614,12 @@ let g:clang_format#auto_format = 1
 
 " == vim-airline
 let g:airline_section_c = airline#section#create(['%f'])
+
+" == float-term
+let g:floaterm_keymap_new    = '<F11>'
+let g:floaterm_keymap_prev   = '<F9>'
+let g:floaterm_keymap_next   = '<F10>'
+let g:floaterm_keymap_toggle = '<F8>'
 
 
 " #########################################################3
