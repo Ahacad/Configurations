@@ -621,6 +621,8 @@ let g:floaterm_keymap_prev   = '<F9>'
 let g:floaterm_keymap_next   = '<F10>'
 let g:floaterm_keymap_toggle = '<F8>'
 
+" == rust.vim
+let g:rustfmt_autosave = 1
 
 " #########################################################3
 "
