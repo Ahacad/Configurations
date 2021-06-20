@@ -4,7 +4,11 @@ augroup SyntaxSettings
     autocmd BufNewFile,BufRead *.tsx set filetype=typescriptreact
 augroup END
 
+" formatting
+autocmd BufWritePre *.py :silent call CocAction("format")
 
+
+" searching
 vnoremap ;; :s:::g
 
 set guicursor+=a:blinkon0 "disable cursor blinking
@@ -458,7 +462,7 @@ let g:coc_global_extensions = [
     \ 'coc-word',
     \ 'coc-emoji',
     \ 'coc-vimlsp',
-    \ 'coc-python', 
+    \ 'coc-pyright', 
     \ 'coc-rls', 
     \ 'coc-vetur',
     \ 'coc-go',
