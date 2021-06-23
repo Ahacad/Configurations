@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =3
+let g:netrw_dirhist_3='/tmp/tes1'
 let g:netrw_dirhist_2='/media/HOME/ahacad/WORKSTATION/Working/#failures'
 let g:netrw_dirhist_1='/etc/polipo'
 let g:netrw_dirhist_0='/tmp'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_7='/tmp/.Test-unix'
 let g:netrw_dirhist_6='/home/ahacad/.config/SELFMADE/zshrc'
 let g:netrw_dirhist_5='/usr/include'
 let g:netrw_dirhist_4='/media/HOME/ahacad/WORKSTATION/Working/#wiki/Frontend'
-let g:netrw_dirhist_3='/home/ahacad/.config/nvim/after'
