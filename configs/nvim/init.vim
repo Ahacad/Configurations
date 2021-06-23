@@ -290,8 +290,10 @@ Plug 'mbbill/undotree'
 "Plug 'puremourning/vimspector'
 
 """ 6. color schemes
+Plug 'folke/tokyonight.nvim'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'joshdick/onedark.vim'
 Plug 'embark-theme/vim', { 'as': 'embark' }
-" dracula
 Plug 'dracula/vim', { 'name': 'dracula' }
 
 """ 7. this thing is awesome
@@ -320,6 +322,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 let g:airline_powerline_fonts = 1
+
 
 "colorscheme dracula
 "colorscheme embark
@@ -362,7 +365,6 @@ let g:multi_cursor_next_key = '<c-n>'
 let g:multi_cursor_prev_key = '<c-p>'
 let g:multi_cursor_skip_key = '<C-s>'
 let g:multi_cursor_quit_key = '<Esc>' 
-
 
 
 " == suda
