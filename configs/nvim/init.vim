@@ -676,6 +676,10 @@ func! CompileRunGcc()
         set splitbelow
         :sp
         :term go run %
+    elseif &filetype == 'erlang'
+        set splitbelow
+        :sp
+        :term escript %
     elseif &filetype == 'scss'
         exec "!clear && sass % fdxk/%<.css && ./useme.sh"
     elseif &filetype == 'tex'
