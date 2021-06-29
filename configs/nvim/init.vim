@@ -5,7 +5,8 @@ augroup SyntaxSettings
 augroup END
 
 " formatting
-autocmd BufWritePre *.py :silent call CocAction("format")
+autocmd BufWritePre *.py,*.go :silent call CocAction("format")
+"autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 
 " searching
@@ -446,8 +447,6 @@ let g:vimspector_enable_mappings = 'HUMAN'
 " toggle suggestion box off for markdown
 "autocmd FileType markdown let b:coc_suggest_disable = 1
 
-" coc-go
-autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
 " coc extensions
 let g:coc_global_extensions = [
