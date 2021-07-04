@@ -665,7 +665,6 @@ func! CompileRunGcc()
 		:term python3 %
 	elseif &filetype == 'html'
         silent! exec "!google-chrome-stable % &"
-		"silent! exec "!".g:mkdp_browser." % &"
 	elseif &filetype == 'javascript'
 		set splitbelow
 		:sp
