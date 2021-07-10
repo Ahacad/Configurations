@@ -286,7 +286,7 @@ Plug 'mbbill/undotree'
 " call floating ranger within vim
 "Plug 'kevinhwang91/rnvimr'
 "" do git inside vim
-"Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 "code debugger for vim
 "Plug 'puremourning/vimspector'
 
