@@ -222,6 +222,9 @@ Plug 'mzlogin/vim-markdown-toc'
 " tsx
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'jparise/vim-graphql'
 " rust lang
 Plug 'rust-lang/rust.vim'
 " clang format for c languages
