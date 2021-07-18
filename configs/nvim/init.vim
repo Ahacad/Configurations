@@ -703,3 +703,6 @@ func! CompileRunGcc()
 endfunc
 
 autocmd FileType rmd nnoremap r :!echo<space>"require(rmarkdown);<space>render('<c-r>%')"<space>\|<space>R<space>--vanilla<enter>
+
+
+" #########################################################3

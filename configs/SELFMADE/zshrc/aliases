@@ -36,3 +36,4 @@ alias rm="move_to_rubbish"
 #alias dolt="~/PROGRAMS/dolt-linux-amd64/bin/dolt"
 #alias pc="proxychains"
 source "/home/ahacad/.config/SELFMADE/shell-shortcuts"
+

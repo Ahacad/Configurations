@@ -4,7 +4,7 @@ wikiPage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#wiki"
 
 cd $wikiPage
 git add .
-git commit -m `date +'%Y-%m-%d'`
+git -c commit.gpgsign=false commit -m `date +'%Y-%m-%d'`
 
 date=`date +"%w"`
 if [ $dat -eq 7 ]; then
@@ -14,7 +14,7 @@ fi
 notePage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#notebooks"
 cd $notePage
 git add .
-git commit -m `date +'%Y-%m-%d'`
+git -c commit.gpgsign=false commit -m `date +'%Y-%m-%d'`
 
 date=`date +"%w"`
 if [ $dat -eq 7 ]; then
@@ -25,7 +25,7 @@ learnPage="/media/HOME/ahacad/WORKSTATION/Working/-learn/#learning"
 
 cd $learnPage
 git add .
-git commit -m `date +'%Y-%m-%d'`
+git -c commit.gpgsign=false commit -m `date +'%Y-%m-%d'`
 
 date=`date +"%w"`
 if [ $dat -eq 7 ]; then
