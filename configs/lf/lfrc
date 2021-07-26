@@ -69,6 +69,7 @@ cmd open ${{
         *.out) $EDITOR $fx;;
         *.go) $EDITOR $fx;;
         *.rs) $EDITOR $fx;;
+        *.mjs) $EDITOR $fx;;
         *.js) $EDITOR $fx;;
         *.jsx) $EDITOR $fx;;
         *.vue) $EDITOR $fx;;
