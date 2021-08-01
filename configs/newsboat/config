@@ -3,7 +3,7 @@ include /usr/share/doc/newsboat/contrib/colorschemes/inkpot
 auto-reload yes
 reload-threads 10
 
-browser chromium
+browser google-chrome-stable
 
 highlight all "---.*---" yellow
 
