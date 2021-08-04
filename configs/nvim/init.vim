@@ -8,6 +8,7 @@ augroup END
 autocmd BufWritePre *.py,*.go :silent call CocAction("format")
 "autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
+nnoremap F :noa w<CR>
 
 " searching
 vnoremap ;; :s:::g
@@ -132,7 +133,7 @@ vnoremap Y "+y
 
 " fold code
 set foldmethod=manual
-noremap F zfat<CR>
+"noremap F zfat<CR>
 noremap f za<CR>
 
 " backups
