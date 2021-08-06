@@ -127,8 +127,8 @@ setxkbmap us -variant colemak -option caps:escape
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 source /usr/share/nvm/init-nvm.sh
 
-export http_proxy=http://localhost:7890
-export https_proxy=http://localhost:7890
+#export http_proxy=http://localhost:7890
+#export https_proxy=http://localhost:7890
 
 source /home/ahacad/.config/broot/launcher/bash/br
 
