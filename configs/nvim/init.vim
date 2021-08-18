@@ -8,7 +8,11 @@ augroup END
 autocmd BufWritePre *.py,*.go :silent call CocAction("format")
 "autocmd BufWritePre *.go :silent call CocAction('runCommand', 'editor.action.organizeImport')
 
+" write file without formatting
 nnoremap F :noa w<CR>
+" open quick window
+nnoremap <F2> :copen<CR>
+
 
 " searching
 vnoremap ;; :s:::g
@@ -247,6 +251,7 @@ Plug 'valloric/MatchTagAlways'
 Plug 'aserebryakov/vim-todo-lists'
 
 """ 5. delicate little tool
+Plug 'skywind3000/asyncrun.vim'
 Plug 'voldikss/vim-floaterm'
 Plug 'kshenoy/vim-signature'
 "Plug 'Yilin-Yang/vim-markbar'
@@ -664,10 +669,10 @@ func! CompileRunGcc()
 	elseif &filetype == 'sh'
 		:!time bash %
 	elseif &filetype == 'python'
-		set splitbelow
-		:sp
+		"set splitbelow
+		":sp
         ":res -15
-		:term python3 %
+		:AsyncRun python3 %
 	elseif &filetype == 'html'
         silent! exec "!google-chrome-stable % &"
 	elseif &filetype == 'javascript'
