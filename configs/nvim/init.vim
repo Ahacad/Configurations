@@ -655,8 +655,8 @@ func! CompileRunGcc()
 		":res -15
 		:term ./%<
 	elseif &filetype == 'cpp'
-		set splitbelow
-		exec "!clear && g++ -std=c++11 % -Wall -o %<"
+		"set splitbelow
+		:AsyncRun clear && g++ -std=c++11 % -Wall -o %<
 		:sp
 		":res -15
 		:term ./%<
