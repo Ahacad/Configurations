@@ -12,6 +12,7 @@ autocmd BufWritePre *.py,*.go :silent call CocAction("format")
 nnoremap F :noa w<CR>
 " open quick window
 nnoremap <F2> :copen<CR>
+nnoremap <F3> :cclose<CR>
 
 
 " searching
@@ -657,9 +658,9 @@ func! CompileRunGcc()
 	elseif &filetype == 'cpp'
 		"set splitbelow
 		:AsyncRun clear && g++ -std=c++11 % -Wall -o %<
-		:sp
+		":sp
 		":res -15
-		:term ./%<
+		":term ./%<
 	elseif &filetype == 'rust'
 		set splitbelow
 		exec "!clear && rustc %"
