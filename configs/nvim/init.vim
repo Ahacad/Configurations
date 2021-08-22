@@ -185,7 +185,7 @@ hi PmenuThumb guibg=#492929
 " PLUGS
 call plug#begin()
 
-""" 1. file related
+"" 1. file related
 " fuzzy file finder
 Plug 'junegunn/fzf.vim'
 
@@ -258,7 +258,7 @@ Plug 'kshenoy/vim-signature'
 "Plug 'Yilin-Yang/vim-markbar'
 " use sudo easily in vim
 Plug 'lambdalisue/suda.vim'
-" shows changes since last commit
+ "shows changes since last commit
 Plug 'airblade/vim-gitgutter'
 " amazing vim start screen
 Plug 'mhinz/vim-startify'
@@ -312,24 +312,24 @@ Plug 'dracula/vim', { 'name': 'dracula' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "multiple tabs for vim
-"Plug 'mg979/vim-xtabline'
-" great language autocomplete
-"Plug 'weirongxu/coc-explorer'
-"Plug 'tpope/vim-fugitive'
-"" 
-"Plug 'svermeulen/vim-subversive'
-"" vim motion on speed!
-"Plug 'easymotion/vim-easymotion'
-"" bomark for vim
-"Plug 'kshenoy/vim-signature'
-"" rplace text through multiple files
-"Plug 'brooth/far.vim'
-"" create .gitignore file
-"Plug 'fszymanski/fzf-gitignore'
-"" calendar in vim
-"Plug 'itchyny/calendar.vim'
-"" distraction-free writing in vim
-"Plug 'junegunn/goyo.vim'
+Plug 'mg979/vim-xtabline'
+ "great language autocomplete
+Plug 'weirongxu/coc-explorer'
+Plug 'tpope/vim-fugitive'
+" 
+Plug 'svermeulen/vim-subversive'
+" vim motion on speed!
+Plug 'easymotion/vim-easymotion'
+" bomark for vim
+Plug 'kshenoy/vim-signature'
+" rplace text through multiple files
+Plug 'brooth/far.vim'
+" create .gitignore file
+Plug 'fszymanski/fzf-gitignore'
+" calendar in vim
+Plug 'itchyny/calendar.vim'
+" distraction-free writing in vim
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
