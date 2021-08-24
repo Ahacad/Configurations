@@ -658,6 +658,7 @@ func! CompileRunGcc()
 	elseif &filetype == 'cpp'
 		"set splitbelow
 		:AsyncRun clear && g++ -std=c++11 % -Wall -o %<
+        :AsyncRun ./%<
 		":sp
 		":res -15
 		":term ./%<
