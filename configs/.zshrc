@@ -137,3 +137,4 @@ xinput --set-prop 12 "libinput Tapping Enabled" 1
 xinput --set-prop 12 "libinput Natural Scrolling Enabled" 1
 
 echo "net, algo, dev, base, draw, jap, eng, ivt"
+export PATH="$HOME/bin:$PATH"
