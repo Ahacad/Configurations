@@ -163,5 +163,7 @@ super + 0
         /media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
 
 # take screen shot
+#super + 4
+        #import "/home/ahacad/Pictures/`date +'%Y%m%d-%H:%M:%S'`.png"
 super + 4
-        import "/home/ahacad/Pictures/`date +'%Y%m%d-%H:%M:%S'`.png"
+        flameshot gui
