@@ -54,6 +54,7 @@ cmd open ${{
         *.c) $EDITOR $fx;;
         *.s) $EDITOR $fx;;
         *.h) $EDITOR $fx;;
+        *.ld) $EDITOR $fx;;
         *.cpp) $EDITOR $fx;;
         *.c++) $EDITOR $fx;;
         *.tex) $EDITOR $fx;;
