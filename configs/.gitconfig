@@ -40,5 +40,5 @@
 	path = nvim
 [commit]
 	gpgsign = true
-;[remote "origin"]
-	;proxy = 
+[remote "origin"]
+    proxy = 
