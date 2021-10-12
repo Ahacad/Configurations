@@ -160,7 +160,8 @@ super + 1
 super + 5
         rofi -show run
 super + 0
-        /media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
+        #/media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
+        #betterlockscreen -l --text λ
 
 # take screen shot
 #super + 4
