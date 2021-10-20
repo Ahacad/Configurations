@@ -3,8 +3,8 @@
 external_monitor=$(xrandr --query | grep '^DP-1')
 if [[ $external_monitor != *disconnected* ]]; then
     xrandr --output eDP-1 --primary --mode 2160x1440 --rotate normal --output DP-1 mode 2560x1440 --rotate normal --right-of eDP-1
-    bspc monitor eDP-1 -d "net" "algo" "dev" "draw" "jap"
-    bspc monitor DP-1 -d "eng" "ivt" 8 9 0
+    bspc monitor eDP-1 -d "net" "algo" "dev" 4 5
+    bspc monitor DP-1 -d 6 "draw" "jap"  "eng" "ivt"
 else
-    bspc monitor -d "net" "algo" "dev" "draw" "jap" "eng" "ivt" 8 9 0
+    bspc monitor -d "net" "algo" "dev" 4 5 6 "draw" "jap" "eng" "ivt"
 fi
