@@ -217,6 +217,7 @@ Plug 'liuchengxu/vista.vim'
 "Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 
+
 " syntax checks for vim 
 Plug 'vim-syntastic/syntastic'
 "Plug 'theniceboy/eleline.vim'
@@ -237,9 +238,9 @@ Plug 'rust-lang/rust.vim'
 " clang format for c languages
 Plug 'rhysd/vim-clang-format'
 " golang
-"Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 " vim wiki
-Plug 'vimwiki/vimwiki'
+"Plug 'vimwiki/vimwiki'
 " flutter
 Plug 'dart-lang/dart-vim-plugin'
 "Plug 'thosakwe/vim-flutter'
@@ -257,9 +258,11 @@ Plug 'voldikss/vim-floaterm'
 Plug 'kshenoy/vim-signature'
 "Plug 'Yilin-Yang/vim-markbar'
 " use sudo easily in vim
+
+
 Plug 'lambdalisue/suda.vim'
- "shows changes since last commit
-Plug 'airblade/vim-gitgutter'
+ ""shows changes since last commit
+"Plug 'airblade/vim-gitgutter'
 " amazing vim start screen
 Plug 'mhinz/vim-startify'
 " easily format your code
@@ -313,7 +316,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 "multiple tabs for vim
 Plug 'mg979/vim-xtabline'
- "great language autocomplete
+ ""great language autocomplete
 Plug 'weirongxu/coc-explorer'
 Plug 'tpope/vim-fugitive'
 " 
@@ -330,7 +333,6 @@ Plug 'fszymanski/fzf-gitignore'
 Plug 'itchyny/calendar.vim'
 " distraction-free writing in vim
 Plug 'junegunn/goyo.vim'
-
 call plug#end()
 
 let g:airline_powerline_fonts = 1
