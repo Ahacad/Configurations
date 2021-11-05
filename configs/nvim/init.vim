@@ -333,6 +333,8 @@ Plug 'fszymanski/fzf-gitignore'
 Plug 'itchyny/calendar.vim'
 " distraction-free writing in vim
 Plug 'junegunn/goyo.vim'
+
+Plug 'github/copilot.vim'
 call plug#end()
 
 let g:airline_powerline_fonts = 1
