@@ -46,6 +46,7 @@ cmd open ${{
         *.scss) $EDITOR $fx;;
         *.sass) $EDITOR $fx;;
         *.less) $EDITOR $fx;;
+        *.lua) $EDITOR $fx;;
         *.py) $EDITOR $fx;;
         *.rb) $EDITOR $fx;;
         *.php) $EDITOR $fx;;

@@ -35,7 +35,8 @@ end
 -- This is a hook, to setup for lazy loaded plugins
 local function setup_plugins_after_loaded()
     -- Run rooter when it is the first time enter the neovim
-    vim.cmd[[autocmd VimEnter * :Rooter]]
+    vim.cmd[[autocmd VimEnter * Rooter]]
+    require("colors")
 end
 
 M.load_plugins = function()
@@ -69,6 +70,7 @@ M.load_plugins = function()
 
   if no_packer then
     require('packer').sync()
+    return
   end
 
   -- add a hook

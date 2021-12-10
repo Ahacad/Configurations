@@ -1,13 +1,15 @@
 local opt = vim.opt
 
 opt.encoding = 'utf-8'
+opt.fileencodings = 'utf-8'
 
 -- enable number and relative line number
 opt.number = true
-opt.rnu = true
+opt.rnu = false
 
 -- line behind cursor
 opt.cursorline = true
+vim.cmd("set guicursor=a:block")
 
 -- [[
 -- TAB SETTING
@@ -16,9 +18,9 @@ opt.cursorline = true
 -- Use the appropriate number of spaces to insert a <Tab>.
 opt.expandtab = true
 -- Number of spaces that a <Tab> in the file counts for.
-opt.tabstop = 2
-opt.shiftwidth = 2
-opt.softtabstop = 2
+opt.tabstop = 4
+opt.shiftwidth = 4
+opt.softtabstop = 4
 
 -- Copy indent from current line when starting a new line
 -- opt.autoindent=true

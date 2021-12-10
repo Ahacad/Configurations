@@ -16,19 +16,9 @@
 > 中文文档因为我比较懒，所以不能保证完全同步，如果遇到
 > 任何文档不对应的问题，请以英文版为准。
 
-## Credit
-
-This project is originally inspired by
-[theniceboy/nvim](https://github.com/theniceboy/nvim).
-
-And lua code is inspired by
-[siduck76/NvChad](https://github.com/siduck76/NvChad).
-
-Take a look at their contribution, which is really fantastic.
-
 ## Features
 
-- Really fast! Start up in only 34ms! (See the bottom of the doc for the data)
+- Really fast! Start up in only 28ms! (See [`benchmark`](./benchmark.txt))
 - LSP support
 - Completion like VSCode
 - Tree file manager
@@ -53,12 +43,32 @@ repository and then run:
 git clone https://github.com/YOUR_USER_NAME/nvim ~/.config/nvim
 ```
 
-Open your neovim by command `nvim` and wait for all plugins installed. Please
-quit and reopen the neovim for loading all plugins.
+Open your neovim by command `nvim` and wait for all plugins installed. The plugins
+will be installed automatically. Please quit and reopen the neovim to load all the
+plugins.
+
+> If the neovim don't install plugins automatically, use the command `:PackerSync`
+> to install those plugins manually. And please open a issue to notify me about the
+> error.
 
 **NOTE:** Markdown preview plugin is installed in another thread, please
 wait for it until it response message of installation success. Otherwise, you will find
 that you can't activate it.
+
+### Clean Installation
+
+You need to clean the below directory for a fresh install.
+
+```bash
+# plugins directory
+rm -rf ~/.local/share/nvim
+
+# neovim cache file
+rm -r ~/.cache/nvim
+
+# neovim plugins load sequence
+rm -r ~/.config/nvim/plugin
+```
 
 ### Docker
 
@@ -124,7 +134,17 @@ See [addtional](./docs/addtional.md)
 
 MIT License
 
-## Commits convention
+## Credit
+
+This project is originally inspired by
+[theniceboy/nvim](https://github.com/theniceboy/nvim).
+
+And lua code is inspired by
+[siduck76/NvChad](https://github.com/siduck76/NvChad).
+
+Take a look at their contribution, which is really fantastic.
+
+## What does commit message means
 
 Please read [commit-convention](https://github.com/Avimitin/commit-convention)
 
@@ -142,29 +162,6 @@ Users only need to take a look on commit with `!` prefix and `N` prefix.
 
 - [ ] Introduce my workflows
 - [ ] Optimized neovim start up time based on each file
-
-## Start up time test data
-
-```text
-# Open only buffer
-# nvim --startuptime /tmp/nvim-startuptime && tail -n 1 /tmp/nvim-startuptime | awk -F: '{print $1}'
-# test it 3 times
-031.760  000.002
-030.677  000.002
-034.750  000.002
-
-# Open README.md
-# nvim README.md --startuptime /tmp/nvim-startuptime && tail -n 1 /tmp/nvim-startuptime | awk -F: '{print $1}'
-093.170  000.002
-092.512  000.003
-090.087  000.002
-
-# Open Rust file (which will trigger LSP server)
-# nvim lib.rs --startuptime /tmp/nvim-startuptime && tail -n 1 /tmp/nvim-startuptime | awk -F: '{print $1}'
-122.347  000.003
-113.395  000.003
-118.647  000.003
-```
 
 ## More Screenshot
 

@@ -1,0 +1,391 @@
+# == operations control
+
+snippet if "the if " w
+if ($1) {
+    ${2:${VISUAL}}
+}
+$0
+endsnippet
+
+snippet ife "if else" w
+if ($1) {
+    ${2:${VISUAL}}
+} else {
+    $3
+}
+$0
+endsnippet
+
+
+snippet for "the for" w
+for ($1; $2; $3){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet fori "for i" w
+for (int i = 0; i < $1; i++){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet whi "while" w
+while ($1) {
+    ${0:${VISUAL}}
+}
+endsnippet
+
+
+# == 
+
+snippet fun "the void function" w
+${1:int} ${2:main}(${3:}){
+    ${0:${VISUAL}}
+}
+endsnippet
+
+snippet class "a new class" b
+class ${1:Solution}{
+public:
+    ${2:int} ${3:func}($4){
+        $0
+    }
+};
+endsnippet
+
+
+
+# == templates for ojs
+
+snippet cofo "codeforces template" bw
+#include <iostream>
+#include <algorithm>
+$1
+
+using namespace std;
+#define pb push_back;
+#define mp make_pair;
+#define FOR(i, a, b) for(int i = a; i < b; i++)
+#define ROF(i, a, b) for(int i = a - 1; i >= b; i--)
+#define F first
+#define S second
+#define C continue
+#define B break
+
+typedef long long int lli;
+/*
+typedef vector<int> vi;
+typedef vector<vi> vii;
+typedef map<int, int> mii;
+typedef vector<pii> vpii;
+*/
+typedef pair<int, int> pii;
+
+const int LEN = 1e5 + 5;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    std::ios::sync_with_stdio(false);
+    cin.tie(0); cout.tie(0);
+    $0
+    
+    return 0;
+}
+endsnippet
+
+snippet leco "leetcode template" bw
+#include <cstdio>
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+${VISUAL}
+
+$0
+
+int main(){
+
+    return 0;
+}
+endsnippet
+
+
+snippet noco "nowcoder template" bw
+#include <cstdio>
+#include <algorithm>
+$1
+using namespace std;
+
+using ll = long long;
+
+$2
+
+int main(){
+    #ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
+    #endif
+    
+    $0
+    
+    return 0;
+}
+endsnippet
+
+snippet cofot "code forces with t test cases" bw
+#include <cstdio>
+#include <algorithm>
+
+using namespace std;
+
+#define REP(i, N) for (int i = 0; i < (N); i++)
+#define fore(i, be, en) for (int i = (be); i < (en); i++)
+#define DWN(i, N) for (int i = (N); i >= 0; i--)
+#define down(i, en, be) for (int i = (en); i >= (be); i--)
+#define FR(N) freopen((N), "r", stdin)
+#define FW(N) freopen((N), "w", stdout)
+#define GETS(ch) fgets((ch), MAXN, stdin);
+#define INF 0x3f3f3f3f
+#define ll long long
+#define io_speed_up ios::sync_with_stdio(false), cin.tie(0), cout.tie(0)
+#define MAXN 1000005
+ll gcd(ll a, ll b) {
+    while (b ^= a ^= b ^= a %= b)
+        ;
+    return a;
+}
+ll lcd(ll a, ll b) { return a * b / gcd(a, b); }
+
+template <typename T>
+inline T read() {
+    char ch = getchar();
+    T x = 0, f = 1;
+    while (ch < '0' || ch > '9') {
+        if (ch == '-') f = -1;
+        ch = getchar();
+    }
+    while ('0' <= ch && ch <= '9') {
+        x = x * 10 + ch - '0';
+        ch = getchar();
+    }
+    return x * f;
+}
+template <class T>
+inline void write(T x) {
+    if (x < 0) x = -x, putchar('-');  // 负数输出
+    static T sta[35];
+    T top = 0;
+    do {
+        sta[top++] = x % 10, x /= 10;
+    } while (x);
+    while (top) putchar(sta[--top] + '0');
+}
+
+void solve() {
+    $0
+}
+
+int main() {
+#ifdef LOCAL
+    freopen("input.txt", "r", stdin);
+    // freopen("output.txt", "w", stdout);
+#endif
+
+    int t = read<int>();
+	while(t--) {
+        solve();
+	}
+
+    return 0;
+}
+endsnippet
+
+
+
+# TODO :
+# - tree array
+# - 高精度运算
+# - kruskal (shortest path & MST)
+# - 二分图
+# - 网络流
+# TOLEARNS:
+# - 编译器前端(栈的 tokenize)
+# FINISHED:
+# - dijkstra
+# WRITTEN DOWN:
+# - fast power
+# - segment tree
+#
+
+snippet buildgraph "build graph" bw 
+struct node {
+    int to = 0, next = 0, w = 0;
+};
+int head[MAXN];
+node edge[MAXN];
+int cnt = 0;
+void add(int x, int y, int w) {
+    edge[++cnt].to = y;
+    edge[cnt].next = head[x];
+    edge[cnt].w = w;
+    head[x] = cnt;
+}
+endsnippet
+
+snippet combination "math combination" bw
+ll fac[MAXN];
+void init(int n) {
+    fac[0] = 1;
+    for(int i = 1; i <= n; i++) fac[i] = fac[i - 1] * i % mod;
+}
+inline ll pow(ll x, int p) {
+    ll ans = 1;
+    while (p) (p & 1) && (ans = ans * x % mod), x = x * x % mod, p >>= 1;
+    return ans;
+}
+inline ll inv(ll x) { return pow(x, mod - 2); }
+inline ll C(ll a, ll b) { return fac[a] * inv(fac[b]) % mod * inv(fac[a - b]) % mod; }
+endsnippet
+
+snippet fastpower "fast power" bw
+long long pow(long long base, long long power, long long p) {
+    long long result = 1;
+    while (power > 0) {
+        if (power & 1) {
+            result = result * base % p;
+        }
+        power >>= 1;
+        base = (base * base) % p;
+    }
+    return result;
+}
+endsnippet
+
+snippet segmenttree "segment tree" bw
+struct node {
+    int s, e, m;
+    long long val = 0;
+    long long lazy = 0;
+    node *l, *r;
+
+    node(int S, int E) {
+        s = S, e = E, m = (s + e) / 2;
+        if (s != e) {
+            l = new node(s, m);
+            r = new node(m + 1, e);
+        }
+    }
+    void apply(long long L) {
+        val += L * (e - s + 1);
+        lazy += L;
+    }
+    void push() {
+        if (s == e) return;
+        l->apply(lazy);
+        r->apply(lazy);
+        lazy = 0;
+    }
+    void update(int S, int E, long long L) {
+        push();
+        if (S <= s && e <= E) {
+            apply(L);
+            return;
+        }
+        if (S <= m) l->update(S, E, L);
+        if (E > m) r->update(S, E, L);
+        val = l->val + r->val;
+    }
+    long long query(int S, int E) {
+        if (S <= s && e <= E) {
+            return val;
+        }
+        push();
+        ll res = 0;
+        if (S <= m) res += l->query(S, E);
+        if (E > m) res += r->query(S, E);
+        return res;
+    }
+};
+endsnippet
+
+snippet dijkstra "dijkstra" bw
+struct node {
+    int to, next, w;
+};
+int head[MAXN];
+node edge[MAXN];
+int cnt;
+void add(int x, int y, int w) {
+    edge[++cnt].to = y;
+    edge[cnt].next = head[x];
+    edge[cnt].w = w;
+    head[x] = cnt;
+}
+
+int d[MAXN];
+bool vis[MAXN];
+void dij(int s) {
+    memset(d, 0x3f, sizeof(d));
+    memset(vis, 0, sizeof(vis));
+    d[s] = 0;
+    priority_queue<pair<int, int> > q;
+    q.push(make_pair(0, s));
+    while (!q.empty()) {
+        int u = q.top().second;
+        q.pop();
+        if (vis[u]) continue;
+        vis[u] = 1;
+        for (int i = head[u]; i; i = edge[i].next) {
+            int to = edge[i].to, w = edge[i].w;
+            if (d[to] > d[u] + w)
+                d[to] = d[u] + w, q.push(make_pair(-d[to], to));
+        }
+    }
+}
+endsnippet
+
+snippet dfs1dfs2 "树链剖分" bw
+const int maxn = 1e5 + 5;
+
+int cnt, fa[maxn], son[maxn], siz[maxn], dep[maxn], dfn[maxn], rnk[maxn],
+    top[maxn];
+int cur, h[maxn], p[maxn], nxt[maxn];
+
+inline void add_edge(int x, int y) {
+    cur++;
+    nxt[cur] = h[x];
+    h[x] = cur;
+    p[cur] = y;
+}
+void dfs1(int o) {
+    son[o] = -1;                         // 重儿子初始化
+    siz[0] = 1;                          // 子树节点数量初始化
+    for (int j = h[o]; j; j = nxt[j]) {  // 遍历儿子
+        if (!dep[p[j]]) {                // 还没有访问过、故深度为0
+            dep[p[j]] = dep[o] + 1;
+            fa[p[j]] = o;
+            dfs1(p[j]);
+            siz[o] += siz[p[j]];  // 更新子树节点数量
+            if (son[o] == -1 || siz[p[j]] > siz[son[o]])
+                son[o] = p[j];  // 更新重子节点
+        }
+    }
+}
+void dfs2(int o, int t) {
+    top[o] = t;  // 重链顶部节点更新
+    cnt++;
+    dfn[o] = cnt;
+    rnk[cnt] = o;
+    if (son[o] == -1) return;
+    dfs2(son[o], t);  // 优先遍历重子节点
+    for (int j = h[o]; j; j = nxt[j])
+        if (p[j] != son[o] && p[j] != fa[o]) dfs2(p[j], p[j]);
+}
+endsnippet
