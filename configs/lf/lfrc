@@ -102,8 +102,11 @@ cmd open ${{
         *.d) $EDITOR $fx;;
         # audio
         *.mp3) mpv $fx;;
+        *.m4a) mpv $fx;;
         # videos
         *.mp4) mpv $fx;;
+        *.rmvb) mpv $fx;;
+        *.webm) mpv $fx;;
         *.avi) mpv $fx;;
         *.MP4) mpv $fx;;
         *.wmv) mpv $fx;;
@@ -112,6 +115,7 @@ cmd open ${{
         *.flv) mpv $fx;;
         # pictures
         *.jpg) sxiv $fx &;;
+        *.jpeg) sxiv $fx &;;
         *.png) sxiv $fx &;;
         # books
         *.pdf) zathura $fx &;;
@@ -121,6 +125,7 @@ cmd open ${{
         *.doc) libreoffice  $fx;;
         *.docx) libreoffice  $fx;;
         *.pptx) libreoffice  $fx;;
+        *.xls) libreoffice  $fx;;
         *.xlsx) libreoffice  $fx;;
         *.ppt) libreoffice  $fx;;
     esac

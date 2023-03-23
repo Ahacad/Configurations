@@ -16,12 +16,31 @@ return require('packer').startup(function(use)
     use {"wbthomason/packer.nvim", event = "VimEnter"}
 
     -- ======================= EDITOR SETUP ==============================
-    use {'kyazdani42/nvim-web-devicons', event = "BufRead"}
+    use {'kyazdani42/nvim-web-devicons'}
+    
+    --use {'nvim-lua/plenary.nvim'}
+
+    --use {
+      --'pwntester/octo.nvim',
+      --requires = {
+        --'nvim-lua/plenary.nvim',
+        --'nvim-telescope/telescope.nvim',
+        --'kyazdani42/nvim-web-devicons',
+      --},
+      --config = function ()
+      --require"config.octo".setup()
+      --end
+    --}
 
     use {
         'neoclide/coc.nvim',
         branch = "release",
         config = function() require("config.coc") end
+    }
+
+    use {
+        'luochen1990/rainbow',
+        config = function() require("config.rainbow") end
     }
 
     use {
@@ -59,6 +78,8 @@ return require('packer').startup(function(use)
     use {
         'Avimitin/neovim-deus',
         'Shatur/neovim-ayu',
+        'rebelot/kanagawa.nvim',
+        'cormacrelf/vim-colors-github',
     }
 
 
@@ -189,12 +210,14 @@ return require('packer').startup(function(use)
     }
 
     -- git information
-    use {
-        'lewis6991/gitsigns.nvim',
-        requires = {'nvim-lua/plenary.nvim'},
-        event = "BufRead",
-        config = function() require("config.gitsign") end
-    }
+    --use {
+        --'lewis6991/gitsigns.nvim',
+        --requires = {'nvim-lua/plenary.nvim'},
+        --event = "BufRead",
+        --config = function() require("config.gitsign") end
+    --}
+
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     use {
         'TimUntersberger/neogit',
@@ -376,6 +399,21 @@ return require('packer').startup(function(use)
     }
 
     use {
+        'triglav/vim-visual-increment',
+    }
+    use {
+        'norcalli/nvim-colorizer.lua',
+    }
+    --use {
+        --'SirVer/ultisnips',
+    --}
+
+    use {
+        'ditorconfig/editorconfig-vim',
+    }
+    
+
+    use {
         'dhruvasagar/vim-table-mode',
     }
 
@@ -385,16 +423,17 @@ return require('packer').startup(function(use)
     }
 
     -- programming time statistics
-    use {
-        "wakatime/vim-wakatime",
-    }
-
     -- GitHub copilot
     use {
+        "wakatime/vim-wakatime",
         "github/copilot.vim",
     }
 
     use {
       "ggandor/lightspeed.nvim"
+    }
+
+    use {
+        "henrik/vim-indexed-search"
     }
 end)

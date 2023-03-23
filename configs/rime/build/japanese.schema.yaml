@@ -1,13 +1,13 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1624840803
-    default.custom: 1619960728
+    default: 1654509031
+    default.custom: 1639152583
     japanese.custom: 0
-    japanese.schema: 1619960571
-    key_bindings: 1624840803
+    japanese.schema: 1639152583
+    key_bindings: 1654509031
     key_bindings.custom: 0
-    punctuation: 1624840803
+    punctuation: 1654509031
     punctuation.custom: 0
 engine:
   filters:

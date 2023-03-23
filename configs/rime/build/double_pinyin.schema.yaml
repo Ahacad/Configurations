@@ -1,15 +1,15 @@
 __build_info:
   rime_version: 1.7.3
   timestamps:
-    default: 1624840803
-    default.custom: 1619960728
-    double_pinyin.custom: 1619958853
-    double_pinyin.schema: 1619958729
-    emoji_suggestion: 1619958841
+    default: 1654509031
+    default.custom: 1639152583
+    double_pinyin.custom: 1639152583
+    double_pinyin.schema: 1639152583
+    emoji_suggestion: 1639152583
     emoji_suggestion.custom: 0
-    key_bindings: 1624840803
+    key_bindings: 1654509031
     key_bindings.custom: 0
-    punctuation: 1624840803
+    punctuation: 1654509031
     punctuation.custom: 0
 emoji_suggestion:
   opencc_config: emoji.json
@@ -168,7 +168,7 @@ schema:
     - stroke
   description: |
     朙月拼音＋自然碼雙拼方案。
-    
+
   name: "自然碼雙拼"
   schema_id: double_pinyin
   version: 0.15

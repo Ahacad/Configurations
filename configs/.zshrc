@@ -77,7 +77,10 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,6 +110,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+source /usr/share/nvm/init-nvm.sh
+
+# customized scripts
 export EDITOR="nvim"
 export GTK_IM_MODULE=ibus
 export XMODIFIERS=@im=ibus
@@ -122,13 +128,14 @@ source "$HOME/.config/SELFMADE/zshrc/aliases"
 setxkbmap us -variant colemak
 setxkbmap us -variant colemak -option caps:escape
 
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/share/nvm/init-nvm.sh
+#source /usr/share/nvm/init-nvm.sh
 
-export http_proxy=http://localhost:7890
-export https_proxy=http://localhost:7890
+#export http_proxy=http://localhost:7890
+#export https_proxy=http://localhost:7890
+
+unset {http,https,ftp}_proxy
 
 source /home/ahacad/.config/broot/launcher/bash/br
 
@@ -136,5 +143,10 @@ xinput --set-prop 12 "libinput Click Method Enabled" 0 1
 xinput --set-prop 12 "libinput Tapping Enabled" 1
 xinput --set-prop 12 "libinput Natural Scrolling Enabled" 1
 
-echo "net, algo, dev, base, draw, jap, eng, ivt"
 export PATH="$HOME/bin:$PATH"
+source ~/.oh-my-zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
+
+export WINEARCH=win64
+
+source '/home/ahacad/bin/encoder-attack2/bin/activate'
+#echo "net, algo, dev, base, draw, jap, eng, ivt"

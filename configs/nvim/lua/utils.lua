@@ -37,6 +37,15 @@ local function setup_plugins_after_loaded()
     -- Run rooter when it is the first time enter the neovim
     vim.cmd[[autocmd VimEnter * Rooter]]
     require("colors")
+    require'colorizer'.setup()
+end
+
+local function setup_plugins_before_loaded()
+  if not vim.fn.has("nvim-0.6") then
+    -- for filetype.nvim
+    -- If using a Neovim version earlier than 0.6.0
+    vim.g.did_load_filetypes = 1
+  end
 end
 
 M.load_plugins = function()
@@ -59,6 +68,9 @@ M.load_plugins = function()
       M.log_err(error_msg, "load plugin")
       return
   end
+
+  -- add a hook
+  setup_plugins_before_loaded()
 
   -- Reading plugins configuration
   local ok, error = pcall(require, 'plug')
@@ -110,14 +122,14 @@ M.lsp_attach = function (client, bufnr)
                    opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     buf_set_keymap('n', '<space>e',
-                   '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>',
+                   '<cmd>lua vim.diagnostic.show_line_diagnostics()<CR>',
                    opts)
-    buf_set_keymap('n', '[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',
+    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>',
                    opts)
-    buf_set_keymap('n', ']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>',
+    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>',
                    opts)
     buf_set_keymap('n', '<space>q',
-                   '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>', opts)
+                   '<cmd>lua vim.diagnostic.set_loclist()<CR>', opts)
 
     -- Set some keybinds conditional on server capabilities
     if client.resolved_capabilities.document_formatting then

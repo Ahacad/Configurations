@@ -1,7 +1,7 @@
 vim.g.coc_global_extensions =  {
      'coc-explorer',
      'coc-actions',
-     -- 'coc-snippets',
+     'coc-snippets',
      'coc-cmake',
      'coc-eslint',
      'coc-prettier',
@@ -16,6 +16,7 @@ vim.g.coc_global_extensions =  {
      'coc-rls',
      'coc-vetur',
      'coc-go',
+     'coc-clojure',
      'coc-texlab',
      'coc-clangd',
      'coc-html',

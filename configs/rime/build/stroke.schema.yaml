@@ -1,14 +1,14 @@
 __build_info:
-  rime_version: 1.7.3
+  rime_version: 1.8.5
   timestamps:
-    default: 1624840803
-    default.custom: 1619960728
-    key_bindings: 1624840803
+    default: 1654509031
+    default.custom: 1639152583
+    key_bindings: 1654509031
     key_bindings.custom: 0
-    punctuation: 1624840803
+    punctuation: 1654509031
     punctuation.custom: 0
     stroke.custom: 0
-    stroke.schema: 1584206825
+    stroke.schema: 1675995540
 abc_segmentor:
   extra_tags:
     - reverse_lookup
@@ -65,6 +65,23 @@ key_binder:
     - {accept: "Control+Shift+numbersign", toggle: full_shape, when: always}
     - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
+    - {accept: d, send: n, when: always}
+    - {accept: t, send: h, when: always}
+    - {accept: j, send: h, when: always}
+    - {accept: k, send: s, when: always}
+    - {accept: l, send: p, when: always}
+    - {accept: u, send: n, when: always}
+    - {accept: i, send: z, when: always}
+    - {accept: KP_1, send: h, when: always}
+    - {accept: KP_2, send: s, when: always}
+    - {accept: KP_3, send: p, when: always}
+    - {accept: KP_4, send: n, when: always}
+    - {accept: KP_5, send: z, when: always}
+    - {accept: KP_6, send: Select, when: has_menu}
+    - {accept: KP_7, send: Select, when: has_menu}
+    - {accept: KP_8, send: Select, when: has_menu}
+    - {accept: KP_9, send: Select, when: has_menu}
+    - {accept: KP_0, send: Select, when: has_menu}
   import_preset: default
 menu:
   page_size: 9
@@ -146,7 +163,7 @@ recognizer:
     url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
 reverse_lookup:
   comment_format:
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"
   dictionary: luna_pinyin
   preedit_format:
     - "xform/([nl])v/$1ü/"
@@ -165,7 +182,7 @@ schema:
   description: |
     五筆畫
     h,s,p,n,z 代表橫、豎、撇、捺、折
-    
+
   name: "五筆畫"
   schema_id: stroke
   version: 0.5
@@ -183,7 +200,7 @@ switches:
 translator:
   comment_format:
     - "xform/~//"
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"
   dictionary: stroke
   preedit_format:
-    - "xlit/hspnz/一丨丿丶乙/"
+    - "xlit/hspnz/⼀⼁⼃⼂⼄/"

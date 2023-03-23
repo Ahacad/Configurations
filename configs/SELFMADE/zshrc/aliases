@@ -17,7 +17,7 @@ alias v="vim"
 alias mnho="sudo mount /dev/nvme0n1p11 /media/HOME"
 alias mnsg="sudo mount /dev/sda1 /media/Seagate-next"
 alias mnwk="sudo mount /dev/nvme0n1p8 /media/Work"
-alias startup="mnho ; mnsg ; mnwk ; sudo /usr/bin/NetworkManager; sudo powertop --auto-tune; tmux-session restore;startx; nm-applet &; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
+alias startup="sudo /usr/bin/NetworkManager; sudo rmmod pcspkr; sudo mount /dev/nvme0n1p9 /mnt/extradisk; sudo powertop --auto-tune; docker restart wakapi; startx; nm-applet &; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
 
 # just to make it shorter
 alias lg=lazygit
@@ -31,7 +31,7 @@ alias p="cd /media/Work/Fudan && lf"
 move_to_rubbish() {
     mv $1 "/home/ahacad/Rubbish"
 }
-alias rm="move_to_rubbish"
+#alias rm="move_to_rubbish"
 #alias pgc="proxychains git clone"
 #alias dolt="~/PROGRAMS/dolt-linux-amd64/bin/dolt"
 #alias pc="proxychains"

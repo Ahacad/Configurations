@@ -1,7 +1,7 @@
 [user]
 	email = ahacad@126.com
 	name = ahacad
-	signingkey = 1AAC6728F20CB30BC25821B1D9AE2A0615FC11A3
+	signingKey = 0B80B8513A489E5066EED0CBF749989470F1010A
 [alias]
 	ci = commit
 	d = difftool
@@ -15,11 +15,11 @@
     prompt = false
 [difftool "nvimdiff"]
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
-[http]
-    proxy = socks5://127.0.0.1:7890
-    sslVerify = false
-[https]
-    proxy = socks5://127.0.0.1:7890
+#[http]
+    #proxy = socks5://127.0.0.1:7890
+    #sslVerify = false
+#[https]
+    #proxy = socks5://127.0.0.1:7890
 [delta]
     plus-color = "#012800"
     minus-color = "#340001"
@@ -38,7 +38,14 @@
     cmd = nvim -d $LOCAL $REMOTE $MERGED -c '$wincmd w' -c 'wincmd J'
 [difftool "vimdiff3"]
 	path = nvim
+#[commit]
+    #gpgsign = true
+#[remote "origin"]
+    #proxy = 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 [commit]
-	gpgsign = true
-;[remote "origin"]
-    ;proxy = 
+	gpgSign = true

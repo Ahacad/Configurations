@@ -43,6 +43,7 @@
   "list.previousKeymap": "<C-u>",
   "coc.preferences.formatOnSaveFiletypes": [
     "json",
+    "lua",
     "javascript",
     "javascriptreact",
     "typescript",
@@ -50,7 +51,8 @@
     "rust",
     "vue",
     "cpp",
-    "c"
+    "c",
+    "python"
   ],
   "snippets.ultisnips.directories": ["/home/ahacad/.config/nvim/ultisnips"],
   "explorer.file.column.indent.indentLine": true,
@@ -59,5 +61,8 @@
   "explorer.file.column.git.showIgnored": true,
   "coc.source.word.enable": false,
   "git.enableGutters": true,
-  "python.jediEnabled": false
+  "python.jediEnabled": false,
+  "coc.snippets.userSnippetsDirectory": "/home/ahacad/.config/nvim/ultisnips",
+  "suggest.enablePreselect": false,
+  "suggest.noselect": true
 }

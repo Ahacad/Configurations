@@ -6,15 +6,21 @@
 # Close or kill window
 alt + shift + {_,ctrl + }c
     bspc node -{c,k}
+# focus the prev/next monitor
+super + {_, shift + }Tab
+    bspc monitor --focus {prev,next}
+# Focus the next/previous window
+#alt + {_,shift + }Tab
+    #bspc node -f {next,prev}
 # Focus or swap window in the current workspace
 alt + {_,shift + }{h,y,n,u}
     bspc node -{f,s} {west,south,north,east}
 # Focus the given workspace or move window to that workspace
 alt + {_,shift + }{1-9,0}
-    bspc {desktop -f, node -d} '^{1-9,10}'
-# Focus the next/previous window
-#alt + {_,shift + }Tab
-    #bspc node -f {next,prev}.local
+#bspc {desktop -f, node -d} '^{1-9,10}'
+    bspc {desktop -f,node -d} focused:^{1-9,10}
+
+#bspc {desktop -f, node -d} focused:^{1-9,10}
 # Focus last window
 alt + Tab 
     bspc node -f last
@@ -50,9 +56,9 @@ alt + d
 alt + m
     bspc desktop -l next
 # Toggle game mode
-super + g
-    killall xcape picom ibus-daemon \
-    || (xcape && ibus-daemon -drx && picom --daemon --experimental-backends)
+#super + g
+#    killall xcape picom ibus-daemon \
+#    || (xcape && ibus-daemon -drx && picom --daemon --experimental-backends)
 # scratchpad
 alt + ctrl + grave
     ~/.config/bspwm/executable/scratchsmalltoggle
@@ -150,7 +156,7 @@ super + shift + m
     dmenu-monitor
 # Lock screen
 super + BackSpace
-    slock
+    betterlockscreen -l
 # Switch GPU
 super + shift + g
     dmenu-gpu
@@ -159,6 +165,8 @@ super + 1
         google-chrome-stable
 super + 5
         rofi -show run
+super + shift + 5
+        rofi -show window
 super + 0
         #/media/Work/Work/ARCH/betterlockscreen/lockscreen.sh
         #betterlockscreen -l --text λ

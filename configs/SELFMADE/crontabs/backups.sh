@@ -1,7 +1,7 @@
 #!/bin/sh
 
 #RepoFolder="/media/HOME/ahacad/WORKSTATION/Working/-working/#Configurations"
-ConfigFolder="/home/ahacad/HOME/Configurations/configs"
+ConfigFolder="/home/ahacad/GitHub/ahacad/Configurations/configs"
 
 
 backup_config() {

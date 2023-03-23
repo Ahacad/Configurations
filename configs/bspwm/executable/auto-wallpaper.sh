@@ -1,5 +1,5 @@
 #! /bin/bash
-folder="/media/HOME/ahacad/WORKSTATION/Working/-working/#wallpaper"
+folder="/home/ahacad/GitHub/wallpaper"
 subfolder="fantasy"
 while true
 do
@@ -9,5 +9,5 @@ do
         rand=$(ls "${folder}/${wallpapersubfolder} | shuf -n 1")
     fi
     xwallpaper --zoom "${folder}/${subfolder}/${rand}"
-    sleep 20m
+    sleep 10m
 done
