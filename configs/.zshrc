@@ -150,3 +150,5 @@ export WINEARCH=win64
 
 source '/home/ahacad/bin/encoder-attack2/bin/activate'
 #echo "net, algo, dev, base, draw, jap, eng, ivt"
+#
+alias lf="/home/ahacad/bin/lfpreview.sh"
