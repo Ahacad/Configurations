@@ -64,5 +64,6 @@
   "python.jediEnabled": false,
   "coc.snippets.userSnippetsDirectory": "/home/ahacad/.config/nvim/ultisnips",
   "suggest.enablePreselect": false,
-  "suggest.noselect": true
+  "suggest.noselect": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
