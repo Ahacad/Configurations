@@ -14,3 +14,5 @@ map("x", "K", "5k", { desc = "move 5 lines down" })
 
 --- Q equals quit file, quit faster
 map("n", "Q", ":q<CR>", { desc = "quit file" })
+
+map("n", "F", ":noa w<CR>")
