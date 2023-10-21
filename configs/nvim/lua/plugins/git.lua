@@ -10,4 +10,7 @@ return {
       require("octo").setup()
     end,
   },
+  {
+    "tpope/vim-fugitive",
+  },
 }
