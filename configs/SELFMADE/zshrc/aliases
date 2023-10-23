@@ -17,7 +17,9 @@ alias v="vim"
 alias mnho="sudo mount /dev/nvme0n1p11 /media/HOME"
 alias mnsg="sudo mount /dev/sda1 /media/Seagate-next"
 alias mnwk="sudo mount /dev/nvme0n1p8 /media/Work"
-alias startup="sudo /usr/bin/NetworkManager; sudo rmmod pcspkr; sudo mount /dev/nvme0n1p9 /mnt/extradisk; sudo powertop --auto-tune; docker restart wakapi; startx; nm-applet &; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
+alias startup="sudo /usr/bin/NetworkManager; sudo mount /dev/nvme0n1p9 /mnt/extradisk; sudo powertop --auto-tune; docker restart wakapi; startx; nm-applet &; ibus-daemon -drx --panel /usr/lib/ibus/ibus-ui-gtk3"
+
+# sudo rmmod pcspkr; 
 
 # just to make it shorter
 alias lg=lazygit
