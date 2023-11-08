@@ -5,4 +5,7 @@ return {
   {
     "mzlogin/vim-markdown-toc",
   },
+  {
+    "terryma/vim-multiple-cursors",
+  },
 }
