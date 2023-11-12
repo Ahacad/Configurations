@@ -8,4 +8,7 @@ return {
   {
     "terryma/vim-multiple-cursors",
   },
+  {
+    "pechorin/any-jump.vim",
+  },
 }
