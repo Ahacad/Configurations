@@ -39,6 +39,11 @@ backup_config() {
 
     # check if local config file exists
     if [ -e "$local_path" ]; then
+        if [ -e "$backup_path/$filename" ]; then
+            [ "$verbose" = true ] && echo "Removing existing file: $backup_path"
+            rm -rf "$backup_path/$filename"
+        fi
+
         mkdir -p "$backup_dir"
 
         # copy file and check for success
