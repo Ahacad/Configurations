@@ -78,7 +78,7 @@ case "$1" in
             [ "$directory" = "." ] && directory=""
             install_config "$HOME/$directory" "../configs" "$filename" true
         done
-        ;
+        ;;
     backup)
         backup_dir="${CONFIG_BACKUP_DIR:-../configs}"
         echo "Backing up configs to $backup_dir"
