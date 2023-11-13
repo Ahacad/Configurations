@@ -11,4 +11,7 @@ return {
   {
     "pechorin/any-jump.vim",
   },
+  {
+    "kylechui/nvim-surround",
+  },
 }

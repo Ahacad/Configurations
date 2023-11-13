@@ -11,7 +11,7 @@ killall sxhkd
                   #shift:both_capslock, \
                   #altwin:swap_lalt_lwin"
 #xcape
-sxhkd &
+sxhkd -m 1 &
 ibus-daemon -drx &
 
 # Auto lock screen
