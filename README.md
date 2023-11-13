@@ -21,8 +21,6 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - redshift
 - alacritty
 - lf
-- dwm
-- st
 - gitconfig
 - zshrc
 - tmux.conf
@@ -33,11 +31,14 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 - khal
 - vdirsyncer (due to the sensitive nature of calendars, I didn't sync them here but use Google Calendar, see [this post](https://opensource.com/article/20/1/open-source-calendar) for setting up)
 
+- dwm (no longer)
+- st (no longer)
+
 ## How to use
 
 1. `src/downloads.sh` to download wallpaper
-2. `src/install.sh` to install configs
-3. setup `crontab` for backup: `$HOME/.config/SELFMADE/crontabs/backups.sh`
+2. `cd src && bash configtool.sh install` to install configs
+3. (no longer needed) setup `crontab` for backup: `$HOME/.config/SELFMADE/crontabs/backups.sh`
 4. you may need to change some paths for your machine:
   1. wallpaper path in `.config/bspwm/executable/auto-wallpaper.sh`
   2. ConfigFolder in `../configs/SELFMADE/crontabs/backups.sh`
@@ -52,6 +53,7 @@ Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing prog
 ```bash
 timedatectl set-ntp true
 ```
+
 ### Rime
 
 ```bash
