@@ -70,15 +70,6 @@ declare -a configs=(
     ".oh-my-zsh"
 )
 
-for config in "${configs[@]}"; do
-    directory=$(dirname "$config")
-    filename=$(basename "$config")
-
-    [ "$directory" = "." ] && directory=""
-
-    install_config "$HOME/$directory" "../configs" "$filename" true
-done
-
 case "$1" in
     install)
         for config in "${configs[@]}"; do
