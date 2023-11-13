@@ -87,6 +87,7 @@ case "$1" in
             filename=$(basename "$config")
             [ "$directory" = "." ] && directory=""
             backup_config "$HOME/$directory" "$backup_dir" "$filename" true
+        done
         ;;
     *)
         echo "Usage: $0 {install|backup}"
