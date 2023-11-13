@@ -3,7 +3,7 @@
 ## Configurations
 ![repo-size](https://img.shields.io/github/repo-size/ahacad/configurations) 
 
-Install all my personal configurations on a Linux machine with [this install.sh script](./install.sh)
+Install all my personal configurations on a Linux machine with [this install.sh script](./src/install.sh)
 
 Refer to [using-arch](https://github.com/ahacad/using-arch)  for installing programs on Arch inux (another one of my repo).
 
