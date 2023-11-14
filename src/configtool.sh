@@ -68,7 +68,7 @@ declare -a configs=(
     ".config/SELFMADE"
     ".config/lf"
     ".config/redshift"
-    ".config/ibus/rime"
+    #".config/ibus/rime"
     ".tmux.conf"
     ".gitconfig"
     ".zshrc"
