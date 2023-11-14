@@ -14,4 +14,7 @@ return {
   {
     "kylechui/nvim-surround",
   },
+  {
+    "liuchengxu/vista.vim",
+  },
 }

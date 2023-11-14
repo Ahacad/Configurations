@@ -52,7 +52,7 @@ bspc config pointer_action2 resize_corner
 # auto focus when mouse enters a window
 bspc config focus_follows_pointer true
 # Scratchpad
-st -c scratchsmall -g 120x34 &
+#st -c scratchsmall -g 120x34 &
 bspc rule -a scratchsmall sticky=on state=floating hidden=on
 #st -c scratchbig -g 170x50 &
 bspc rule -a 'scratchbig' sticky=on state=floating hidden=on rectangle=1450x1000+300+200
