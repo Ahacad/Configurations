@@ -1,7 +1,7 @@
 [user]
 	email = ahacad@126.com
 	name = ahacad
-	signingKey = 0B80B8513A489E5066EED0CBF749989470F1010A
+	signingkey = 913A338D6881BDFB30C03270241D1F8E9A772044
 [alias]
 	ci = commit
 	d = difftool
@@ -48,4 +48,4 @@
 	process = git-lfs filter-process
 	required = true
 [commit]
-	gpgSign = true
+	gpgsign = true
