@@ -70,3 +70,4 @@ some programs replies on `xdg-open` to open files, you may want to [configure it
 ```
 xdg-mime default xpdf.desktop application/pdf
 ```
+
