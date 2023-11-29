@@ -9,9 +9,9 @@ export ETHERNET="$(ls /sys/class/net | grep en)"
 export THERMAL="$(grep -Rl "x86_pkg_temp" /sys/class/thermal/thermal_zone*/type | tr -d -c 0-9)"
 
 # Launch Polybar, using default config location ~/.config/polybar/config
-for m in $(polybar --list-monitors | cut -d":" -f1); do
-    MONITOR=$m polybar --reload topbar &
-done
+# for m in $(polybar --list-monitors | cut -d":" -f1); do
+#     MONITOR=$m polybar --reload topbar &
+# done
 
 screens=$(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f6)
 if [[ $(xrandr --listactivemonitors | grep -v "Monitors" | cut -d" " -f4 | cut -d"+" -f2- | uniq | wc -l) == 1 ]]; then
