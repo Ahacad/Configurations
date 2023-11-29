@@ -67,6 +67,7 @@ declare -a configs=(
     ".config/polybar"
     ".config/SELFMADE"
     ".config/lf"
+    ".config/rofi"
     ".config/redshift"
     #".config/ibus/rime"
     ".tmux.conf"
