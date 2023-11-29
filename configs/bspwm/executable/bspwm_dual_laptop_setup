@@ -1,11 +1,11 @@
 #! /bin/bash
 
-external_monitor=$(xrandr --query | grep '^DP-2')
+external_monitor=$(xrandr --query | grep '^HDMI-0')
 if [[ $external_monitor != *disconnected* ]]; then
-    xrandr --output eDP-1 --primary --mode 1920x1080 --rotate normal --output HDMI-1 mode 2560x1440 --rotate normal --right-of eDP-1
-    bspc monitor eDP-1 -d 1 2 3 4 5 "infra" 7 8 9 0
-    bspc monitor HDMI-1 -d 1 2 "dev" "research" "fin" "draw" 7 8 9 0
+    xrandr --output HDMI-0 --mode 1920x1080 --pos 0x0 --rotate right --output DP-0 --primary --mode 2560x1440 --rate 144 --pos 1080x0 --rotate normal --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --off --output DP-5 --off --output None-2-1 --off --output DP-1-1 --off --output HDMI-1-1 --off --output HDMI-1-2 --off
+    bspc monitor HDMI-0 -d 1 2 3 4 5 6 7 8 9 0
+    bspc monitor DP-0 -d "I" "II" "III" "IV" "V" "VI" "VII" "VIII" "IX" "X"
 else
-    xrandr --output HDMI-3 --primary --mode 2560x1440 --rotate normal --rate 144
+    xrandr --output DP-0 --primary --mode 2560x1440 --rotate normal --rate 144
     bspc monitor -d "prim" "second" "dev" 4 "infra" 6 "draw" "jap" "eng" "ivt"
 fi

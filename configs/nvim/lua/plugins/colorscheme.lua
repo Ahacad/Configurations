@@ -6,7 +6,7 @@ return {
     lazy = true,
     opts = {
       style = "moon",
-      transparent = true,
+      transparent = false,
       styles = {
         sidebars = "transparent",
       },

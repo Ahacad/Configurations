@@ -150,7 +150,11 @@ source ~/.oh-my-zsh/themes/powerlevel10k/powerlevel10k.zsh-theme
 
 export WINEARCH=win64
 
-source '/home/ahacad/bin/encoder-attack2/bin/activate'
+# python venv for pip rather than system-wide install
+#source '/home/ahacad/Venvs/.env1/bin/activate'
 #echo "net, algo, dev, base, draw, jap, eng, ivt"
 #
 #alias lf="/home/ahacad/bin/lfpreview.sh"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
