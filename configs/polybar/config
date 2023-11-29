@@ -19,13 +19,28 @@ yellow = #d19a66
 monitor = ${env:MONITOR}
 enable-ipc = true
 wm-restack = bspwm
-height = 22
+height = 28
+
 foreground = ${colors.foreground}
 background = ${colors.background}
 font-0 = SauceCodePro Nerd Font:style=Bold:size=10;2
+font-1 = "Iosevka Nerd Font:size=10;4"
+font-2 = "Iosevka Nerd Font:size=10;3"
+font-3 = "feather:size=12;3"
+font-4 = "Fantasque Sans Mono:style=Bold:size=12;3"
 #font-0 = LiterationMono Nerd Font:style=Italic:size=10;2
-padding-right = 1
+
+offset-x = 0%
+offset-y = 0%
+padding = 0
+#module-margin-left = 0
+#module-margin-right = 0
 module-margin = 1
+radius-top = 0.0
+radius-bottom = 0.0
+border-size = 0
+border-color = ${color.background}
+
 cursor-click = pointer
 tray-position = right
 
