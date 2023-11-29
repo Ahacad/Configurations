@@ -15,7 +15,7 @@ red    = #be5046
 green  = #98c379
 yellow = #d19a66
 
-[bar/topbar]
+[section/base]
 monitor = ${env:MONITOR}
 enable-ipc = true
 wm-restack = bspwm
@@ -26,11 +26,19 @@ font-0 = SauceCodePro Nerd Font:style=Bold:size=10;2
 #font-0 = LiterationMono Nerd Font:style=Italic:size=10;2
 padding-right = 1
 module-margin = 1
+cursor-click = pointer
+tray-position = right
+
+
+[bar/main]
+inherit = section/base
 modules-left   = bspwm filesystem
 modules-center =   date
 modules-right  = ethernet wlan cpu temperature memory battery backlight bluetooth pulseaudio-control
-cursor-click = pointer
-tray-position = right
+
+[bar/secondary]
+inherit = section/base
+modules-left   = bspwm
 
 [module/bspwm]
 type = internal/bspwm
