@@ -166,8 +166,9 @@ shift + {_,ctrl + ,alt + }Print
 # # Switch GPU
 # super + shift + g
 #     dmenu-gpu
-
-
+#rofi -show run
+        
+       
 # terminal
 alt + shift + Return
     alacritty
@@ -177,9 +178,11 @@ super + 1
 super + 4
         flameshot gui
 super + 5
-        rofi -show run
+        ~/.config/rofi/scripts/launcher_run_t2
 super + shift + 5
         rofi -show window
+super + 6
+        ~/.config/rofi/scripts/launcher_t2
 # Lock screen
 super + BackSpace
     betterlockscreen -l --text λ
