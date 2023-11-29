@@ -1,9 +1,9 @@
 ; vim:ft=dosini
-;
 
-include-file = ~/.config/polybar/bars.ini
-include-file = ~/.config/polybar/colors.ini
-include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/forest/bars.ini
+include-file = ~/.config/polybar/forest/colors.ini
+#include-file = ~/.config/polybar/modules.ini
+include-file = ~/.config/polybar/user_modules.ini
 
 [colors]
 foreground         = #abb2bf
@@ -19,26 +19,44 @@ yellow = #d19a66
 monitor = ${env:MONITOR}
 enable-ipc = true
 wm-restack = bspwm
-height = 22
+height = 28
+
 foreground = ${colors.foreground}
 background = ${colors.background}
 font-0 = SauceCodePro Nerd Font:style=Bold:size=10;2
+font-1 = "Iosevka Nerd Font:size=10;4"
+font-2 = "Iosevka Nerd Font:size=10;3"
+font-3 = "feather:size=12;3"
+font-4 = "Fantasque Sans Mono:style=Bold:size=12;3"
+font-5 = "Material\-Design\-Iconic\-Font:size=13;4"
+
 #font-0 = LiterationMono Nerd Font:style=Italic:size=10;2
-padding-right = 1
+
+offset-x = 0%
+offset-y = 0%
+padding = 0
+#module-margin-left = 0
+#module-margin-right = 0
 module-margin = 1
+radius-top = 0.0
+radius-bottom = 0.0
+border-size = 0
+border-color = ${color.background}
+
 cursor-click = pointer
 tray-position = right
 
 
 [bar/main]
 inherit = section/base
-modules-left   = bspwm filesystem
-modules-center =   date
-modules-right  = ethernet wlan cpu temperature memory battery backlight bluetooth pulseaudio-control
+modules-left   = bspwm sep filesystem
+modules-center = date
+modules-right  = ethernet wlan cpu temperature memory battery backlight bluetooth pulseaudio-control sep sysmenu sep
 
 [bar/secondary]
 inherit = section/base
 modules-left   = bspwm
+modules-right = title sep mpd sep keyboard sep updates
 
 [module/bspwm]
 type = internal/bspwm
@@ -61,6 +79,9 @@ label-urgent-foreground        = ${colors.red}
 [module/date]
 type = internal/date
 interval = 1
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${color.red}
 label = %time% - %date%
 time     = %R
 date     = %a, %b %d
@@ -70,23 +91,39 @@ date-alt = %A, %B %d, %Y
 [module/ethernet]
 type = internal/network
 interface = ${env:ETHERNET}
-format-connected-prefix    = " "
-label-connected         = %local_ip%
+accumulate-stats = true
+#format-connected-prefix    = "🖧  "
+#format-connected-prefix    = " "
+format-connected-prefix    = "ETHER "
+format-connected-prefix-foreground = ${color.purple}
+#label-connected         = %local_ip% ( %upspeed%  %downspeed%)
+label-connected         = "%local_ip% (up %upspeed% down %downspeed%)"
 
 [module/wlan]
 type = internal/network
 interface = ${env:WLAN}
+
+format-connected = <label-connected>
 format-connected-prefix    = "直 "
-format-disconnected-prefix = "睊 "
-format-disconnected-prefix-foreground = ${colors.red}
-label-connected         = %essid% ( %upspeed%  %downspeed%)
+format-connected-prefix-foreground = ${color.purple}
+
+format-disconnected = <label-disconnected>
+format-disconnected-prefix = "  "
+format-disconnected-prefix-foreground = ${color.orange}
+
 label-disconnected      = Disconnected
-label-disconnected-foreground = ${colors.red}
+label-disconnected-foreground = ${color.orange}
+label-connected         = "%essid% (up %upspeed% down %downspeed%)"
+
+#label-connected = "%{A1:networkmanager_dmenu &:} %essid% %{F#6C77BB}%{F-} %downspeed%%{A}"
+#label-disconnected = "%{A1:networkmanager_dmenu &:} Offline%{A}"
 
 [module/cpu]
 type = internal/cpu
 #format-prefix = " "
-format-prefix = "CPU "
+format-prefix = " "
+format-prefix-foreground = ${color.yellow}
+label = " %percentage%%"
 
 [module/temperature]
 type = internal/temperature
@@ -99,15 +136,19 @@ ramp-1 = 
 ramp-2 = 
 ramp-3 = 
 ramp-4 = 
+ramp-foreground = ${color.cyan}
 
 [module/memory]
 type = internal/memory
 #format-prefix = "﬙ "
-format-prefix = "MEM "
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${color.blue}
 label         = %gb_used%
 
 [module/battery]
 type = internal/battery
+full-at = 99
 battery = BAT1
 adapter = AC
 format-discharging = <ramp-capacity> <label-discharging>
@@ -132,7 +173,7 @@ type = internal/alsa
 format-volume = <ramp-volume> <bar-volume>
 master-mixer = IEC958
 format-muted-prefix = "ﱝ "
-label-muted = sound muted
+label-muted = " Muted"
 ramp-volume-0 = 奄
 ramp-volume-1 = 奔
 ramp-volume-2 = 墳
@@ -144,23 +185,36 @@ bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight]
 type = internal/backlight
-card = amdgpu_bl0
+card = intel_backlight
 format = <ramp> <label>
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+label = %percentage%%
+; ramp-0 = 
+; ramp-1 = 
+; ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-3 = 
+ramp-4 = 
+ramp-foreground = ${color.lime}
 
 [module/filesystem]
 type = internal/fs
 mount-0 = /
 mount-1 = /home
+mount-2 = /mnt/hdd1
 #mount-2 = /media/Work
 interval = 30
 fixed-values = true
 spacing = 2
 format-mounted = <label-mounted>
+format-mounted-prefix = " "
+format-mounted-prefix-foreground = ${color.orange}
+format-unmounted = <label-unmounted>
+format-unmounted-prefix = 
+format-unmounted-prefix-foreground = ${color.red}
 label-mounted = %mountpoint%: %used% / %total%
-label-unmounted = %mountpoint%: not mounted
+label-unmounted = %mountpoint%: NA
 
 [module/bluetooth]
 type = custom/script
@@ -179,7 +233,6 @@ tail = true
 format-underline = ${colors.cyan}
 label-padding = 2
 label-foreground = ${colors.foreground}
-
 # Icons mixed from Font Awesome 5 and Material Icons
 # You can copy-paste your options for each possible action, which is more
 # trouble-free but repetitive, or apply only the relevant ones (for example
@@ -192,3 +245,145 @@ click-middle = pulseaudio-control --sink-blacklist "alsa_output.pci-0000_01_00.1
 scroll-up = pulseaudio-control --volume-max 130 up
 scroll-down = pulseaudio-control --volume-max 130 down
 
+[module/keyboard]
+type = internal/xkeyboard
+
+; List of indicators to ignore
+blacklist-0 = num lock
+blacklist-1 = scroll lock
+
+; Available tags:
+;   <label-layout> (default)
+;   <label-indicator> (default)
+format = <label-layout> <label-indicator>
+format-prefix = 
+format-prefix-foreground = ${color.blue-gray}
+
+; Available tokens:
+;   %layout%
+;   %name%
+;   %number%
+; Default: %layout%
+label-layout = " %layout%"
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-indicator-on = "%name%"
+label-indicator-on-foreground = ${color.cyan}
+
+[module/title]
+type = internal/xwindow
+
+; Available tags:
+;   <label> (default)
+format = <label>
+format-prefix = 
+format-foreground = ${color.foreground}
+
+; Available tokens:
+;   %title%
+; Default: %title%
+label = " %title%"
+label-maxlen = 30
+
+; Used instead of label when there is no window title
+label-empty = " Desktop"
+
+[module/mpd]
+type = internal/mpd
+
+; Host where mpd is running (either ip or domain name)
+; Can also be the full path to a unix socket where mpd is running.
+;;host = 127.0.0.1
+;;port = 6600
+;;password = mysecretpassword
+
+; Seconds to sleep between progressbar/song timer sync
+; Default: 1
+interval = 1
+
+; Available tags:
+;   <label-song> (default)
+;   <label-time>
+;   <bar-progress>
+;   <toggle> - gets replaced with <icon-(pause|play)>
+;   <toggle-stop> - gets replaced with <icon-(stop|play)>
+;   <icon-random>
+;   <icon-repeat>
+;   <icon-repeatone> (deprecated)
+;   <icon-single> - Toggle playing only a single song. Replaces <icon-repeatone>
+;   <icon-consume>
+;   <icon-prev>
+;   <icon-stop>
+;   <icon-play>
+;   <icon-pause>
+;   <icon-next>
+;   <icon-seekb>
+;   <icon-seekf>
+format-online = <label-song> <icon-prev> <toggle> <icon-next>
+format-online-prefix = 
+format-online-prefix-foreground = ${color.green}
+
+;format-playing = ${self.format-online}
+;format-paused = ${self.format-online}
+;format-stopped = ${self.format-online}
+
+; Available tags:
+;   <label-offline>
+format-offline = <label-offline>
+format-offline-prefix = 
+format-offline-prefix-foreground = ${color.red}
+
+; Available tokens:
+;   %artist%
+;   %album-artist%
+;   %album%
+;   %date%
+;   %title%
+; Default: %artist% - %title%
+label-song =  " %artist% - %title%"
+label-song-maxlen = 25
+label-song-ellipsis = true
+
+; Available tokens:
+;   %elapsed%
+;   %total%
+; Default: %elapsed% / %total%
+label-time = %elapsed% / %total%
+label-time-background = ${color.background-alt}
+label-time-padding = 1
+
+; Available tokens:
+;   None
+label-offline = " Offline"
+
+; Only applies if <icon-X> is used
+icon-play = 
+icon-play-foreground = ${color.cyan}
+icon-pause = 
+icon-pause-foreground = ${color.cyan}
+icon-stop = 
+icon-stop-foreground = ${color.red}
+icon-next = 
+icon-next-foreground = ${color.cyan}
+icon-prev = 
+icon-prev-foreground = ${color.cyan}
+icon-seekf = 
+icon-seekb = 
+icon-random = 
+icon-repeat = 
+icon-repeatone = 
+icon-single = 
+icon-consume =
+
+; Used to display the state of random/repeat/repeatone/single
+; Only applies if <icon-[random|repeat|repeatone|single]> is used
+toggle-on-foreground = ${color.primary}
+toggle-off-foreground = ${color.red}
+
+; Only applies if <bar-progress> is used
+;;bar-progress-width = 45
+;;bar-progress-indicator = |
+;;bar-progress-fill = ─
+;;bar-progress-empty = ─
